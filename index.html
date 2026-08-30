@@ -20,6 +20,7 @@
 
     <nav class="desktop-nav" aria-label="Primary navigation">
       <a href="#about" data-i18n="navAbout">About</a>
+      <a href="#work" data-i18n="navWork">Work</a>
       <a href="#experience" data-i18n="navExperience">Experience</a>
       <a href="#education" data-i18n="navEducation">Education</a>
       <a href="#contact" data-i18n="navContact">Contact</a>
@@ -44,15 +45,14 @@
           Building reliable game systems and polished player experiences for mobile games.
         </p>
         <div class="hero-actions">
-          <a class="button button-primary" href="#experience" data-i18n="viewExperience">View experience</a>
+          <a class="button button-primary" href="#work" data-i18n="viewWork">View my work</a>
           <a class="button button-secondary" href="https://www.linkedin.com/in/%E5%B7%9D%E6%A5%93-%E5%8A%89-a3a732196/?locale=zh" target="_blank" rel="noreferrer">LinkedIn</a>
         </div>
       </div>
 
-      <div class="hero-visual" aria-label="Portrait placeholder">
-        <div class="portrait-placeholder">
-          <span>LCF</span>
-          <small data-i18n="photoLater">Photo coming later</small>
+      <div class="hero-visual">
+        <div class="portrait-frame">
+          <img src="assets/portrait.jpg" alt="Liu Chuan Feng with a cat" data-i18n-alt="portraitAlt">
         </div>
       </div>
     </section>
@@ -91,9 +91,71 @@
       </div>
     </section>
 
+    <section class="section work-section" id="work">
+      <div class="section-heading work-heading">
+        <div>
+          <p class="section-number">02</p>
+          <h2 data-i18n="workTitle">Selected work</h2>
+        </div>
+        <p class="work-intro" data-i18n="workIntro">Mobile games I have helped build and support as a Unity Engineer.</p>
+      </div>
+
+      <div class="work-grid">
+        <article class="work-card work-card-featured">
+          <div class="work-card-topline">
+            <span class="work-index">01</span>
+            <span class="work-status" data-i18n="ongoing">In development</span>
+          </div>
+          <div class="work-card-content">
+            <div>
+              <p class="company">Limit Break</p>
+              <h3>Puzzle Panic</h3>
+            </div>
+            <p data-i18n="puzzleWorkDescription">Developing gameplay systems, user interfaces, and supporting flows for a mobile puzzle game in an international team.</p>
+          </div>
+          <ul class="work-tags" aria-label="Technologies">
+            <li>Unity</li>
+            <li>C#</li>
+            <li>Gameplay</li>
+            <li>UI</li>
+          </ul>
+        </article>
+
+        <article class="work-card">
+          <div class="work-card-topline">
+            <span class="work-index">02</span>
+            <span class="work-status" data-i18n="released">Released</span>
+          </div>
+          <p class="company">Rudel, Inc.</p>
+          <h3>ブルーロック<br>Project: World Champion</h3>
+          <p data-i18n="releasedWorkDescription">Contributed to mobile game features across gameplay, user interface, and live-service systems.</p>
+        </article>
+
+        <article class="work-card">
+          <div class="work-card-topline">
+            <span class="work-index">03</span>
+            <span class="work-status" data-i18n="released">Released</span>
+          </div>
+          <p class="company">Rudel, Inc.</p>
+          <h3>キングダム<br>頂天</h3>
+          <p data-i18n="releasedWorkDescription">Contributed to mobile game features across gameplay, user interface, and live-service systems.</p>
+        </article>
+
+        <article class="work-card">
+          <div class="work-card-topline">
+            <span class="work-index">04</span>
+            <span class="work-status" data-i18n="released">Released</span>
+          </div>
+          <p class="company">Rudel, Inc.</p>
+          <h3>大熱闘<br>ドラゴンスマッシュ</h3>
+          <p data-i18n="releasedWorkDescription">Contributed to mobile game features across gameplay, user interface, and live-service systems.</p>
+        </article>
+      </div>
+    </section>
+
     <section class="section" id="experience">
       <div class="section-heading">
-        <p class="section-number">02</p>
+        <p class="section-number">03</p>
         <h2 data-i18n="experienceTitle">Experience</h2>
       </div>
 
@@ -134,7 +196,7 @@
 
     <section class="section" id="education">
       <div class="section-heading">
-        <p class="section-number">03</p>
+        <p class="section-number">04</p>
         <h2 data-i18n="educationTitle">Education</h2>
       </div>
 
@@ -154,7 +216,7 @@
 
     <section class="contact-section" id="contact">
       <div>
-        <p class="section-number">04</p>
+        <p class="section-number">05</p>
         <h2 data-i18n="contactTitle">Let's connect</h2>
         <p data-i18n="contactDescription">For professional opportunities or collaboration, please reach out through LinkedIn.</p>
       </div>
