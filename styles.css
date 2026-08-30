@@ -354,6 +354,18 @@ h2 {
   box-shadow: 0 30px 80px rgba(0, 0, 0, 0.2);
 }
 
+.personal-project-list {
+  display: grid;
+  gap: 18px;
+}
+
+.personal-project-card-pattern {
+  border-color: rgba(255, 147, 106, 0.32);
+  background:
+    radial-gradient(circle at 18% 26%, rgba(241, 80, 81, 0.2), transparent 25rem),
+    linear-gradient(135deg, rgba(77, 162, 240, 0.13), rgba(255, 255, 255, 0.025));
+}
+
 .personal-project-visual {
   width: min(100%, 360px);
   aspect-ratio: 1;
@@ -370,6 +382,16 @@ h2 {
   display: block;
   object-fit: cover;
   border-radius: calc(30% - 7px);
+}
+
+.personal-project-visual-pattern {
+  background: linear-gradient(145deg, rgba(12, 20, 42, 0.96), rgba(30, 70, 123, 0.72));
+  transform: rotate(2deg);
+}
+
+.personal-project-visual-pattern img {
+  object-fit: contain;
+  image-rendering: pixelated;
 }
 
 .personal-project-copy .work-card-topline {
