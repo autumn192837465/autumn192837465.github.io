@@ -107,7 +107,7 @@
           <p data-i18n="personalIntro">Games I designed, developed, and published independently.</p>
         </div>
 
-        <div class="personal-project-list">
+        <div class="personal-project-list work-reveal">
           <article class="personal-project-card">
             <div class="personal-project-visual">
               <img src="assets/planet-drop-icon.png" alt="Planet Drop game icon" data-i18n-alt="planetDropAlt">
@@ -181,90 +181,105 @@
           <p data-i18n="professionalIntro">Selected titles I worked on as part of professional development teams.</p>
         </div>
 
-        <div class="work-grid">
-          <article class="work-card work-card-featured">
-            <div class="work-card-topline">
-              <span class="work-status" data-i18n="softLaunch">Soft launch</span>
-            </div>
-            <div class="work-card-content">
-              <div>
+        <div class="work-grid work-reveal">
+          <article class="work-card work-card-featured case-study-card">
+            <div class="case-study-primary">
+              <div class="work-card-topline">
                 <p class="company">Limit Break</p>
-                <h3>Puzzle Panic</h3>
+                <span class="work-status" data-i18n="softLaunch">Soft launch</span>
               </div>
-              <p data-i18n="puzzleWorkDescription">Developing gameplay systems, user interfaces, and supporting flows for a mobile puzzle game in an international team.</p>
+              <h3>Puzzle Panic</h3>
+              <div class="case-role">
+                <span class="case-label" data-i18n="puzzleRoleLabel">Role</span>
+                <strong data-i18n="puzzleRole">Client Engineer (Unity)</strong>
+              </div>
+              <div class="credit-links credit-links-featured" aria-label="Puzzle Panic links">
+                <a class="credit-link" href="https://apps.apple.com/sg/app/puzzle-panic/id6737629725" target="_blank" rel="noreferrer">
+                  <img class="store-icon" src="assets/app-store-icon.webp" alt="">
+                  <span>App Store</span>
+                  <span aria-hidden="true">↗</span>
+                </a>
+              </div>
             </div>
-            <ul class="work-tags" aria-label="Technologies">
-              <li>Unity</li>
-              <li>C#</li>
-              <li>Gameplay</li>
-              <li>UI</li>
+
+            <div class="case-study-details">
+              <section class="case-detail case-detail-responsibilities">
+                <h4 data-i18n="puzzleResponsibilitiesLabel">Responsibilities</h4>
+                <ul>
+                  <li data-i18n="puzzleResponsibility1">Gameplay &amp; Boss Systems</li>
+                  <li data-i18n="puzzleResponsibility2">Reward &amp; Out-game Flows</li>
+                  <li data-i18n="puzzleResponsibility3">Async Processing with UniTask</li>
+                  <li data-i18n="puzzleResponsibility4">Unit Testing &amp; Debug Tooling</li>
+                  <li data-i18n="puzzleResponsibility5">Root Cause Analysis &amp; Quality Improvement</li>
+                </ul>
+              </section>
+              <section class="case-detail">
+                <h4 data-i18n="puzzleCollaborationLabel">Collaboration</h4>
+                <ul>
+                  <li data-i18n="puzzleCollaboration1">Designers · Planners · QA</li>
+                  <li data-i18n="puzzleCollaboration2">Japan · US · Philippines</li>
+                  <li data-i18n="puzzleCollaboration3">Japanese · English · Chinese</li>
+                </ul>
+              </section>
+              <section class="case-detail case-detail-tech">
+                <h4 data-i18n="puzzleTechLabel">Tech</h4>
+                <ul class="work-tags" aria-label="Technologies">
+                  <li>Unity</li>
+                  <li>C#</li>
+                  <li>UniTask</li>
+                  <li>GitHub</li>
+                </ul>
+              </section>
+            </div>
+          </article>
+
+          <article class="work-card professional-card professional-card-blue">
+            <div class="work-card-topline">
+              <span class="credit-number" aria-hidden="true">01</span>
+              <span class="work-status" data-i18n="released">Released</span>
+            </div>
+            <p class="company">Rudel, Inc.</p>
+            <h3 lang="ja">ブルーロック <span>Project: World Champion</span></h3>
+            <p class="credit-description" data-i18n="releasedWorkDescription">Contributed to mobile game features across gameplay, user interface, and live-service systems.</p>
+            <ul class="work-tags compact-tags" aria-label="Technologies">
+              <li>Unity</li><li>C#</li><li>Mobile</li>
             </ul>
-            <div class="credit-links credit-links-featured" aria-label="Puzzle Panic links">
-              <a class="credit-link" href="https://apps.apple.com/sg/app/puzzle-panic/id6737629725" target="_blank" rel="noreferrer">
-                <img class="store-icon" src="assets/app-store-icon.webp" alt="">
-                <span>App Store</span>
-                <span aria-hidden="true">↗</span>
-              </a>
-            </div>
-          </article>
-
-          <article class="work-card">
-            <div class="work-card-topline">
-              <span class="work-status" data-i18n="released">Released</span>
-            </div>
-            <p class="company">Rudel, Inc.</p>
-            <h3>ブルーロック<br>Project: World Champion</h3>
-            <p class="credit-description" data-i18n="releasedWorkDescription">Contributed to mobile game features across gameplay, user interface, and live-service systems.</p>
             <div class="credit-links" aria-label="Blue Lock Project: World Champion links">
-              <a class="credit-link" href="https://bluelock-pwc.com/" target="_blank" rel="noreferrer">
-                <span data-i18n="officialSite">Official site</span>
-                <span aria-hidden="true">↗</span>
-              </a>
-              <a class="credit-link" href="https://play.google.com/store/apps/details?id=jp.pjfb&amp;hl=ja" target="_blank" rel="noreferrer">
-                <img class="store-icon" src="assets/google-play-store-icon.webp" alt="">
-                <span>Google Play</span>
-                <span aria-hidden="true">↗</span>
-              </a>
-              <a class="credit-link" href="https://apps.apple.com/jp/app/%E3%83%96%E3%83%AB%E3%83%BC%E3%83%AD%E3%83%83%E3%82%AF-project-world-champion/id1631984107" target="_blank" rel="noreferrer">
-                <img class="store-icon" src="assets/app-store-icon.webp" alt="">
-                <span>App Store</span>
-                <span aria-hidden="true">↗</span>
-              </a>
+              <a class="credit-link" href="https://bluelock-pwc.com/" target="_blank" rel="noreferrer"><span data-i18n="officialSite">Official site</span><span aria-hidden="true">↗</span></a>
+              <a class="credit-link" href="https://play.google.com/store/apps/details?id=jp.pjfb&amp;hl=ja" target="_blank" rel="noreferrer"><img class="store-icon" src="assets/google-play-store-icon.webp" alt=""><span>Google Play</span><span aria-hidden="true">↗</span></a>
+              <a class="credit-link" href="https://apps.apple.com/jp/app/%E3%83%96%E3%83%AB%E3%83%BC%E3%83%AD%E3%83%83%E3%82%AF-project-world-champion/id1631984107" target="_blank" rel="noreferrer"><img class="store-icon" src="assets/app-store-icon.webp" alt=""><span>App Store</span><span aria-hidden="true">↗</span></a>
             </div>
           </article>
 
-          <article class="work-card">
+          <article class="work-card professional-card professional-card-violet">
             <div class="work-card-topline">
+              <span class="credit-number" aria-hidden="true">02</span>
               <span class="work-status" data-i18n="released">Released</span>
             </div>
             <p class="company">Rudel, Inc.</p>
-            <h3>キングダム<br>頂天</h3>
+            <h3 lang="ja">キングダム 頂天</h3>
             <p class="credit-description" data-i18n="releasedWorkDescription">Contributed to mobile game features across gameplay, user interface, and live-service systems.</p>
+            <ul class="work-tags compact-tags" aria-label="Technologies">
+              <li>Unity</li><li>C#</li><li>Mobile</li>
+            </ul>
             <div class="credit-links" aria-label="Kingdom Itadaki links">
-              <a class="credit-link" href="https://kingdom-itadaki.com/" target="_blank" rel="noreferrer">
-                <span data-i18n="officialSite">Official site</span>
-                <span aria-hidden="true">↗</span>
-              </a>
-              <a class="credit-link" href="https://play.google.com/store/apps/details?id=jp.rudel.pjshin&amp;hl=ja-JP" target="_blank" rel="noreferrer">
-                <img class="store-icon" src="assets/google-play-store-icon.webp" alt="">
-                <span>Google Play</span>
-                <span aria-hidden="true">↗</span>
-              </a>
-              <a class="credit-link" href="https://apps.apple.com/jp/app/id6475892450" target="_blank" rel="noreferrer">
-                <img class="store-icon" src="assets/app-store-icon.webp" alt="">
-                <span>App Store</span>
-                <span aria-hidden="true">↗</span>
-              </a>
+              <a class="credit-link" href="https://kingdom-itadaki.com/" target="_blank" rel="noreferrer"><span data-i18n="officialSite">Official site</span><span aria-hidden="true">↗</span></a>
+              <a class="credit-link" href="https://play.google.com/store/apps/details?id=jp.rudel.pjshin&amp;hl=ja-JP" target="_blank" rel="noreferrer"><img class="store-icon" src="assets/google-play-store-icon.webp" alt=""><span>Google Play</span><span aria-hidden="true">↗</span></a>
+              <a class="credit-link" href="https://apps.apple.com/jp/app/id6475892450" target="_blank" rel="noreferrer"><img class="store-icon" src="assets/app-store-icon.webp" alt=""><span>App Store</span><span aria-hidden="true">↗</span></a>
             </div>
           </article>
 
-          <article class="work-card">
+          <article class="work-card professional-card professional-card-slate">
             <div class="work-card-topline">
+              <span class="credit-number" aria-hidden="true">03</span>
               <span class="work-status" data-i18n="released">Released</span>
             </div>
             <p class="company">Rudel, Inc.</p>
-            <h3>大熱闘<br>ドラゴンスマッシュ</h3>
-            <p data-i18n="releasedWorkDescription">Contributed to mobile game features across gameplay, user interface, and live-service systems.</p>
+            <h3 lang="ja">大熱闘 ドラゴンスマッシュ</h3>
+            <p class="credit-description" data-i18n="releasedWorkDescription">Contributed to mobile game features across gameplay, user interface, and live-service systems.</p>
+            <ul class="work-tags compact-tags" aria-label="Technologies">
+              <li>Unity</li><li>C#</li><li>Mobile</li>
+            </ul>
           </article>
         </div>
       </div>

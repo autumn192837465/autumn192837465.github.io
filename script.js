@@ -1,3 +1,5 @@
+if (typeof document !== "undefined") document.documentElement.classList.add("js");
+
 const translations = {
   en: {
     skip: "Skip to content",
@@ -37,6 +39,19 @@ const translations = {
     released: "Released",
     officialSite: "Official site",
     puzzleWorkDescription: "Developing gameplay systems, user interfaces, and supporting flows for a mobile puzzle game in an international team.",
+    puzzleRoleLabel: "Role",
+    puzzleRole: "Client Engineer (Unity)",
+    puzzleResponsibilitiesLabel: "Responsibilities",
+    puzzleResponsibility1: "Gameplay & Boss Systems",
+    puzzleResponsibility2: "Reward & Out-game Flows",
+    puzzleResponsibility3: "Async Processing with UniTask",
+    puzzleResponsibility4: "Unit Testing & Debug Tooling",
+    puzzleResponsibility5: "Root Cause Analysis & Quality Improvement",
+    puzzleCollaborationLabel: "Collaboration",
+    puzzleCollaboration1: "Designers · Planners · QA",
+    puzzleCollaboration2: "Japan · US · Philippines",
+    puzzleCollaboration3: "Japanese · English · Chinese",
+    puzzleTechLabel: "Tech",
     releasedWorkDescription: "Contributed to mobile game features across gameplay, user interface, and live-service systems.",
     locationLabel: "Location",
     skillsLabel: "Core skills",
@@ -106,6 +121,19 @@ const translations = {
     released: "已發行",
     officialSite: "官方網站",
     puzzleWorkDescription: "在國際團隊中，參與行動益智遊戲的遊戲系統、使用者介面與相關流程開發。",
+    puzzleRoleLabel: "職位",
+    puzzleRole: "客戶端工程師（Unity）",
+    puzzleResponsibilitiesLabel: "負責領域",
+    puzzleResponsibility1: "遊戲內與 Boss 系統",
+    puzzleResponsibility2: "獎勵流程與遊戲外功能",
+    puzzleResponsibility3: "使用 UniTask 的非同步處理",
+    puzzleResponsibility4: "單元測試與除錯工具開發",
+    puzzleResponsibility5: "原因分析與品質改善",
+    puzzleCollaborationLabel: "團隊協作",
+    puzzleCollaboration1: "與設計師、企劃及 QA 調整規格",
+    puzzleCollaboration2: "日本、美國與菲律賓團隊",
+    puzzleCollaboration3: "日語、英語與中文",
+    puzzleTechLabel: "技術",
     releasedWorkDescription: "參與行動遊戲的遊戲玩法、使用者介面與營運系統功能開發。",
     locationLabel: "所在地",
     skillsLabel: "核心技能",
@@ -175,6 +203,19 @@ const translations = {
     released: "リリース済み",
     officialSite: "公式サイト",
     puzzleWorkDescription: "国際的なチームで、モバイルパズルゲームのゲームシステム、UI、関連フローを開発しています。",
+    puzzleRoleLabel: "担当職種",
+    puzzleRole: "クライアントエンジニア（Unity）",
+    puzzleResponsibilitiesLabel: "担当領域",
+    puzzleResponsibility1: "インゲーム・ボスシステム",
+    puzzleResponsibility2: "報酬フロー・アウトゲーム機能",
+    puzzleResponsibility3: "UniTaskを用いた非同期処理",
+    puzzleResponsibility4: "Unit Test・デバッグツール開発",
+    puzzleResponsibility5: "原因分析・品質改善",
+    puzzleCollaborationLabel: "チーム連携",
+    puzzleCollaboration1: "デザイナー・プランナー・QAとの仕様調整",
+    puzzleCollaboration2: "日本・米国・フィリピン拠点との連携",
+    puzzleCollaboration3: "日本語・英語・中国語",
+    puzzleTechLabel: "技術",
     releasedWorkDescription: "ゲームプレイ、UI、運用システムなど、モバイルゲームの機能開発に携わりました。",
     locationLabel: "所在地",
     skillsLabel: "主なスキル",
@@ -263,6 +304,22 @@ function initializePortfolio() {
 
   const currentYear = document.getElementById("current-year");
   if (currentYear) currentYear.textContent = new Date().getFullYear();
+
+  const revealItems = document.querySelectorAll(".work-reveal");
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (reduceMotion || !("IntersectionObserver" in window)) {
+    revealItems.forEach((item) => item.classList.add("is-visible"));
+  } else {
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("is-visible");
+        observer.unobserve(entry.target);
+      });
+    }, { threshold: 0.12 });
+    revealItems.forEach((item) => revealObserver.observe(item));
+  }
+
   setLanguage(getInitialLanguage());
 }
 
