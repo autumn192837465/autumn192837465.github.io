@@ -28,9 +28,11 @@ const translations = {
     planetDropSubtitle: "Merge Puzzle",
     planetDropDescription: "A physics-based merge game where every drop shapes the board. Combine planets, choose roguelike upgrades, discover powerful builds, and chase a new high score.",
     planetDropAlt: "Planet Drop game icon",
+    planetDropVideoTitle: "Planet Drop gameplay preview",
     patternHeroSubtitle: "Action prototype",
     patternHeroDescription: "An in-development personal game exploring responsive action gameplay, combat systems, and a handcrafted pixel-art presentation.",
     patternHeroAlt: "Pattern Hero game icon",
+    patternHeroVideoTitle: "Pattern Hero gameplay preview",
     watchDemo: "Watch demo",
     professionalKicker: "Professional credits",
     professionalTitle: "Games I contributed to",
@@ -112,9 +114,11 @@ const translations = {
     planetDropSubtitle: "星球合成益智遊戲",
     planetDropDescription: "每一次投放都會改變盤面的物理合成遊戲。合併星球、選擇 Roguelike 強化、組合不同流派，挑戰更高分數。",
     planetDropAlt: "Planet Drop 遊戲圖示",
+    planetDropVideoTitle: "Planet Drop 遊戲預覽",
     patternHeroSubtitle: "動作遊戲原型",
     patternHeroDescription: "開發中的個人動作遊戲原型，聚焦於爽快的操作、戰鬥系統與手工像素風格的呈現。",
     patternHeroAlt: "Pattern Hero 遊戲圖示",
+    patternHeroVideoTitle: "Pattern Hero 遊戲預覽",
     watchDemo: "觀看 Demo",
     professionalKicker: "參與作品",
     professionalTitle: "職涯參與開發的遊戲",
@@ -196,9 +200,11 @@ const translations = {
     planetDropSubtitle: "マージパズル",
     planetDropDescription: "一手ごとに盤面が変化する物理マージゲーム。惑星を合体し、ローグライク強化でビルドを組み立て、ハイスコアを目指します。",
     planetDropAlt: "Planet Dropのゲームアイコン",
+    planetDropVideoTitle: "Planet Drop ゲームプレイ動画",
     patternHeroSubtitle: "アクションゲームのプロトタイプ",
     patternHeroDescription: "操作感のよいアクション、バトルシステム、手作りのピクセルアート表現を追求する、開発中の個人ゲームです。",
     patternHeroAlt: "Pattern Heroのゲームアイコン",
+    patternHeroVideoTitle: "Pattern Hero ゲームプレイ動画",
     watchDemo: "デモを見る",
     professionalKicker: "参加作品",
     professionalTitle: "開発に携わったゲーム",
@@ -277,6 +283,11 @@ function setLanguage(language) {
   document.querySelectorAll("[data-i18n-alt]").forEach((element) => {
     const key = element.dataset.i18nAlt;
     if (dictionary[key]) element.alt = dictionary[key];
+  });
+
+  document.querySelectorAll("[data-i18n-title]").forEach((element) => {
+    const key = element.dataset.i18nTitle;
+    if (dictionary[key]) element.title = dictionary[key];
   });
 
   document.querySelectorAll("[data-lang]").forEach((button) => {
