@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Zen+Old+Mincho:wght@600;700&display=swap");
+
 :root {
   color-scheme: dark;
   --bg: #06111f;
@@ -9,8 +11,16 @@
   --line: rgba(255, 255, 255, 0.12);
   --accent: #9fc9ff;
   --accent-strong: #d6e9ff;
+  --font-body: "Zen Kaku Gothic New", "Noto Sans TC", system-ui, sans-serif;
+  --font-display: "Zen Old Mincho", "Noto Serif TC", Georgia, serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Consolas, monospace;
   --max-width: 1160px;
   --radius: 24px;
+}
+
+html[lang="zh-TW"] {
+  --font-body: "Noto Sans TC", "Zen Kaku Gothic New", system-ui, sans-serif;
+  --font-display: "Noto Serif TC", "Zen Old Mincho", Georgia, serif;
 }
 
 * {
@@ -27,14 +37,33 @@ body {
     radial-gradient(circle at 82% 8%, rgba(66, 131, 202, 0.18), transparent 29rem),
     linear-gradient(180deg, #071426 0%, var(--bg) 55%, #040b14 100%);
   color: var(--text);
-  font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", "Noto Sans TC", "Noto Sans JP", sans-serif;
-  line-height: 1.7;
+  font-family: var(--font-body);
+  line-height: 1.78;
+  letter-spacing: 0.018em;
   min-height: 100vh;
 }
 
 button,
 a {
   font: inherit;
+}
+
+.eyebrow,
+.section-number,
+.company,
+.education-year,
+.work-kicker,
+.work-status,
+.credit-number,
+.case-label,
+.case-detail h4,
+.project-label,
+.brand-mark,
+.language-switcher,
+.button,
+.store-link,
+.credit-link {
+  font-family: var(--font-mono);
 }
 
 a {
@@ -162,8 +191,9 @@ h1 {
   max-width: 760px;
   font-size: clamp(3.6rem, 9vw, 7.7rem);
   line-height: 0.93;
-  letter-spacing: -0.065em;
-  font-weight: 620;
+  font-family: var(--font-display);
+  letter-spacing: 0.005em;
+  font-weight: 700;
 }
 
 .hero-title {
@@ -262,8 +292,9 @@ h2 {
   margin: 0;
   font-size: clamp(2.3rem, 5vw, 4rem);
   line-height: 1;
-  letter-spacing: -0.045em;
-  font-weight: 590;
+  font-family: var(--font-display);
+  letter-spacing: 0.02em;
+  font-weight: 700;
 }
 
 .about-grid {
@@ -333,8 +364,9 @@ h2 {
   margin: 0;
   font-size: clamp(1.7rem, 3.5vw, 2.8rem);
   line-height: 1.04;
-  letter-spacing: -0.04em;
-  font-weight: 590;
+  font-family: var(--font-display);
+  letter-spacing: 0.015em;
+  font-weight: 700;
 }
 
 .work-subheading > p:last-child {
@@ -410,8 +442,9 @@ h2 {
   margin: 8px 0 20px;
   font-size: clamp(2.8rem, 7vw, 5.8rem);
   line-height: 0.9;
-  letter-spacing: -0.06em;
-  font-weight: 600;
+  font-family: var(--font-display);
+  letter-spacing: -0.005em;
+  font-weight: 700;
 }
 
 .personal-project-copy h3 span {
@@ -420,8 +453,9 @@ h2 {
   color: var(--accent-strong);
   font-size: clamp(1rem, 2.2vw, 1.5rem);
   line-height: 1.2;
-  letter-spacing: -0.02em;
-  font-weight: 520;
+  font-family: var(--font-body);
+  letter-spacing: 0.01em;
+  font-weight: 500;
 }
 
 .personal-project-copy > p:not(.company) {
@@ -552,7 +586,7 @@ h2 {
   bottom: -0.18em;
   z-index: -1;
   color: var(--accent-strong);
-  font-family: ui-monospace, "SFMono-Regular", Consolas, monospace;
+  font-family: var(--font-mono);
   font-size: clamp(5rem, 12vw, 10rem);
   line-height: 1;
   letter-spacing: 0.04em;
@@ -600,8 +634,9 @@ h2 {
   margin: 7px 0 18px;
   font-size: clamp(1.55rem, 2.6vw, 2.35rem);
   line-height: 1.12;
-  letter-spacing: -0.035em;
-  font-weight: 590;
+  font-family: var(--font-display);
+  letter-spacing: 0.01em;
+  font-weight: 700;
   word-break: keep-all;
   overflow-wrap: normal;
   text-wrap: balance;
@@ -618,7 +653,7 @@ h2 {
   margin-top: 0.25em;
   font-size: 0.58em;
   line-height: 1.25;
-  letter-spacing: -0.01em;
+  letter-spacing: 0.015em;
 }
 
 .work-card > p:last-child,
@@ -844,8 +879,9 @@ h2 {
 .education-card h3 {
   margin: 6px 0 12px;
   font-size: clamp(1.55rem, 3vw, 2.25rem);
-  letter-spacing: -0.03em;
-  font-weight: 590;
+  font-family: var(--font-display);
+  letter-spacing: 0.015em;
+  font-weight: 700;
 }
 
 .timeline-content > p:last-of-type {
