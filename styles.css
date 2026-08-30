@@ -528,10 +528,41 @@ h2 {
 }
 
 .work-card > p:last-child,
+.work-card > .credit-description,
 .work-card-content > p {
   margin-top: auto;
   margin-bottom: 0;
   color: var(--muted);
+}
+
+.credit-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 24px;
+}
+
+.credit-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 10px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--accent-strong);
+  font-size: 0.78rem;
+  font-weight: 600;
+  line-height: 1.2;
+  text-decoration: none;
+  transition: border-color 180ms ease, color 180ms ease, transform 180ms ease;
+}
+
+.credit-link:hover,
+.credit-link:focus-visible {
+  border-color: var(--accent);
+  color: var(--accent);
+  transform: translateY(-1px);
 }
 
 .work-tags {
