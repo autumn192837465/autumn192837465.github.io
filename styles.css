@@ -515,7 +515,7 @@ h2 {
   height: 14px;
 }
 
-.professional-work {
+.personal-work {
   margin-top: 100px;
   padding-top: 72px;
   border-top: 1px solid var(--line);
@@ -1115,7 +1115,7 @@ footer p {
     margin-bottom: 30px;
   }
 
-  .professional-work {
+  .personal-work {
     margin-top: 70px;
     padding-top: 54px;
   }
