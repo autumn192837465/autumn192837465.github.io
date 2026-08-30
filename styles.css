@@ -377,7 +377,7 @@ h2 {
 .personal-project-card {
   padding: clamp(24px, 5vw, 52px);
   display: grid;
-  grid-template-columns: minmax(230px, 0.72fr) minmax(0, 1.28fr);
+  grid-template-columns: minmax(0, 1.08fr) minmax(300px, 0.92fr);
   align-items: center;
   gap: clamp(36px, 7vw, 82px);
   border: 1px solid rgba(159, 201, 255, 0.28);
@@ -429,8 +429,8 @@ h2 {
 
 .personal-project-copy h3 {
   margin: 8px 0 20px;
-  font-size: clamp(2.8rem, 7vw, 5.8rem);
-  line-height: 0.9;
+  font-size: clamp(2.15rem, 4vw, 3.8rem);
+  line-height: 0.96;
   font-family: var(--font-display);
   letter-spacing: -0.005em;
   font-weight: 700;
@@ -621,7 +621,7 @@ h2 {
 
 .work-card h3 {
   margin: 7px 0 18px;
-  font-size: clamp(1.55rem, 2.6vw, 2.35rem);
+  font-size: clamp(1.4rem, 2.1vw, 2rem);
   line-height: 1.12;
   font-family: var(--font-display);
   letter-spacing: 0.01em;
@@ -633,7 +633,7 @@ h2 {
 
 .work-card-featured h3 {
   margin: 10px 0 24px;
-  font-size: clamp(2.8rem, 6vw, 5.4rem);
+  font-size: clamp(2.25rem, 4.2vw, 3.8rem);
   line-height: 0.96;
 }
 
@@ -867,7 +867,7 @@ h2 {
 .timeline-content h3,
 .education-card h3 {
   margin: 6px 0 12px;
-  font-size: clamp(1.55rem, 3vw, 2.25rem);
+  font-size: clamp(1.35rem, 2.2vw, 1.85rem);
   font-family: var(--font-display);
   letter-spacing: 0.015em;
   font-weight: 700;
@@ -1017,7 +1017,7 @@ footer p {
   }
 
   .personal-project-card {
-    grid-template-columns: minmax(210px, 0.72fr) minmax(0, 1.28fr);
+    grid-template-columns: minmax(0, 1.05fr) minmax(280px, 0.95fr);
     gap: 38px;
   }
 
@@ -1124,11 +1124,11 @@ footer p {
   }
 
   .work-card-featured h3 {
-    font-size: clamp(2.65rem, 14vw, 4.6rem);
+    font-size: clamp(2.1rem, 10vw, 3.35rem);
   }
 
   .professional-card h3 {
-    font-size: clamp(1.45rem, 7.4vw, 2.05rem);
+    font-size: clamp(1.35rem, 6.5vw, 1.85rem);
   }
 
   .case-detail-responsibilities {
