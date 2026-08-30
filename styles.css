@@ -463,14 +463,19 @@ h2 {
 }
 
 .store-icon {
-  width: 20px;
-  height: 20px;
+  width: 16px;
+  height: 16px;
   flex: 0 0 auto;
   object-fit: contain;
 }
 
 .store-link .store-icon {
   margin-right: -14px;
+}
+
+.credit-link .store-icon {
+  width: 14px;
+  height: 14px;
 }
 
 .professional-work {
