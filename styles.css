@@ -462,6 +462,17 @@ h2 {
   background: rgba(159, 201, 255, 0.1);
 }
 
+.store-icon {
+  width: 20px;
+  height: 20px;
+  flex: 0 0 auto;
+  object-fit: contain;
+}
+
+.store-link .store-icon {
+  margin-right: -14px;
+}
+
 .professional-work {
   margin-top: 118px;
   padding-top: 84px;
