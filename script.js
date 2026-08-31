@@ -323,6 +323,26 @@ function getInitialLanguage() {
   return normalizeLanguage(navigator.languages?.[0] || navigator.language);
 }
 
+function loadTwitterWidgets() {
+  const embed = document.querySelector(".puzzle-social-embed");
+  if (!embed) return;
+
+  const loadEmbed = () => window.twttr?.widgets?.load(embed);
+  const existingScript = document.querySelector('script[src="https://platform.x.com/widgets.js"]');
+  if (existingScript) {
+    if (window.twttr?.widgets) loadEmbed();
+    else existingScript.addEventListener("load", loadEmbed, { once: true });
+    return;
+  }
+
+  const script = document.createElement("script");
+  script.src = "https://platform.x.com/widgets.js";
+  script.async = true;
+  script.charset = "utf-8";
+  script.addEventListener("load", loadEmbed, { once: true });
+  document.head.appendChild(script);
+}
+
 function initializePortfolio() {
   document.querySelectorAll("[data-lang]").forEach((button) => {
     button.addEventListener("click", () => setLanguage(button.dataset.lang));
@@ -347,6 +367,7 @@ function initializePortfolio() {
   }
 
   setLanguage(getInitialLanguage());
+  loadTwitterWidgets();
 }
 
 if (typeof document !== "undefined") initializePortfolio();
