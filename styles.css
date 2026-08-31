@@ -66,6 +66,12 @@ a {
   font-family: var(--font-mono);
 }
 
+.youtube-mark {
+  color: #ff8b8b;
+  font-size: 0.72rem;
+  line-height: 1;
+}
+
 a {
   color: inherit;
 }
