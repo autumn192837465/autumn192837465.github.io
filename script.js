@@ -29,6 +29,7 @@ const translations = {
     planetDropDescription: "A physics-based merge game where every drop shapes the board. Combine planets, choose roguelike upgrades, discover powerful builds, and chase a new high score.",
     planetDropAlt: "Planet Drop game icon",
     planetDropVideoTitle: "Planet Drop gameplay preview",
+    planetDropGamePage: "Game Page",
     patternHeroSubtitle: "Action prototype",
     patternHeroDescription: "An in-development personal game exploring responsive action gameplay, combat systems, and a handcrafted pixel-art presentation.",
     patternHeroAlt: "Pattern Hero game icon",
@@ -118,6 +119,7 @@ const translations = {
     planetDropDescription: "每一次投放都會改變盤面的物理合成遊戲。合併星球、選擇 Roguelike 強化、組合不同流派，挑戰更高分數。",
     planetDropAlt: "Planet Drop 遊戲圖示",
     planetDropVideoTitle: "Planet Drop 遊戲預覽",
+    planetDropGamePage: "遊戲專頁",
     patternHeroSubtitle: "動作遊戲原型",
     patternHeroDescription: "開發中的個人動作遊戲原型，聚焦於爽快的操作、戰鬥系統與手工像素風格的呈現。",
     patternHeroAlt: "Pattern Hero 遊戲圖示",
@@ -207,6 +209,7 @@ const translations = {
     planetDropDescription: "一手ごとに盤面が変化する物理マージゲーム。惑星を合体し、ローグライク強化でビルドを組み立て、ハイスコアを目指します。",
     planetDropAlt: "Planet Dropのゲームアイコン",
     planetDropVideoTitle: "Planet Drop ゲームプレイ動画",
+    planetDropGamePage: "ゲーム紹介",
     patternHeroSubtitle: "アクションゲームのプロトタイプ",
     patternHeroDescription: "操作感のよいアクション、バトルシステム、手作りのピクセルアート表現を追求する、開発中の個人ゲームです。",
     patternHeroAlt: "Pattern Heroのゲームアイコン",
@@ -344,6 +347,8 @@ function loadTwitterWidgets() {
 }
 
 function initializePortfolio() {
+  if (!document.querySelector(".site-header")) return;
+
   document.querySelectorAll("[data-lang]").forEach((button) => {
     button.addEventListener("click", () => setLanguage(button.dataset.lang));
   });

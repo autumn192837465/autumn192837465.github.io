@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Planet Drop is a physics-based merge puzzle with roguelike upgrades, created independently by Liu Chuan Feng.">
+  <meta name="theme-color" content="#06111f">
+  <meta property="og:title" content="Planet Drop | Liu Chuan Feng">
+  <meta property="og:description" content="Drop planets, merge new worlds, and shape a different build every run.">
+  <meta property="og:image" content="https://autumn192837465.github.io/assets/planet-drop-icon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://autumn192837465.github.io/planet-drop/">
+  <title>Planet Drop | Liu Chuan Feng</title>
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="planet-drop.css">
+  <script src="planet-drop.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#planet-drop-main" data-i18n="skip">Skip to content</a>
+
+  <div class="planet-drop-page">
+    <header class="pd-header">
+      <a class="pd-brand" href="../#work" data-i18n-aria="portfolioHomeLabel" aria-label="Back to Liu Chuan Feng's portfolio">
+        <span class="brand-mark" aria-hidden="true">LCF</span>
+        <span class="pd-brand-name">Liu Chuan Feng</span>
+      </a>
+
+      <a class="pd-back-link" href="../#work">
+        <span aria-hidden="true">←</span>
+        <span data-i18n="backToWorkShort">Portfolio</span>
+      </a>
+
+      <div class="language-switcher pd-language-switcher" data-i18n-aria="languageLabel" aria-label="Language selection">
+        <button type="button" data-lang="en">EN</button>
+        <span aria-hidden="true">/</span>
+        <button type="button" data-lang="zh-TW">中文</button>
+        <span aria-hidden="true">/</span>
+        <button type="button" data-lang="ja">日本語</button>
+      </div>
+    </header>
+
+    <aside class="pd-orbit-nav" aria-label="Planet Drop sections">
+      <span class="pd-orbit-line" aria-hidden="true"></span>
+      <a href="#drop" data-orbit-link="drop"><span>01</span><span class="pd-orbit-node" aria-hidden="true"></span><span class="sr-only">Drop</span></a>
+      <a href="#merge" data-orbit-link="merge"><span>02</span><span class="pd-orbit-node" aria-hidden="true"></span><span class="sr-only">Merge</span></a>
+      <a href="#choose" data-orbit-link="choose"><span>03</span><span class="pd-orbit-node" aria-hidden="true"></span><span class="sr-only">Choose</span></a>
+      <a href="#evolve" data-orbit-link="evolve"><span>04</span><span class="pd-orbit-node" aria-hidden="true"></span><span class="sr-only">Evolve</span></a>
+      <a href="#download" data-orbit-link="download"><span>05</span><span class="pd-orbit-node" aria-hidden="true"></span><span class="sr-only">Download</span></a>
+    </aside>
+
+    <main id="planet-drop-main">
+      <section class="pd-hero" aria-labelledby="pd-title">
+        <div class="pd-hero-background" aria-hidden="true"></div>
+        <div class="pd-hero-overlay" aria-hidden="true"></div>
+
+        <div class="pd-hero-merge" aria-hidden="true">
+          <span class="pd-merge-planet pd-merge-planet-left"></span>
+          <span class="pd-merge-planet pd-merge-planet-right"></span>
+          <span class="pd-merge-ring"></span>
+        </div>
+
+        <div class="pd-shell pd-hero-grid">
+          <div class="pd-hero-copy">
+            <p class="pd-eyebrow" data-i18n="heroEyebrow">A universe formed by merging</p>
+            <h1 id="pd-title">Planet Drop</h1>
+            <p class="pd-hero-tagline" data-i18n="heroTagline">Drop small worlds. Merge a universe.</p>
+            <p class="pd-hero-description" data-i18n="heroDescription">A physics-based merge puzzle where every drop reshapes the board—and every roguelike upgrade changes the strategy.</p>
+
+            <div class="pd-download-group" data-i18n-aria="downloadLabel" aria-label="Download Planet Drop">
+              <a class="pd-store-button" href="https://play.google.com/store/apps/details?id=com.kinopistudio.planetdrop" target="_blank" rel="noreferrer">
+                <img src="../assets/google-play-store-icon.webp" alt="">
+                <span><small data-i18n="availableOn">Available on</small>Google Play</span>
+                <span aria-hidden="true">↗</span>
+              </a>
+              <a class="pd-store-button" href="https://apps.apple.com/jp/app/%E6%83%91%E6%98%9F%E3%82%B2%E3%83%BC%E3%83%A0/id6801366150" target="_blank" rel="noreferrer">
+                <img src="../assets/app-store-icon.webp" alt="">
+                <span><small data-i18n="downloadOn">Download on the</small>App Store</span>
+                <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="pd-hero-visual">
+            <div class="pd-observation-window pd-hero-window">
+              <img src="../assets/planet-drop-screenshot-02.webp" alt="Planet Drop gameplay showing colorful planets merging" data-i18n-alt="heroScreenshotAlt" fetchpriority="high">
+              <div class="pd-game-badge" aria-hidden="true">
+                <img src="../assets/planet-drop-icon.png" alt="">
+              </div>
+              <span class="pd-window-label">LIVE OBSERVATION · PD-01</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="pd-section pd-shell" id="drop" data-orbit-section="drop" aria-labelledby="drop-title">
+        <div class="pd-section-heading pd-reveal">
+          <p class="pd-section-number">01 — Drop</p>
+          <div>
+            <p class="pd-kicker" data-i18n="dropKicker">Core gameplay</p>
+            <h2 id="drop-title" data-i18n="dropTitle">Every drop changes the board.</h2>
+            <p data-i18n="dropIntro">Aim, release, and let physics take over. Space is limited, so one small decision can open a chain—or end the run.</p>
+          </div>
+        </div>
+
+        <div class="pd-feature-grid">
+          <article class="pd-feature-card pd-reveal" style="--reveal-delay: 0ms">
+            <span class="pd-feature-orbit pd-feature-orbit-drop" aria-hidden="true"></span>
+            <p class="pd-card-index">01.1</p>
+            <h3 data-i18n="dropCardTitle">Drop with intent</h3>
+            <p data-i18n="dropCardText">Position the next planet, anticipate its bounce, and make room before the container overflows.</p>
+          </article>
+          <article class="pd-feature-card pd-reveal" style="--reveal-delay: 100ms">
+            <span class="pd-feature-orbit pd-feature-orbit-merge" aria-hidden="true"></span>
+            <p class="pd-card-index">01.2</p>
+            <h3 data-i18n="mergeCardTitle">Match and merge</h3>
+            <p data-i18n="mergeCardText">When two identical planets meet, they combine into a larger world and create new scoring possibilities.</p>
+          </article>
+          <article class="pd-feature-card pd-reveal" style="--reveal-delay: 200ms">
+            <span class="pd-feature-orbit pd-feature-orbit-chain" aria-hidden="true"></span>
+            <p class="pd-card-index">01.3</p>
+            <h3 data-i18n="chainCardTitle">Build the chain</h3>
+            <p data-i18n="chainCardText">Read the board a few moves ahead and turn a difficult layout into a satisfying cascade of merges.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="pd-section pd-section-wide" id="merge" data-orbit-section="merge" aria-labelledby="merge-title">
+        <div class="pd-shell">
+          <div class="pd-section-heading pd-reveal pd-merge-reveal">
+            <p class="pd-section-number">02 — Merge</p>
+            <div>
+              <p class="pd-kicker" data-i18n="mergeKicker">Gameplay</p>
+              <h2 id="merge-title" data-i18n="mergeTitle">Watch a universe take shape.</h2>
+              <p data-i18n="mergeIntro">Simple input meets lively 2D physics. The rules are immediate; the board that emerges is different every time.</p>
+            </div>
+          </div>
+
+          <div class="pd-media-grid">
+            <div class="pd-video-window pd-reveal pd-merge-left">
+              <iframe
+                src="https://www.youtube-nocookie.com/embed/ljXM8mThwYE"
+                title="Planet Drop gameplay video"
+                data-i18n-title="gameplayVideoTitle"
+                loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+              ></iframe>
+            </div>
+
+            <div class="pd-screenshot-panel pd-reveal pd-merge-right">
+              <div class="pd-carousel" data-carousel>
+                <div class="pd-carousel-window" aria-live="polite">
+                  <figure class="pd-carousel-slide is-current" data-slide>
+                    <img src="../assets/planet-drop-screenshot-01.webp" alt="Planet Drop start screen" data-i18n-alt="screenshot1Alt" loading="lazy">
+                  </figure>
+                  <figure class="pd-carousel-slide" data-slide>
+                    <img src="../assets/planet-drop-screenshot-02.webp" alt="Planets merging into larger worlds" data-i18n-alt="screenshot2Alt" loading="lazy">
+                  </figure>
+                  <figure class="pd-carousel-slide" data-slide>
+                    <img src="../assets/planet-drop-screenshot-03.webp" alt="Roguelike upgrade choices" data-i18n-alt="screenshot3Alt" loading="lazy">
+                  </figure>
+                  <figure class="pd-carousel-slide" data-slide>
+                    <img src="../assets/planet-drop-screenshot-04.webp" alt="Planet Drop score and stardust reward screen" data-i18n-alt="screenshot4Alt" loading="lazy">
+                  </figure>
+                </div>
+
+                <div class="pd-carousel-controls">
+                  <button type="button" data-carousel-previous data-i18n-aria="previousScreenshot" aria-label="Previous screenshot">←</button>
+                  <div class="pd-carousel-dots" aria-hidden="true">
+                    <span class="is-current"></span><span></span><span></span><span></span>
+                  </div>
+                  <button type="button" data-carousel-next data-i18n-aria="nextScreenshot" aria-label="Next screenshot">→</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="pd-section pd-shell" id="choose" data-orbit-section="choose" aria-labelledby="choose-title">
+        <div class="pd-section-heading pd-reveal">
+          <p class="pd-section-number">03 — Choose</p>
+          <div>
+            <p class="pd-kicker" data-i18n="chooseKicker">Roguelike upgrades</p>
+            <h2 id="choose-title" data-i18n="chooseTitle">Choose a rule. Change the run.</h2>
+            <p data-i18n="chooseIntro">Upgrades alter size, score, gravity, and even planet behavior. Combining them turns a familiar merge puzzle into a new build each time.</p>
+          </div>
+        </div>
+
+        <div class="pd-upgrade-layout">
+          <div class="pd-upgrade-grid">
+            <article class="pd-upgrade-card pd-reveal" style="--reveal-delay: 0ms">
+              <span class="pd-upgrade-symbol">↘</span>
+              <h3 data-i18n="upgradeSizeTitle">Smaller worlds</h3>
+              <p data-i18n="upgradeSizeText">Shrink upcoming planets—or the entire board—to recover valuable space.</p>
+            </article>
+            <article class="pd-upgrade-card pd-reveal" style="--reveal-delay: 90ms">
+              <span class="pd-upgrade-symbol">×2</span>
+              <h3 data-i18n="upgradeScoreTitle">Score multipliers</h3>
+              <p data-i18n="upgradeScoreText">Reward careful planning with stronger score growth and powerful combinations.</p>
+            </article>
+            <article class="pd-upgrade-card pd-reveal" style="--reveal-delay: 180ms">
+              <span class="pd-upgrade-symbol">⌁</span>
+              <h3 data-i18n="upgradeGravityTitle">Altered gravity</h3>
+              <p data-i18n="upgradeGravityText">Change how the board settles and discover new ways to connect distant planets.</p>
+            </article>
+            <article class="pd-upgrade-card pd-reveal" style="--reveal-delay: 270ms">
+              <span class="pd-upgrade-symbol pd-rainbow-symbol">●</span>
+              <h3 data-i18n="upgradeRainbowTitle">Special effects</h3>
+              <p data-i18n="upgradeRainbowText">Create rainbow planets and other effects that can rescue a run—or set up a spectacular chain.</p>
+            </article>
+          </div>
+
+          <div class="pd-observation-window pd-upgrade-screenshot pd-reveal">
+            <img src="../assets/planet-drop-screenshot-03.webp" alt="Three Planet Drop roguelike upgrade cards" data-i18n-alt="upgradeScreenshotAlt" loading="lazy">
+            <span class="pd-window-label">BUILD LAB · 03</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="pd-section pd-section-wide pd-evolve-section" id="evolve" data-orbit-section="evolve" aria-labelledby="evolve-title">
+        <div class="pd-shell pd-evolve-grid">
+          <div class="pd-evolve-art pd-reveal">
+            <div class="pd-icon-window">
+              <img src="../assets/planet-drop-icon.png" alt="Planet Drop game icon" data-i18n-alt="gameIconAlt" loading="lazy">
+            </div>
+            <p class="pd-art-caption">KINO PI STUDIO · SOLO PROJECT</p>
+          </div>
+
+          <div class="pd-evolve-copy pd-reveal">
+            <p class="pd-section-number">04 — Evolve</p>
+            <p class="pd-kicker" data-i18n="evolveKicker">Independent development</p>
+            <h2 id="evolve-title" data-i18n="evolveTitle">One developer, from first idea to release.</h2>
+            <p data-i18n="evolveText1">Planet Drop was independently designed, programmed, tested, submitted, and released by Liu Chuan Feng.</p>
+            <p data-i18n="evolveText2">The project brings together responsive physics, a flexible upgrade system, mobile UI, store deployment, and the many small decisions required to turn a prototype into a published game.</p>
+
+            <ul class="pd-solo-list">
+              <li data-i18n="soloItem1">Game design &amp; system planning</li>
+              <li data-i18n="soloItem2">Unity / C# implementation</li>
+              <li data-i18n="soloItem3">UI, tuning &amp; release operations</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="pd-final-section" id="download" data-orbit-section="download" aria-labelledby="download-title">
+        <div class="pd-final-background" aria-hidden="true"></div>
+        <div class="pd-shell pd-final-content pd-reveal pd-merge-reveal">
+          <p class="pd-section-number">05 — Download</p>
+          <p class="pd-kicker" data-i18n="finalKicker">Begin the next run</p>
+          <h2 id="download-title" data-i18n="finalTitle">How large can your universe become?</h2>
+          <p data-i18n="finalText">Drop a planet, choose your upgrades, and build a strategy that only exists in this run.</p>
+
+          <div class="pd-download-group pd-final-downloads" data-i18n-aria="downloadLabel" aria-label="Download Planet Drop">
+            <a class="pd-store-button" href="https://play.google.com/store/apps/details?id=com.kinopistudio.planetdrop" target="_blank" rel="noreferrer">
+              <img src="../assets/google-play-store-icon.webp" alt="">
+              <span><small data-i18n="availableOn">Available on</small>Google Play</span>
+              <span aria-hidden="true">↗</span>
+            </a>
+            <a class="pd-store-button" href="https://apps.apple.com/jp/app/%E6%83%91%E6%98%9F%E3%82%B2%E3%83%BC%E3%83%A0/id6801366150" target="_blank" rel="noreferrer">
+              <img src="../assets/app-store-icon.webp" alt="">
+              <span><small data-i18n="downloadOn">Download on the</small>App Store</span>
+              <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+
+          <a class="pd-return-link" href="../#work">
+            <span aria-hidden="true">←</span>
+            <span data-i18n="backToWork">Back to personal projects</span>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="pd-footer">
+      <p>Planet Drop · Kino Pi Studio</p>
+      <p data-i18n="footerText">An independently developed merge puzzle.</p>
+    </footer>
+  </div>
+</body>
+</html>

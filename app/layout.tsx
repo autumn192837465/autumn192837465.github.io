@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import '../styles.css';
+import '../planet-drop/planet-drop.css';
 import { PortfolioClient } from './portfolio-client';
 
 export const metadata: Metadata = {
