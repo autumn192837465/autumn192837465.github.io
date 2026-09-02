@@ -33,6 +33,7 @@ html {
 
 body {
   margin: 0;
+  overflow-x: hidden;
   background:
     radial-gradient(circle at 82% 8%, rgba(66, 131, 202, 0.18), transparent 29rem),
     linear-gradient(180deg, #071426 0%, var(--bg) 55%, #040b14 100%);
@@ -925,15 +926,30 @@ h2 {
   font-size: 0.75rem;
 }
 
-.js .work-reveal {
+.js .section-reveal {
+  --reveal-x: -42px;
   opacity: 0;
-  transform: translateY(18px);
+  transform: translate3d(var(--reveal-x), 0, 0);
 }
 
-.js .work-reveal.is-visible {
+.js .section-reveal.reveal-from-left {
+  --reveal-x: -42px;
+}
+
+.js .section-reveal.reveal-from-right {
+  --reveal-x: 42px;
+}
+
+.js .section-reveal.is-visible {
   opacity: 1;
-  transform: translateY(0);
-  transition: opacity 280ms ease, transform 280ms ease;
+  transform: translate3d(0, 0, 0);
+  transition:
+    opacity 680ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 680ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.js .section-reveal.reveal-delay.is-visible {
+  transition-delay: 90ms;
 }
 
 .profile-facts {
@@ -1056,9 +1072,13 @@ h2 {
   justify-content: space-between;
   align-items: end;
   gap: 40px;
+  border: 1px solid rgba(159, 201, 255, 0.18);
   border-radius: 34px;
-  background: #f1f6fc;
-  color: #071426;
+  background:
+    radial-gradient(circle at 88% 18%, rgba(84, 137, 205, 0.14), transparent 22rem),
+    linear-gradient(135deg, rgba(13, 32, 55, 0.98), rgba(7, 22, 40, 0.98));
+  color: var(--text);
+  box-shadow: 0 28px 70px rgba(1, 7, 18, 0.22);
 }
 
 .contact-section h2 {
@@ -1067,18 +1087,24 @@ h2 {
 
 .contact-section p:not(.section-number) {
   max-width: 650px;
-  color: #536274;
+  color: #b2c2d4;
 }
 
 .contact-section .section-number {
-  color: #325f91;
+  color: var(--accent);
 }
 
 .button-light {
   flex: 0 0 auto;
-  background: #071426;
-  color: white;
-  border-color: #071426;
+  background: rgba(159, 201, 255, 0.12);
+  color: #eaf5ff;
+  border-color: rgba(159, 201, 255, 0.36);
+}
+
+.button-light:hover,
+.button-light:focus-visible {
+  background: rgba(159, 201, 255, 0.18);
+  border-color: rgba(159, 201, 255, 0.58);
 }
 
 footer {
@@ -1273,6 +1299,14 @@ footer p {
     align-items: flex-start;
   }
 
+  .js .section-reveal.reveal-from-left {
+    --reveal-x: -24px;
+  }
+
+  .js .section-reveal.reveal-from-right {
+    --reveal-x: 24px;
+  }
+
   footer {
     flex-direction: column;
     gap: 8px;
@@ -1290,8 +1324,8 @@ footer p {
     transition: none !important;
   }
 
-  .js .work-reveal,
-  .js .work-reveal.is-visible {
+  .js .section-reveal,
+  .js .section-reveal.is-visible {
     opacity: 1;
     transform: none;
   }

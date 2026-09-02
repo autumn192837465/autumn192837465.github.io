@@ -10,34 +10,43 @@ const translations = {
     navContact: "Contact",
     heroEyebrow: "Unity Engineer · Tokyo, Japan",
     heroTitle: "Unity Engineer",
-    heroDescription: "Building reliable game systems and polished player experiences for mobile games.",
+    heroDescription: "More than five years of mobile game development experience across core gameplay, game systems, and mobile UI.",
     viewWork: "View my work",
     portraitAlt: "Liu Chuan Feng with a cat",
     aboutTitle: "About",
-    aboutParagraph1: "I’m a Tokyo-based Unity Engineer with more than five years of experience building mobile games across both in-game and out-game systems. I started teaching myself Unity while studying at university.",
-    aboutParagraph2: "At Rudel, I worked on the development and live operation of three released titles. I later served as Lead Engineer, establishing reusable UI and scene-management foundations, coding standards, and templates for a new project. I now focus on core gameplay development for Puzzle Panic at Limit Break.",
-    aboutParagraph3: "Outside work, I build games independently. Planet Drop is available on Google Play and the App Store, while Pattern Hero is currently in development. I handle the full process myself, from planning and programming through store submission and release.",
-    aboutParagraph4: "I collaborate with international teams in Chinese, Japanese, and English.",
+    aboutParagraph1: "I’m a Tokyo-based Unity Engineer with more than five years of experience in mobile game development, covering in-game and out-game features, UI architecture, asynchronous systems, testing, and performance.",
+    aboutParagraph2: "At Limit Break, I develop core gameplay and boss systems for Puzzle Panic. Previously at Rudel, I contributed to the development and live operation of three mobile games and later served as Lead Engineer.",
+    aboutParagraph3: "My games include Planet Drop, available on Google Play and the App Store, and Pattern Hero, currently in development.",
+    aboutParagraph4: "I work with international teams in Chinese, Japanese, and English.",
     workTitle: "Work",
-    workIntro: "Selected professional credits, followed by games built independently.",
-    personalKicker: "Personal projects",
-    personalTitle: "Built from idea to release",
-    personalIntro: "Games I designed, developed, and published independently.",
-    soloProject: "Personal project",
+    workIntro: "Professional game credits and original games.",
+    personalKicker: "Games",
+    personalTitle: "Personal games",
+    personalIntro: "Gameplay, availability, and current development status.",
+    soloProject: "Game",
     availableNow: "Available now",
     planetDropSubtitle: "Merge Puzzle",
-    planetDropDescription: "A physics-based merge game where every drop shapes the board. Combine planets, choose roguelike upgrades, discover powerful builds, and chase a new high score.",
+    planetDropDescription: "Drop planets into the container and merge matching ones into larger planets. Anticipate each bounce, manage the limited space, and choose roguelike upgrades that change planet size, gravity, scoring, and special effects before the board fills up.",
     planetDropAlt: "Planet Drop game icon",
     planetDropVideoTitle: "Planet Drop gameplay preview",
     planetDropGamePage: "Game Page",
-    patternHeroSubtitle: "Action prototype",
-    patternHeroDescription: "An in-development personal game exploring responsive action gameplay, combat systems, and a handcrafted pixel-art presentation.",
+    patternHeroSubtitle: "2D Action Game",
+    patternHeroDescription: "Choose combat abilities through a roulette system, then take them into real-time action stages. Adapt movement and attacks to the abilities you receive and fight through pixel-art encounters.",
+    gameplayTagsLabel: "Gameplay features",
+    planetTag1: "Physics merging",
+    planetTag2: "Space management",
+    planetTag3: "Roguelike upgrades",
+    planetTag4: "High-score challenge",
+    patternTag1: "Real-time combat",
+    patternTag2: "Roulette choices",
+    patternTag3: "Ability combinations",
+    patternTag4: "Pixel-art stages",
     patternHeroAlt: "Pattern Hero game icon",
     patternHeroVideoTitle: "Pattern Hero gameplay preview",
     watchDemo: "Watch demo",
     professionalKicker: "Professional credits",
     professionalTitle: "Games I contributed to",
-    professionalIntro: "Selected titles I worked on as part of professional development teams.",
+    professionalIntro: "Selected games and the areas I contributed to within their development teams.",
     ongoing: "In development",
     softLaunch: "Soft launch",
     released: "Released",
@@ -87,9 +96,9 @@ const translations = {
     nctuDegree: "Bachelor's Degree in Computer Science",
     kindaiName: "Kindai University",
     kindaiProgram: "Exchange Student",
-    contactTitle: "Let's connect",
+    contactTitle: "Contact",
     contactDescription: "For professional opportunities or collaboration, please reach out through LinkedIn.",
-    footerText: "Built as a multilingual personal portfolio."
+    footerText: "Unity Engineer · Tokyo, Japan"
   },
   "zh-TW": {
     skip: "跳至主要內容",
@@ -100,34 +109,43 @@ const translations = {
     navContact: "聯絡方式",
     heroEyebrow: "Unity 工程師 · 日本東京",
     heroTitle: "Unity 工程師",
-    heroDescription: "專注於打造可靠的遊戲系統與精緻的行動遊戲體驗。",
+    heroDescription: "具五年以上行動遊戲開發經驗，主要負責核心玩法、遊戲系統與行動裝置 UI。",
     viewWork: "查看我的作品",
     portraitAlt: "劉川楓與貓的合照",
     aboutTitle: "關於我",
-    aboutParagraph1: "我是目前在東京工作的 Unity 工程師，累積超過五年的手機遊戲開發經驗，熟悉遊戲內（in-game）與遊戲外（out-game）功能開發。我從大學時期開始自學 Unity，並透過個人專案累積實作經驗。",
-    aboutParagraph2: "在 Rudel 任職期間，我參與過三款已上線遊戲的開發與營運。後期擔任 Lead Engineer，負責為新專案建立共用 UI、場景管理架構、程式撰寫規範與可重複使用的範本。目前我在 Limit Break 負責 Puzzle Panic 的核心玩法開發。",
-    aboutParagraph3: "工作之餘，我也持續獨立開發遊戲。Planet Drop 已在 Google Play 與 App Store 上架，Pattern Hero 則仍在開發中。從遊戲企劃、程式開發到送審上架，都是由我一人完成。",
-    aboutParagraph4: "工作上，我能使用中文、日文與英文，和不同國家的團隊成員合作。",
+    aboutParagraph1: "目前於東京從事行動遊戲開發，具五年以上經驗，工作範圍涵蓋 In-game、Out-game、UI 架構、非同步處理、測試與效能改善。",
+    aboutParagraph2: "現於 Limit Break 負責 Puzzle Panic 的核心玩法與 Boss 系統。過去於 Rudel 參與三款行動遊戲的開發與營運，並曾擔任 Lead Engineer。",
+    aboutParagraph3: "個人遊戲包括已於 Google Play 與 App Store 上架的 Planet Drop，以及目前開發中的 Pattern Hero。",
+    aboutParagraph4: "可使用中文、日文與英文進行跨國團隊協作。",
     workTitle: "作品",
-    workIntro: "先介紹職涯中參與開發的作品，接著是我獨立完成的個人遊戲。",
-    personalKicker: "個人作品",
-    personalTitle: "從構想到正式發行",
-    personalIntro: "由我獨立設計、開發並發行的遊戲。",
-    soloProject: "個人獨立作品",
+    workIntro: "商業遊戲開發經歷與個人遊戲作品。",
+    personalKicker: "遊戲",
+    personalTitle: "個人遊戲",
+    personalIntro: "遊戲玩法、上架狀態與目前開發進度。",
+    soloProject: "遊戲",
     availableNow: "現已上架",
     planetDropSubtitle: "星球合成益智遊戲",
-    planetDropDescription: "每次放下一顆行星都會改變盤面的物理合成遊戲。合成相同行星、選擇 Roguelike 強化、組合不同策略，挑戰更高分數。",
+    planetDropDescription: "讓行星落入容器，相同行星接觸後會合成為更大的行星。玩家需要預判落點與彈跳，在有限空間內安排合成順序，並選擇改變尺寸、重力、得分與特殊效果的 Roguelike 強化，在盤面堆滿前取得更高分數。",
     planetDropAlt: "Planet Drop 遊戲圖示",
     planetDropVideoTitle: "Planet Drop 遊戲預覽",
     planetDropGamePage: "遊戲專頁",
-    patternHeroSubtitle: "動作遊戲原型",
-    patternHeroDescription: "開發中的個人動作遊戲原型，聚焦於爽快的操作、戰鬥系統與手工像素風格的呈現。",
+    patternHeroSubtitle: "2D 動作遊戲",
+    patternHeroDescription: "透過輪盤選擇本局的戰鬥能力，再進入即時動作關卡。玩家需要配合取得的能力調整移動與攻擊，在像素風格的戰鬥中應對敵人。",
+    gameplayTagsLabel: "玩法特色",
+    planetTag1: "物理合成",
+    planetTag2: "空間管理",
+    planetTag3: "Roguelike 強化",
+    planetTag4: "高分挑戰",
+    patternTag1: "即時戰鬥",
+    patternTag2: "輪盤選擇",
+    patternTag3: "能力組合",
+    patternTag4: "像素風格關卡",
     patternHeroAlt: "Pattern Hero 遊戲圖示",
     patternHeroVideoTitle: "Pattern Hero 遊戲預覽",
     watchDemo: "觀看 Demo",
     professionalKicker: "參與作品",
-    professionalTitle: "職涯參與開發的遊戲",
-    professionalIntro: "我以開發團隊成員身分參與製作的精選商業作品。",
+    professionalTitle: "參與開發的遊戲",
+    professionalIntro: "負責領域包含核心玩法、UI、營運功能與開發工具。",
     ongoing: "開發中",
     softLaunch: "限區測試",
     released: "已發行",
@@ -177,9 +195,9 @@ const translations = {
     nctuDegree: "資訊工程學系 學士",
     kindaiName: "近畿大學",
     kindaiProgram: "交換學生",
-    contactTitle: "保持聯絡",
-    contactDescription: "如有工作機會或合作需求，歡迎透過 LinkedIn 與我聯絡。",
-    footerText: "三語個人品牌與履歷網站。"
+    contactTitle: "聯絡方式",
+    contactDescription: "工作機會與合作相關聯絡，請透過 LinkedIn。",
+    footerText: "Unity 工程師 · 日本東京"
   },
   ja: {
     skip: "メインコンテンツへ移動",
@@ -190,34 +208,43 @@ const translations = {
     navContact: "お問い合わせ",
     heroEyebrow: "Unityエンジニア · 東京",
     heroTitle: "Unityエンジニア",
-    heroDescription: "信頼性の高いゲームシステムと、完成度の高いモバイルゲーム体験を開発しています。",
+    heroDescription: "モバイルゲーム開発5年以上。コアゲームプレイ、ゲームシステム、モバイルUIを担当しています。",
     viewWork: "作品を見る",
     portraitAlt: "猫と一緒に写る劉川楓",
     aboutTitle: "プロフィール",
-    aboutParagraph1: "東京でUnityエンジニアとして勤務し、5年以上にわたりモバイルゲーム開発に携わっています。インゲーム・アウトゲームの両領域を経験しており、大学在学中に独学でUnityを学び始めました。",
-    aboutParagraph2: "Rudelでは、リリース済み3タイトルの開発・運用を担当しました。後半はリードエンジニアとして、新規プロジェクト向けの共通UI・シーン管理基盤、コーディング規約、再利用可能なテンプレートを整備しました。現在はLimit Breakで『Puzzle Panic』のコアゲームプレイ開発を担当しています。",
-    aboutParagraph3: "業務外では個人でもゲームを開発しています。『Planet Drop』はGoogle PlayとApp Storeで配信中で、『Pattern Hero』は現在開発中です。企画・プログラミングからストア申請・リリースまで、すべて一人で手がけています。",
-    aboutParagraph4: "中国語・日本語・英語を使い、国際的なチームと協働しています。",
+    aboutParagraph1: "東京でモバイルゲーム開発に携わり、5年以上の経験があります。インゲーム、アウトゲーム、UI設計、非同期処理、テスト、パフォーマンス改善を担当してきました。",
+    aboutParagraph2: "現在はLimit Breakで『Puzzle Panic』のコアゲームプレイとボスシステムを担当しています。以前はRudelで3タイトルの開発・運用に携わり、リードエンジニアも務めました。",
+    aboutParagraph3: "個人ゲームとして、Google PlayとApp Storeで配信中の『Planet Drop』と、開発中の『Pattern Hero』があります。",
+    aboutParagraph4: "中国語・日本語・英語を用いた国際チームでの連携が可能です。",
     workTitle: "作品",
-    workIntro: "プロとして携わった作品に続いて、個人で開発したゲームを紹介します。",
-    personalKicker: "個人作品",
-    personalTitle: "企画からリリースまで",
-    personalIntro: "企画・開発・リリースまで個人で手がけたゲームです。",
-    soloProject: "個人開発作品",
+    workIntro: "商業ゲームの開発実績と個人ゲーム作品。",
+    personalKicker: "ゲーム",
+    personalTitle: "個人ゲーム",
+    personalIntro: "ゲームプレイ、配信状況、現在の開発状況。",
+    soloProject: "ゲーム",
     availableNow: "配信中",
     planetDropSubtitle: "マージパズル",
-    planetDropDescription: "一手ごとに盤面が変化する物理マージゲーム。惑星を合体し、ローグライク強化でビルドを組み立て、ハイスコアを目指します。",
+    planetDropDescription: "惑星を容器へ落とし、同じ惑星を接触させてより大きな惑星へマージします。落下位置と跳ね方を予測し、限られた空間を管理しながら、サイズ、重力、スコア、特殊効果を変えるローグライク強化を選び、盤面が埋まる前にハイスコアを目指します。",
     planetDropAlt: "Planet Dropのゲームアイコン",
     planetDropVideoTitle: "Planet Drop ゲームプレイ動画",
     planetDropGamePage: "ゲーム紹介",
-    patternHeroSubtitle: "アクションゲームのプロトタイプ",
-    patternHeroDescription: "操作感のよいアクション、バトルシステム、手作りのピクセルアート表現を追求する、開発中の個人ゲームです。",
+    patternHeroSubtitle: "2Dアクションゲーム",
+    patternHeroDescription: "ルーレットでそのランの戦闘能力を選び、リアルタイムのアクションステージへ進みます。獲得した能力に合わせて移動と攻撃を調整し、ピクセルアートの戦闘で敵に対応します。",
+    gameplayTagsLabel: "ゲームプレイの特徴",
+    planetTag1: "物理マージ",
+    planetTag2: "スペース管理",
+    planetTag3: "ローグライク強化",
+    planetTag4: "ハイスコア挑戦",
+    patternTag1: "リアルタイム戦闘",
+    patternTag2: "ルーレット選択",
+    patternTag3: "能力の組み合わせ",
+    patternTag4: "ピクセルアートステージ",
     patternHeroAlt: "Pattern Heroのゲームアイコン",
     patternHeroVideoTitle: "Pattern Hero ゲームプレイ動画",
     watchDemo: "デモを見る",
     professionalKicker: "参加作品",
     professionalTitle: "開発に携わったゲーム",
-    professionalIntro: "プロの開発チームの一員として制作に携わった主なタイトルです。",
+    professionalIntro: "コアゲームプレイ、UI、運用機能、開発ツールなどの担当領域を紹介します。",
     ongoing: "開発中",
     softLaunch: "ソフトローンチ",
     released: "リリース済み",
@@ -269,7 +296,7 @@ const translations = {
     kindaiProgram: "交換留学生",
     contactTitle: "お問い合わせ",
     contactDescription: "仕事やコラボレーションのご相談は、LinkedInよりご連絡ください。",
-    footerText: "多言語対応の個人ポートフォリオサイト。"
+    footerText: "Unityエンジニア · 東京"
   }
 };
 
@@ -300,6 +327,11 @@ function setLanguage(language) {
   document.querySelectorAll("[data-i18n-title]").forEach((element) => {
     const key = element.dataset.i18nTitle;
     if (dictionary[key]) element.title = dictionary[key];
+  });
+
+  document.querySelectorAll("[data-i18n-aria]").forEach((element) => {
+    const key = element.dataset.i18nAria;
+    if (dictionary[key]) element.setAttribute("aria-label", dictionary[key]);
   });
 
   document.querySelectorAll("[data-lang]").forEach((button) => {
@@ -356,19 +388,23 @@ function initializePortfolio() {
   const currentYear = document.getElementById("current-year");
   if (currentYear) currentYear.textContent = new Date().getFullYear();
 
-  const revealItems = document.querySelectorAll(".work-reveal");
+  const revealItems = document.querySelectorAll(".section-reveal");
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   if (reduceMotion || !("IntersectionObserver" in window)) {
     revealItems.forEach((item) => item.classList.add("is-visible"));
   } else {
-    const revealObserver = new IntersectionObserver((entries, observer) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) return;
-        entry.target.classList.add("is-visible");
-        observer.unobserve(entry.target);
-      });
-    }, { threshold: 0.12 });
-    revealItems.forEach((item) => revealObserver.observe(item));
+    try {
+      const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        });
+      }, { threshold: 0.12, rootMargin: "0px 0px -8% 0px" });
+      revealItems.forEach((item) => revealObserver.observe(item));
+    } catch {
+      revealItems.forEach((item) => item.classList.add("is-visible"));
+    }
   }
 
   setLanguage(getInitialLanguage());
