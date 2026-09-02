@@ -116,7 +116,7 @@ const translations = {
     soloProject: "個人獨立作品",
     availableNow: "現已上架",
     planetDropSubtitle: "星球合成益智遊戲",
-    planetDropDescription: "每一次投放都會改變盤面的物理合成遊戲。合併星球、選擇 Roguelike 強化、組合不同流派，挑戰更高分數。",
+    planetDropDescription: "每次放下一顆行星都會改變盤面的物理合成遊戲。合成相同行星、選擇 Roguelike 強化、組合不同策略，挑戰更高分數。",
     planetDropAlt: "Planet Drop 遊戲圖示",
     planetDropVideoTitle: "Planet Drop 遊戲預覽",
     planetDropGamePage: "遊戲專頁",
