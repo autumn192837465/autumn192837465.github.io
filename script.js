@@ -394,13 +394,18 @@ function initializePortfolio() {
     revealItems.forEach((item) => item.classList.add("is-visible"));
   } else {
     try {
-      const revealObserver = new IntersectionObserver((entries, observer) => {
+      const revealObserver = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
-          if (!entry.isIntersecting) return;
-          entry.target.classList.add("is-visible");
-          observer.unobserve(entry.target);
+          if (entry.intersectionRatio >= 0.12) {
+            entry.target.classList.add("is-visible");
+            return;
+          }
+
+          if (!entry.isIntersecting) {
+            entry.target.classList.remove("is-visible");
+          }
         });
-      }, { threshold: 0.12, rootMargin: "0px 0px -8% 0px" });
+      }, { threshold: [0, 0.12], rootMargin: "0px 0px -8% 0px" });
       revealItems.forEach((item) => revealObserver.observe(item));
     } catch {
       revealItems.forEach((item) => item.classList.add("is-visible"));
