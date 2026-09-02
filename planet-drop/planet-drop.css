@@ -174,7 +174,7 @@
   pointer-events: none;
   background-image:
     radial-gradient(circle at 72% 36%, rgba(113, 92, 212, 0.16), transparent 27rem),
-    linear-gradient(180deg, rgba(2, 8, 24, 0.52), rgba(3, 10, 28, 0.7)),
+    linear-gradient(180deg, rgba(2, 8, 24, 0.28), rgba(3, 10, 28, 0.45)),
     var(--pd-game-background);
   background-repeat: no-repeat;
   background-size: cover;
@@ -190,8 +190,8 @@
   z-index: -2;
   pointer-events: none;
   background:
-    linear-gradient(90deg, rgba(6, 17, 31, 0.96) 0%, rgba(6, 17, 31, 0.82) 47%, rgba(6, 17, 31, 0.62) 100%),
-    linear-gradient(180deg, rgba(6, 17, 31, 0.34) 0%, rgba(6, 17, 31, 0.54) 52%, #06111f 100%);
+    linear-gradient(90deg, rgba(6, 17, 31, 0.78) 0%, rgba(6, 17, 31, 0.5) 47%, rgba(6, 17, 31, 0.35) 100%),
+    linear-gradient(180deg, rgba(6, 17, 31, 0.16) 0%, rgba(6, 17, 31, 0.34) 52%, #06111f 100%);
 }
 
 .pd-hero-grid {
@@ -1128,7 +1128,7 @@
 
   .pd-hero-overlay {
     background:
-      linear-gradient(180deg, rgba(6, 17, 31, 0.76) 0%, rgba(6, 17, 31, 0.8) 45%, #06111f 100%);
+      linear-gradient(180deg, rgba(6, 17, 31, 0.68) 0%, rgba(6, 17, 31, 0.72) 45%, #06111f 100%);
   }
 
   .pd-hero h1 {
