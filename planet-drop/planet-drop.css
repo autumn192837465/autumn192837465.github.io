@@ -880,6 +880,93 @@
   margin-top: 38px;
 }
 
+.pd-qr-download {
+  width: min(100%, 1040px);
+  margin: 58px auto 0;
+}
+
+.pd-qr-download h3 {
+  margin: 0;
+  color: var(--accent-strong);
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+}
+
+.pd-qr-download > p {
+  max-width: 620px;
+  margin: 8px auto 0;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.pd-qr-frame {
+  margin-top: 24px;
+  padding: 10px;
+  overflow: hidden;
+  border: 1px solid rgba(159, 201, 255, 0.2);
+  border-radius: 28px;
+  background: rgba(4, 11, 24, 0.72);
+  box-shadow:
+    0 28px 74px rgba(1, 6, 19, 0.34),
+    0 0 42px rgba(111, 96, 215, 0.08);
+}
+
+.pd-qr-desktop-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+}
+
+.pd-qr-mobile-grid {
+  display: none;
+}
+
+.pd-qr-crop {
+  position: relative;
+  display: block;
+  aspect-ratio: 8 / 9;
+  overflow: hidden;
+  border: 1px solid rgba(159, 201, 255, 0.18);
+  border-radius: 20px;
+  background: #08031a;
+  transition:
+    transform 220ms ease,
+    border-color 220ms ease,
+    box-shadow 220ms ease;
+}
+
+.pd-qr-crop:hover,
+.pd-qr-crop:focus-visible {
+  border-color: rgba(159, 201, 255, 0.42);
+  box-shadow: 0 12px 34px rgba(5, 12, 30, 0.32);
+  transform: translateY(-4px);
+}
+
+.pd-qr-crop:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.pd-qr-crop img {
+  position: absolute;
+  top: 0;
+  display: block;
+  width: 200%;
+  max-width: none;
+  height: 100%;
+}
+
+.pd-qr-crop-ios img {
+  left: 0;
+}
+
+.pd-qr-crop-android img {
+  right: 0;
+}
+
 .pd-return-link {
   gap: 10px;
   margin: 40px auto 0;
@@ -1210,6 +1297,29 @@
     padding: 102px 0;
   }
 
+  .pd-qr-download {
+    margin-top: 48px;
+  }
+
+  .pd-qr-download > p {
+    padding: 0 12px;
+    font-size: 0.88rem;
+  }
+
+  .pd-qr-frame {
+    padding: 8px;
+    border-radius: 24px;
+  }
+
+  .pd-qr-desktop-image {
+    display: none;
+  }
+
+  .pd-qr-mobile-grid {
+    display: grid;
+    gap: 12px;
+  }
+
   .pd-footer {
     width: min(calc(100% - 28px), var(--max-width)) !important;
     flex-direction: column;
@@ -1235,6 +1345,11 @@
   .pd-back-link:hover,
   .pd-back-link:focus-visible,
   .pd-orbit-nav a[aria-current="true"] .pd-orbit-node {
+    transform: none !important;
+  }
+
+  .pd-qr-crop:hover,
+  .pd-qr-crop:focus-visible {
     transform: none !important;
   }
 

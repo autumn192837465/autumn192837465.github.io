@@ -57,6 +57,11 @@ if (typeof document !== "undefined") {
       finalKicker: "Begin the next run",
       finalTitle: "How large can your universe become?",
       finalText: "Drop a planet, choose your upgrades, and build a strategy that only exists in this run.",
+      qrTitle: "Scan to download",
+      qrHint: "Scan the QR code for your device, or use the store buttons above.",
+      qrImageAlt: "Planet Drop App Store and Google Play QR codes",
+      qrIosAlt: "Planet Drop App Store QR code",
+      qrAndroidAlt: "Planet Drop Google Play QR code",
       backToWork: "Back to personal projects",
       footerText: "A physics-based planet merge puzzle with roguelike upgrades."
     },
@@ -117,6 +122,11 @@ if (typeof document !== "undefined") {
       finalKicker: "開始下一局",
       finalTitle: "你的宇宙，能成長到多大？",
       finalText: "投下一顆行星、選擇本局強化，組合出只屬於這一次挑戰的策略。",
+      qrTitle: "掃描 QR Code 下載",
+      qrHint: "使用手機相機掃描對應平台的 QR Code，或點選上方商店按鈕。",
+      qrImageAlt: "Planet Drop 的 App Store 與 Google Play QR Code",
+      qrIosAlt: "Planet Drop App Store QR Code",
+      qrAndroidAlt: "Planet Drop Google Play QR Code",
       backToWork: "返回個人網站作品區",
       footerText: "結合物理合成與 Roguelike 強化的行星益智遊戲。"
     },
@@ -177,6 +187,11 @@ if (typeof document !== "undefined") {
       finalKicker: "次のランを始めよう",
       finalTitle: "あなたの宇宙は、どこまで大きくなる？",
       finalText: "惑星を落とし、強化を選び、このランだけの戦略を組み立てよう。",
+      qrTitle: "QRコードからダウンロード",
+      qrHint: "端末に合うQRコードをカメラで読み取るか、上のストアボタンをご利用ください。",
+      qrImageAlt: "Planet DropのApp StoreとGoogle Play用QRコード",
+      qrIosAlt: "Planet DropのApp Store用QRコード",
+      qrAndroidAlt: "Planet DropのGoogle Play用QRコード",
       backToWork: "ポートフォリオの作品一覧へ戻る",
       footerText: "物理マージとローグライク強化を組み合わせた惑星パズル。"
     }

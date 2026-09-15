@@ -6,6 +6,7 @@ import screenshot01Url from '../../assets/planet-drop-screenshot-01.webp';
 import screenshot02Url from '../../assets/planet-drop-screenshot-02.webp';
 import screenshot03Url from '../../assets/planet-drop-screenshot-03.webp';
 import screenshot04Url from '../../assets/planet-drop-screenshot-04.webp';
+import downloadQrUrl from '../../assets/planet-drop-download-qr.png';
 import pageDocument from '../../planet-drop/index.html?raw';
 import { PlanetDropClient } from './planet-drop-client';
 
@@ -41,7 +42,8 @@ const pageMarkup = sourceBody
   .replace(/\.\.\/assets\/planet-drop-screenshot-01\.webp/g, screenshot01Url.src)
   .replace(/\.\.\/assets\/planet-drop-screenshot-02\.webp/g, screenshot02Url.src)
   .replace(/\.\.\/assets\/planet-drop-screenshot-03\.webp/g, screenshot03Url.src)
-  .replace(/\.\.\/assets\/planet-drop-screenshot-04\.webp/g, screenshot04Url.src);
+  .replace(/\.\.\/assets\/planet-drop-screenshot-04\.webp/g, screenshot04Url.src)
+  .replace(/\.\.\/assets\/planet-drop-download-qr\.png/g, downloadQrUrl.src);
 
 export default function PlanetDropPage() {
   return (
