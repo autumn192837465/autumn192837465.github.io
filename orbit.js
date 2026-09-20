@@ -12,6 +12,19 @@ function initializeOrbit() {
     uniform vec2 size;
     uniform vec2 pointer;
     uniform float time;
+    float hash(vec3 p) { return fract(sin(dot(p,vec3(127.1,311.7,74.7)))*43758.5453); }
+    float noise(vec3 p) {
+      vec3 i=floor(p), f=fract(p); f=f*f*(3.-2.*f);
+      return mix(mix(mix(hash(i),hash(i+vec3(1,0,0)),f.x),
+        mix(hash(i+vec3(0,1,0)),hash(i+vec3(1,1,0)),f.x),f.y),
+        mix(mix(hash(i+vec3(0,0,1)),hash(i+vec3(1,0,1)),f.x),
+        mix(hash(i+vec3(0,1,1)),hash(i+vec3(1,1,1)),f.x),f.y),f.z);
+    }
+    float clouds(vec3 p) {
+      float value=0., strength=.55;
+      for(int j=0;j<4;j++){ value+=strength*noise(p); p=p*2.03+vec3(7.1,3.7,1.8); strength*=.5; }
+      return value;
+    }
     mat3 tilt(float a, float b) {
       return mat3(cos(b),0.,sin(b),0.,1.,0.,-sin(b),0.,cos(b)) *
         mat3(1.,0.,0.,0.,cos(a),-sin(a),0.,sin(a),cos(a));
@@ -21,22 +34,28 @@ function initializeOrbit() {
       mat3 camera=tilt(-.38+pointer.y*.12, .18+pointer.x*.16);
       vec3 ro=camera*vec3(0.,0.,5.);
       vec3 rd=camera*normalize(vec3(uv*4.9,-5.));
-      float b=dot(ro,rd), disc=b*b-dot(ro,ro)+.78*.78;
+      float b=dot(ro,rd), disc=b*b-dot(ro,ro)+.88*.88;
       float hit=100.;
       vec3 color=vec3(0.);
       float alpha=0.;
-      float halo=exp(-length(uv)*length(uv)*19.)*.32;
-      color=vec3(.12,.23,.52)*halo; alpha=halo;
+      float halo=exp(-length(uv-vec2(-.04,.02))*length(uv-vec2(-.04,.02))*17.)*.23;
+      color=vec3(.18,.10,.38)*halo; alpha=halo;
+      float limb=exp(-abs(length(uv)-.182)*105.)*.24;
+      color+=vec3(.24,.28,.65)*limb; alpha=max(alpha,limb);
       if(disc>0.){
         hit=-b-sqrt(disc);
         vec3 n=normalize(ro+rd*hit);
-        vec3 q=tilt(0.,time*.09)*n;
-        float bands=sin(q.y*17.+sin(q.x*5.+q.z*4.)*1.7);
-        float fine=sin(q.y*55.+q.x*9.)*.07;
-        vec3 base=mix(vec3(.08,.16,.34),vec3(.28,.42,.66),smoothstep(-1.,1.,bands+fine));
-        float diffuse=max(dot(n,normalize(vec3(-3.,3.,4.))),0.);
-        float rim=pow(1.-max(dot(n,-rd),0.),3.);
-        color=base*(.13+diffuse*1.25)+vec3(.21,.42,.85)*rim*.8;
+        vec3 q=tilt(.24,time*.035)*n;
+        float drift=clouds(q*3.8);
+        float vapor=clouds(q*9.+vec3(drift*3.));
+        float filaments=smoothstep(.40,.69,vapor);
+        vec3 base=mix(vec3(.06,.07,.16),vec3(.30,.24,.44),drift);
+        base=mix(base,vec3(.36,.43,.61),filaments*.65);
+        vec3 light=normalize(vec3(-3.,2.,.65));
+        float diffuse=max(dot(n,light),0.);
+        float rim=pow(1.-max(dot(n,-rd),0.),3.5);
+        float rimLight=.14+.86*max(dot(n,light),0.);
+        color=base*(.12+diffuse*1.45)+vec3(.37,.45,.88)*rim*rimLight;
         alpha=1.;
       }
       for(int i=0;i<3;i++){
@@ -48,22 +67,24 @@ function initializeOrbit() {
           vec3 pos=ro+rd*t;
           float radius=1.05+fi*.23;
           float dist=abs(length(pos)-radius);
-          float line=1.-smoothstep(.004,.012,dist);
+          float width=5./min(size.x,size.y);
+          float line=1.-smoothstep(.002,.002+width,dist);
           if(t>0. && t<hit && line>0.){
-            vec3 ink=mix(vec3(.38,.63,.92),vec3(.57,.48,.77),fi*.5);
-            color=mix(color,ink,line*.6); alpha=max(alpha,line*.7);
+            vec3 ink=mix(vec3(.31,.43,.68),vec3(.49,.34,.60),fi*.5);
+            float depth=.22+.28*smoothstep(-1.4,1.4,pos.z);
+            color=mix(color,ink,line*depth); alpha=max(alpha,line*depth);
           }
         }
       }
       // A small moon travels in a tilted orbit around the main sphere.
-      vec3 moon=tilt(.45,.3)*vec3(cos(time*.18+.8)*1.29,0.,sin(time*.18+.8)*1.29);
+      vec3 moon=tilt(.45,.3)*vec3(cos(time*.09+.8)*1.29,0.,sin(time*.09+.8)*1.29);
       vec3 delta=ro-moon;
       float mb=dot(delta,rd), md=mb*mb-dot(delta,delta)+.085*.085;
       if(md>0.){
         float mt=-mb-sqrt(md);
         if(mt<hit){
           vec3 mn=normalize(ro+rd*mt-moon);
-          color=vec3(.62,.73,.9)*(.2+.8*max(dot(mn,normalize(vec3(-3.,3.,4.))),0.)); alpha=1.;
+          color=vec3(.48,.48,.64)*(.10+.8*max(dot(mn,normalize(vec3(-3.,2.,.65))),0.))*(.65+.35*noise(mn*18.)); alpha=1.;
         }
       }
       gl_FragColor=vec4(color,alpha);
