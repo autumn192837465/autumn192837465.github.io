@@ -35,8 +35,8 @@ body {
   margin: 0;
   overflow-x: hidden;
   background:
-    radial-gradient(circle at 82% 8%, rgba(66, 131, 202, 0.18), transparent 29rem),
-    linear-gradient(180deg, #071426 0%, var(--bg) 55%, #040b14 100%);
+    radial-gradient(ellipse at 78% 12%, rgba(52, 67, 125, 0.16), transparent 45%),
+    linear-gradient(180deg, #050b1b 0%, #071020 55%, #030711 100%);
   color: var(--text);
   font-family: var(--font-body);
   line-height: 1.78;
@@ -63,28 +63,28 @@ body {
 }
 
 .site-atmosphere::before {
-  --star-opacity-min: 0.12;
-  --star-opacity-max: 0.24;
+  --star-opacity-min: 0.30;
+  --star-opacity-max: 0.48;
   opacity: var(--star-opacity-min);
   background-image:
     radial-gradient(circle, rgba(214, 233, 255, 0.82) 0 1px, transparent 1.5px),
     radial-gradient(circle, rgba(159, 201, 255, 0.64) 0 1px, transparent 1.6px),
     radial-gradient(circle, rgba(244, 247, 251, 0.5) 0 0.8px, transparent 1.3px);
-  background-size: 197px 223px, 271px 307px, 353px 281px;
+  background-size: 137px 193px, 229px 277px, 317px 251px;
   background-position: 18px 36px, 91px 142px, 211px 74px;
-  animation: star-field-twinkle 5.5s ease-in-out infinite;
+  animation: star-field-twinkle 9s ease-in-out infinite;
 }
 
 .site-atmosphere::after {
-  --star-opacity-min: 0.06;
-  --star-opacity-max: 0.14;
+  --star-opacity-min: 0.18;
+  --star-opacity-max: 0.34;
   opacity: var(--star-opacity-min);
   background-image:
     radial-gradient(circle, rgba(159, 201, 255, 0.9) 0 1.3px, transparent 2px),
     radial-gradient(circle, rgba(169, 159, 255, 0.68) 0 1px, transparent 1.8px);
   background-size: 421px 367px, 509px 443px;
   background-position: 61px 117px, 278px 36px;
-  animation: star-field-twinkle 7s ease-in-out 1.1s infinite reverse;
+  animation: star-field-twinkle 12s ease-in-out 1.1s infinite reverse;
 }
 
 .shooting-star {
@@ -384,15 +384,6 @@ h1 {
   position: relative;
   isolation: isolate;
   box-shadow: 0 28px 70px rgba(0, 0, 0, 0.28);
-}
-
-.orbit-canvas { display: block; width: 100%; height: 100%; position: absolute; inset: 0; }
-.hero:has(.orbit-ready) { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 24px; }
-.orbit-ready .portrait-frame { position: absolute; bottom: 0; right: 4%; width: 96px; aspect-ratio: 1; border-radius: 50%; border-color: rgba(159,201,255,.4); }
-@media (max-width: 760px) {
-  .hero:has(.orbit-ready) { grid-template-columns: 1fr; }
-  .hero-visual.orbit-ready { width: min(100%, 480px); justify-self: center; }
-  .orbit-ready .portrait-frame { width: 76px; }
 }
 
 .portrait-frame::after {
