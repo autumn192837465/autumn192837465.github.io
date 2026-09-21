@@ -12,18 +12,11 @@ function initializeOrbit() {
     uniform vec2 size;
     uniform vec2 pointer;
     uniform float time;
-    float hash(vec3 p) { return fract(sin(dot(p,vec3(127.1,311.7,74.7)))*43758.5453); }
-    float noise(vec3 p) {
-      vec3 i=floor(p), f=fract(p); f=f*f*(3.-2.*f);
-      return mix(mix(mix(hash(i),hash(i+vec3(1,0,0)),f.x),
-        mix(hash(i+vec3(0,1,0)),hash(i+vec3(1,1,0)),f.x),f.y),
-        mix(mix(hash(i+vec3(0,0,1)),hash(i+vec3(1,0,1)),f.x),
-        mix(hash(i+vec3(0,1,1)),hash(i+vec3(1,1,1)),f.x),f.y),f.z);
-    }
-    float clouds(vec3 p) {
-      float value=0., strength=.55;
-      for(int j=0;j<4;j++){ value+=strength*noise(p); p=p*2.03+vec3(7.1,3.7,1.8); strength*=.5; }
-      return value;
+    // Soft, rounded crater bowls echo Planet Drop's illustrated golden planet.
+    vec2 crater(vec3 p, vec3 center, float radius) {
+      float d=length(p-normalize(center))/radius;
+      return vec2(1.-smoothstep(.78,.98,d),
+        smoothstep(.86,.96,d)*(1.-smoothstep(1.,1.12,d)));
     }
     mat3 tilt(float a, float b) {
       return mat3(cos(b),0.,sin(b),0.,1.,0.,-sin(b),0.,cos(b)) *
@@ -39,23 +32,31 @@ function initializeOrbit() {
       vec3 color=vec3(0.);
       float alpha=0.;
       float halo=exp(-length(uv-vec2(-.04,.02))*length(uv-vec2(-.04,.02))*17.)*.23;
-      color=vec3(.18,.10,.38)*halo; alpha=halo;
+      color=vec3(.34,.12,.62)*halo; alpha=halo;
       float limb=exp(-abs(length(uv)-.182)*105.)*.24;
-      color+=vec3(.24,.28,.65)*limb; alpha=max(alpha,limb);
+      color+=vec3(.68,.34,.65)*limb; alpha=max(alpha,limb);
       if(disc>0.){
         hit=-b-sqrt(disc);
         vec3 n=normalize(ro+rd*hit);
         vec3 q=tilt(.24,time*.035)*n;
-        float drift=clouds(q*3.8);
-        float vapor=clouds(q*9.+vec3(drift*3.));
-        float filaments=smoothstep(.40,.69,vapor);
-        vec3 base=mix(vec3(.06,.07,.16),vec3(.30,.24,.44),drift);
-        base=mix(base,vec3(.36,.43,.61),filaments*.65);
-        vec3 light=normalize(vec3(-3.,2.,.65));
+        vec2 pits=crater(q,vec3(-.40,.48,.90),.32)
+          +crater(q,vec3(.48,.08,.96),.39)
+          +crater(q,vec3(-.25,-.55,.85),.25)
+          +crater(q,vec3(.12,.83,.35),.18)
+          +crater(q,vec3(-.86,-.08,.50),.19)
+          +crater(q,vec3(.60,-.65,.40),.16)
+          +crater(q,vec3(-.4,.3,-.9),.30)
+          +crater(q,vec3(.5,-.5,-.7),.36);
+        vec3 base=mix(vec3(1.,.62,.07),vec3(1.,.83,.22),smoothstep(-.7,.8,q.y));
+        base=mix(base,vec3(.88,.32,.025),clamp(pits.x,0.,1.)*.78);
+        base+=vec3(.15,.16,.07)*clamp(pits.y,0.,1.);
+        vec3 light=normalize(vec3(-3.,3.,3.));
         float diffuse=max(dot(n,light),0.);
         float rim=pow(1.-max(dot(n,-rd),0.),3.5);
         float rimLight=.14+.86*max(dot(n,light),0.);
-        color=base*(.12+diffuse*1.45)+vec3(.37,.45,.88)*rim*rimLight;
+        float gloss=pow(max(dot(n,normalize(light-rd)),0.),38.);
+        color=base*(.26+diffuse*.78)+vec3(1.,.92,.66)*gloss*.48
+          +vec3(.75,.42,.95)*rim*rimLight*.6;
         alpha=1.;
       }
       for(int i=0;i<3;i++){
@@ -70,8 +71,8 @@ function initializeOrbit() {
           float width=5./min(size.x,size.y);
           float line=1.-smoothstep(.002,.002+width,dist);
           if(t>0. && t<hit && line>0.){
-            vec3 ink=mix(vec3(.31,.43,.68),vec3(.49,.34,.60),fi*.5);
-            float depth=.22+.28*smoothstep(-1.4,1.4,pos.z);
+            vec3 ink=mix(vec3(.40,.38,.90),vec3(.78,.32,.86),fi*.5);
+            float depth=.26+.30*smoothstep(-1.4,1.4,pos.z);
             color=mix(color,ink,line*depth); alpha=max(alpha,line*depth);
           }
         }
@@ -79,12 +80,17 @@ function initializeOrbit() {
       // A small moon travels in a tilted orbit around the main sphere.
       vec3 moon=tilt(.45,.3)*vec3(cos(time*.09+.8)*1.29,0.,sin(time*.09+.8)*1.29);
       vec3 delta=ro-moon;
-      float mb=dot(delta,rd), md=mb*mb-dot(delta,delta)+.085*.085;
+      float mb=dot(delta,rd), md=mb*mb-dot(delta,delta)+.17*.17;
       if(md>0.){
         float mt=-mb-sqrt(md);
         if(mt<hit){
           vec3 mn=normalize(ro+rd*mt-moon);
-          color=vec3(.48,.48,.64)*(.10+.8*max(dot(mn,normalize(vec3(-3.,2.,.65))),0.))*(.65+.35*noise(mn*18.)); alpha=1.;
+          vec3 mq=tilt(.3,time*.10)*mn;
+          float swirl=sin(atan(mq.y,mq.x)*2.+length(mq.xy)*11.);
+          vec3 ice=mix(vec3(.025,.40,.82),vec3(.38,.88,1.),smoothstep(-.2,.3,swirl));
+          float edge=pow(1.-max(dot(mn,-rd),0.),3.);
+          color=ice*(.32+.68*max(dot(mn,normalize(vec3(-3.,3.,3.))),0.))
+            +vec3(.40,.78,1.)*edge*.5; alpha=1.;
         }
       }
       gl_FragColor=vec4(color,alpha);
