@@ -32,6 +32,7 @@ html {
 }
 
 body {
+  isolation: isolate;
   margin: 0;
   overflow-x: hidden;
   background:
@@ -47,7 +48,7 @@ body {
 .site-atmosphere {
   position: fixed;
   inset: 0;
-  z-index: 0;
+  z-index: -1;
   overflow: hidden;
   pointer-events: none;
   contain: strict;
@@ -55,11 +56,18 @@ body {
 
 .site-atmosphere::before,
 .site-atmosphere::after {
+  display: none;
   content: "";
   position: absolute;
   inset: -8%;
   background-repeat: repeat;
   will-change: opacity;
+}
+
+.night-sky {
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 
 .site-atmosphere::before {
