@@ -2,12 +2,12 @@ if (typeof document !== "undefined") document.documentElement.classList.add("js"
 
 const translations = {
   en: {
-    pageTitle: "Liu Chuan Feng | Unity Engineer, Tokyo",
+    pageTitle: "Liu Chuan Feng | Senior Unity Engineer, Tokyo",
     skip: "Skip to content",
     navWork: "Work",
     navAbout: "About",
     navContact: "Contact",
-    heroLead: "Unity engineer in Tokyo. I build games at Limit Break, and make my own apps on the side.",
+    heroLead: "Senior Unity engineer in Tokyo. I build games at Limit Break, and make my own apps on the side.",
     heroCta: "Message me on LinkedIn",
 
     appsTitle: "Apps I’ve released",
@@ -17,6 +17,8 @@ const translations = {
     phoneLabel: "My phone with the apps I’ve released",
     phoneHint: "Tap an app on the phone to open it.",
     phoneHome: "Back to the home screen",
+    phoneBack: "Home",
+    phoneSwitch: "Switch app",
     widgetCity: "Tokyo",
     moreAbout: "Read about it",
     phCatchHint: "Catch the light, like a cat would.",
@@ -60,7 +62,7 @@ const translations = {
     workIntro: "Mobile games built with teams in Tokyo.",
     ppAlt: "Puzzle Panic store art: a chef heroine above a match puzzle board",
     ppMeta: "Limit Break, soft launch in April 2026",
-    ppText: "Client engineer (Unity). Gameplay and boss systems, reward and out-game flows, async code with UniTask, unit tests and debug tools. I work daily with designers, planners and QA in Japan, the US and the Philippines.",
+    ppText: "Senior client engineer (Unity). Gameplay and boss systems, reward and out-game flows, async code with UniTask, unit tests and debug tools. I work daily with designers, planners and QA in Japan, the US and the Philippines.",
     launchPost: "Launch post",
     blAlt: "Blue Lock Project: World Champion key art",
     blMeta: "Rudel, released 2022",
@@ -73,8 +75,8 @@ const translations = {
     artCredit: "Game art from each title’s App Store page, © Limit Break Inc. and Rudel Inc.",
 
     aboutTitle: "About",
-    aboutText: "I’m a Unity engineer with more than five years of mobile game development in Tokyo, on four titles that have launched.",
-    aboutMore: "My focus is gameplay and boss systems, out-game UI and live events, backed by async code with UniTask, unit tests and debug tools that keep a live game easy to update. At Rudel I worked on three live titles and became lead engineer. At Limit Break I’m a client engineer on Puzzle Panic, working every day with designers, planners and QA in Japan, the US and the Philippines.",
+    aboutText: "I’m a senior Unity engineer with more than five years of mobile game development in Tokyo, on four titles that have launched.",
+    aboutMore: "My focus is gameplay and boss systems, out-game UI and live events, backed by async code with UniTask, unit tests and debug tools that keep a live game easy to update. At Rudel I worked on three live titles and became lead engineer. At Limit Break I’m a senior client engineer on Puzzle Panic, working every day with designers, planners and QA in Japan, the US and the Philippines.",
     aboutIndie: "Outside work I also make apps independently, handling planning, development, release and promotion myself. Four are live on the App Store and Google Play.",
     factBased: "Based in",
     factBasedValue: "Tokyo, Japan",
@@ -84,7 +86,7 @@ const translations = {
     factToolsValue: "Unity, C#, UniTask and Flutter",
     experienceTitle: "Experience",
     present: "now",
-    lbRole: "Unity engineer on Puzzle Panic",
+    lbRole: "Senior Unity engineer on Puzzle Panic",
     rdRole: "Unity engineer, then lead engineer",
     pgRole: "Software engineer for sensor monitoring",
     educationTitle: "Education",
@@ -100,12 +102,12 @@ const translations = {
   },
 
   "zh-TW": {
-    pageTitle: "Liu Chuan Feng | Unity 工程師・東京",
+    pageTitle: "Liu Chuan Feng | 資深 Unity 工程師・東京",
     skip: "跳到主要內容",
     navWork: "參與作品",
     navAbout: "關於我",
     navContact: "聯絡",
-    heroLead: "東京的 Unity 工程師。在 Limit Break 開發遊戲，也用自己的時間做 App。",
+    heroLead: "東京的資深 Unity 工程師。在 Limit Break 開發遊戲，也用自己的時間做 App。",
     heroCta: "在 LinkedIn 聯絡我",
 
     appsTitle: "已上架的 App",
@@ -115,6 +117,8 @@ const translations = {
     phoneLabel: "我的手機，裡面是已上架的 App",
     phoneHint: "點手機上的 App，打開看看。",
     phoneHome: "回到主畫面",
+    phoneBack: "主畫面",
+    phoneSwitch: "切換 App",
     widgetCity: "東京",
     moreAbout: "看介紹",
     phCatchHint: "像貓一樣，抓住那個光點。",
@@ -158,7 +162,7 @@ const translations = {
     workIntro: "在東京與團隊一起開發的手機遊戲。",
     ppAlt: "Puzzle Panic 商店圖：廚師女主角與消除盤面",
     ppMeta: "Limit Break，2026 年 4 月測試上線",
-    ppText: "用戶端工程師（Unity）。負責玩法與 Boss 系統、獎勵與外圍流程、UniTask 非同步處理、單元測試與除錯工具。每天與日本、美國、菲律賓的設計、企劃和 QA 合作。",
+    ppText: "資深用戶端工程師（Unity）。負責玩法與 Boss 系統、獎勵與外圍流程、UniTask 非同步處理、單元測試與除錯工具。每天與日本、美國、菲律賓的設計、企劃和 QA 合作。",
     launchPost: "上線公告",
     blAlt: "藍色監獄 Project: World Champion 主視覺",
     blMeta: "Rudel，2022 年上線",
@@ -171,8 +175,8 @@ const translations = {
     artCredit: "遊戲圖片取自各作品的 App Store 頁面，© Limit Break Inc. 與 Rudel Inc.",
 
     aboutTitle: "關於我",
-    aboutText: "我是 Unity 遊戲工程師，在東京從事手機遊戲開發五年以上，參與過四款已上線的作品。",
-    aboutMore: "專長是遊戲玩法與 Boss 系統、外圍 UI 與活動功能，並以 UniTask 非同步架構、單元測試和除錯工具，讓營運中的遊戲能穩定地持續更新。在 Rudel 參與三款營運中的作品，並擔任主程式；現在於 Limit Break 擔任 Puzzle Panic 的客戶端工程師，每天與日本、美國、菲律賓的設計師、企劃和 QA 協作。",
+    aboutText: "我是資深 Unity 遊戲工程師，在東京從事手機遊戲開發五年以上，參與過四款已上線的作品。",
+    aboutMore: "專長是遊戲玩法與 Boss 系統、外圍 UI 與活動功能，並以 UniTask 非同步架構、單元測試和除錯工具，讓營運中的遊戲能穩定地持續更新。在 Rudel 參與三款營運中的作品，並擔任主程式；現在於 Limit Break 擔任 Puzzle Panic 的資深客戶端工程師，每天與日本、美國、菲律賓的設計師、企劃和 QA 協作。",
     aboutIndie: "工作之外，我也獨立開發 App，從企劃、開發到上架與宣傳都由自己完成，目前已在 App Store 與 Google Play 上架四款。",
     factBased: "所在地",
     factBasedValue: "日本東京",
@@ -182,7 +186,7 @@ const translations = {
     factToolsValue: "Unity、C#、UniTask、Flutter",
     experienceTitle: "工作經歷",
     present: "至今",
-    lbRole: "Unity 工程師，負責 Puzzle Panic",
+    lbRole: "資深 Unity 工程師，負責 Puzzle Panic",
     rdRole: "Unity 工程師，後擔任主程式",
     pgRole: "軟體工程師，開發感測器監控系統",
     educationTitle: "學歷",
@@ -198,12 +202,12 @@ const translations = {
   },
 
   ja: {
-    pageTitle: "Liu Chuan Feng | Unity エンジニア・東京",
+    pageTitle: "Liu Chuan Feng | シニア Unity エンジニア・東京",
     skip: "本文へスキップ",
     navWork: "参加タイトル",
     navAbout: "プロフィール",
     navContact: "連絡先",
-    heroLead: "東京の Unity エンジニア。Limit Break でゲームを開発しながら、個人でもアプリを作っています。",
+    heroLead: "東京のシニア Unity エンジニア。Limit Break でゲームを開発しながら、個人でもアプリを作っています。",
     heroCta: "LinkedIn で連絡する",
 
     appsTitle: "公開中のアプリ",
@@ -213,6 +217,8 @@ const translations = {
     phoneLabel: "公開中のアプリが入った私のスマホ",
     phoneHint: "スマホのアプリをタップして開いてみてください。",
     phoneHome: "ホーム画面に戻る",
+    phoneBack: "ホーム",
+    phoneSwitch: "アプリを切り替える",
     widgetCity: "東京",
     moreAbout: "紹介を見る",
     phCatchHint: "猫になったつもりで、光をつかまえて。",
@@ -256,7 +262,7 @@ const translations = {
     workIntro: "東京でチームと一緒に開発したモバイルゲームです。",
     ppAlt: "Puzzle Panic のストア画像：シェフのヒロインとパズル盤面",
     ppMeta: "Limit Break、2026 年 4 月ソフトローンチ",
-    ppText: "クライアントエンジニア（Unity）。ゲームプレイとボスシステム、報酬・アウトゲームの導線、UniTask による非同期処理、ユニットテストとデバッグツールを担当。日本・アメリカ・フィリピンのデザイナー、プランナー、QA と日々連携しています。",
+    ppText: "シニアクライアントエンジニア（Unity）。ゲームプレイとボスシステム、報酬・アウトゲームの導線、UniTask による非同期処理、ユニットテストとデバッグツールを担当。日本・アメリカ・フィリピンのデザイナー、プランナー、QA と日々連携しています。",
     launchPost: "リリース告知",
     blAlt: "ブルーロック Project: World Champion のキービジュアル",
     blMeta: "Rudel、2022 年リリース",
@@ -269,8 +275,8 @@ const translations = {
     artCredit: "ゲーム画像は各タイトルの App Store ページより。© Limit Break Inc.、Rudel Inc.",
 
     aboutTitle: "プロフィール",
-    aboutText: "東京でモバイルゲーム開発に 5 年以上携わる Unity エンジニアです。これまでにリリースされた 4 タイトルの開発に参加してきました。",
-    aboutMore: "得意分野はゲームプレイとボスのシステム、アウトゲーム UI、イベント機能です。UniTask による非同期処理、ユニットテスト、デバッグツールなど、運営タイトルを安定して更新し続けるための基盤づくりも重視しています。Rudel では運営中の 3 タイトルに携わり、リードエンジニアを担当しました。現在は Limit Break で Puzzle Panic のクライアントエンジニアとして、日本・アメリカ・フィリピンのデザイナー、プランナー、QA と日々協業しています。",
+    aboutText: "東京でモバイルゲーム開発に 5 年以上携わるシニア Unity エンジニアです。これまでにリリースされた 4 タイトルの開発に参加してきました。",
+    aboutMore: "得意分野はゲームプレイとボスのシステム、アウトゲーム UI、イベント機能です。UniTask による非同期処理、ユニットテスト、デバッグツールなど、運営タイトルを安定して更新し続けるための基盤づくりも重視しています。Rudel では運営中の 3 タイトルに携わり、リードエンジニアを担当しました。現在は Limit Break で Puzzle Panic のシニアクライアントエンジニアとして、日本・アメリカ・フィリピンのデザイナー、プランナー、QA と日々協業しています。",
     aboutIndie: "業務外では個人でもアプリを開発し、企画・開発・リリース・宣伝まで一人で行っています。現在、App Store と Google Play で 4 本を公開中です。",
     factBased: "拠点",
     factBasedValue: "東京",
@@ -280,7 +286,7 @@ const translations = {
     factToolsValue: "Unity、C#、UniTask、Flutter",
     experienceTitle: "職歴",
     present: "現在",
-    lbRole: "Unity エンジニア（Puzzle Panic）",
+    lbRole: "シニア Unity エンジニア（Puzzle Panic）",
     rdRole: "Unity エンジニア、のちリードエンジニア",
     pgRole: "ソフトウェアエンジニア（センサー監視）",
     educationTitle: "学歴",
@@ -394,13 +400,13 @@ function createLaser(canvas, counter) {
   const dot = { x: 0, y: 0, vx: 0, vy: 0, tx: 0, ty: 0 };
   const pointer = { x: -999, y: -999 };
   const bursts = [];
-  const pick = () => { dot.tx = w * (0.12 + Math.random() * 0.76); dot.ty = h * (0.3 + Math.random() * 0.55); };
+  const pick = () => { dot.tx = w * (0.12 + Math.random() * 0.76); dot.ty = h * (0.28 + Math.random() * 0.3); };
   function size() {
     const r = Math.min(devicePixelRatio || 1, 2);
     w = canvas.clientWidth; h = canvas.clientHeight;
     canvas.width = Math.round(w * r); canvas.height = Math.round(h * r);
     ctx.setTransform(r, 0, 0, r, 0, 0);
-    if (!dot.x) { dot.x = w / 2; dot.y = h * 0.6; pick(); }
+    if (!dot.x) { dot.x = w / 2; dot.y = h * 0.45; pick(); }
   }
   function frame(now) {
     const dt = Math.min((now - (last || now)) / 16.7, 3); last = now;
@@ -409,7 +415,7 @@ function createLaser(canvas, counter) {
     if (d < 80 && d > 0) { ax += (dx / d) * 1.1 * (1 - d / 80); ay += (dy / d) * 1.1 * (1 - d / 80); }
     dot.vx = (dot.vx + ax * dt) * 0.9; dot.vy = (dot.vy + ay * dt) * 0.9;
     dot.x = Math.max(14, Math.min(w - 14, dot.x + dot.vx * dt));
-    dot.y = Math.max(h * 0.25, Math.min(h - 70, dot.y + dot.vy * dt));
+    dot.y = Math.max(h * 0.25, Math.min(h * 0.6, dot.y + dot.vy * dt));
     if (Math.hypot(dot.tx - dot.x, dot.ty - dot.y) < 16 || Math.random() < 0.006) pick();
     ctx.clearRect(0, 0, w, h);
     for (let i = bursts.length - 1; i >= 0; i--) {
@@ -431,7 +437,7 @@ function createLaser(canvas, counter) {
     if (Math.hypot(dot.x - x, dot.y - y) < 34) {
       caught += 1; counter.textContent = String(caught);
       bursts.push({ x: dot.x, y: dot.y, t: 0 });
-      dot.x = w * (0.15 + Math.random() * 0.7); dot.y = h * (0.35 + Math.random() * 0.45); pick();
+      dot.x = w * (0.15 + Math.random() * 0.7); dot.y = h * (0.3 + Math.random() * 0.28); pick();
       navigator.vibrate?.(15);
     } else {
       [pointer.x, pointer.y] = [x, y];
@@ -480,40 +486,67 @@ function initializePhone() {
     if (view === laserView) laser.stop();
   }
 
+  const back = phone.querySelector(".phone-back");
+  const dock = phone.querySelector(".phone-dock");
+  const homeIcon = (name) => phone.querySelector(`.launch[data-app="${name}"]`);
+  const setChrome = (shown, name) => {
+    back.hidden = dock.hidden = homebar.hidden = !shown;
+    dock.querySelectorAll("button").forEach((b) => b.toggleAttribute("aria-current", b.dataset.app === name));
+  };
+
   async function openApp(name, icon) {
     if (open) return;
     const view = phone.querySelector(`[data-view="${name}"]`);
     if (!view) return;
-    open = view; launcher = icon;
+    open = view; launcher = homeIcon(name);
     phone.classList.remove("is-tracking");
     ["--ry", "--rx", "--gx"].forEach((p) => phone.style.removeProperty(p));
     phone.classList.add("is-open");
-    view.hidden = false; homebar.hidden = false;
+    view.hidden = false; setChrome(true, name);
     startView(view);
     view.style.transformOrigin = originOf(icon);
     await animate(view, [
       { transform: `scale(${scale(icon)})`, borderRadius: "40%", opacity: 0.4 },
       { transform: "scale(1)", borderRadius: "0%", opacity: 1 },
     ], 520);
-    homebar.focus({ preventScroll: true });
+    back.focus({ preventScroll: true });
   }
   async function closeApp(focusIcon = true) {
     if (!open) return;
     const view = open; open = null;
     phone.classList.remove("is-open");
+    setChrome(false);
+    view.style.transformOrigin = originOf(launcher);
     await animate(view, [
       { transform: "scale(1)", borderRadius: "0%", opacity: 1 },
       { transform: `scale(${scale(launcher)})`, borderRadius: "40%", opacity: 0 },
     ], 380);
     stopView(view);
-    view.hidden = true; homebar.hidden = true;
+    view.hidden = true;
     if (focusIcon) launcher?.focus({ preventScroll: true });
+  }
+  async function switchApp(name, icon) {
+    if (!open || open.dataset.view === name) return;
+    const prev = open; open = null;
+    stopView(prev);
+    const view = phone.querySelector(`[data-view="${name}"]`);
+    open = view; launcher = homeIcon(name);
+    view.hidden = false; setChrome(true, name);
+    startView(view);
+    view.style.transformOrigin = originOf(icon);
+    await animate(view, [
+      { transform: `scale(${scale(icon)})`, borderRadius: "40%", opacity: 0.4 },
+      { transform: "scale(1)", borderRadius: "0%", opacity: 1 },
+    ], 460);
+    if (open !== prev) prev.hidden = true;
   }
 
   phone.querySelectorAll(".launch").forEach((icon) => {
     icon.setAttribute("role", "button");
     icon.addEventListener("click", (event) => { event.preventDefault(); openApp(icon.dataset.app, icon); });
   });
+  dock.querySelectorAll("button").forEach((b) => b.addEventListener("click", () => switchApp(b.dataset.app, b)));
+  back.addEventListener("click", () => closeApp());
   homebar.addEventListener("click", () => closeApp());
   phone.querySelectorAll(".phone-sheet a").forEach((link) => link.addEventListener("click", () => closeApp(false)));
   document.addEventListener("keydown", (event) => { if (event.key === "Escape") closeApp(); });

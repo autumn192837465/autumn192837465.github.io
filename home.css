@@ -252,7 +252,7 @@ html[lang="zh-TW"] .section-head h2 { font-weight: 400; }
 .slides img { opacity: 0; transition: opacity 700ms ease; }
 .slides img.is-current { opacity: 1; }
 .phone-sheet {
-  position: absolute; left: 5cqw; right: 5cqw; bottom: 9cqw; z-index: 2;
+  position: absolute; left: 5cqw; right: 5cqw; bottom: 30cqw; z-index: 2;
   display: flex; align-items: center; gap: 3.5cqw; padding: 3.5cqw;
   border-radius: 6cqw;
   background: rgba(12, 9, 34, 0.62);
@@ -261,6 +261,32 @@ html[lang="zh-TW"] .section-head h2 { font-weight: 400; }
 .phone-sheet img { width: 13cqw; height: 13cqw; border-radius: var(--radius-icon); flex: none; }
 .phone-sheet p { display: flex; flex-direction: column; font-size: 4cqw; line-height: 1.3; }
 .phone-sheet a { color: #ffc4d6; font-size: 3.6cqw; padding-block: 1cqw; }
+.phone-back {
+  position: absolute; left: 4cqw; top: 14cqw; z-index: 4;
+  display: inline-flex; align-items: center; gap: 1.8cqw;
+  min-height: 9cqw; padding: 0 4cqw 0 3.2cqw; border: 0; border-radius: 99px; cursor: pointer;
+  background: rgba(12, 9, 34, 0.6); color: #fff;
+  -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px);
+  font-size: 3.8cqw; font-weight: 800; line-height: 1;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.14);
+}
+.phone-back .chev { width: 2.2cqw; height: 2.2cqw; border-left: 0.7cqw solid currentColor; border-bottom: 0.7cqw solid currentColor; rotate: 45deg; margin-left: 0.8cqw; }
+.phone-back[hidden], .phone-dock[hidden] { display: none; }
+@media (hover: hover) { .phone-back:hover { background: rgba(12, 9, 34, 0.8); } }
+.phone-dock {
+  position: absolute; left: 5cqw; right: 5cqw; bottom: 9cqw; z-index: 4;
+  display: flex; justify-content: space-around; align-items: center;
+  padding: 2.6cqw 3cqw; border-radius: 7cqw;
+  background: rgba(255, 255, 255, 0.2);
+  -webkit-backdrop-filter: blur(16px) saturate(1.5); backdrop-filter: blur(16px) saturate(1.5);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.22);
+}
+.phone-dock button { position: relative; padding: 0; border: 0; background: none; cursor: pointer; border-radius: var(--radius-icon); }
+.phone-dock img { width: 14cqw; height: 14cqw; border-radius: var(--radius-icon); transition: transform 160ms var(--ease-out), opacity 160ms ease; }
+.phone-dock button:not([aria-current]) img { opacity: 0.72; }
+.phone-dock button[aria-current]::after { content: ""; position: absolute; left: 50%; bottom: -1.9cqw; width: 1.3cqw; height: 1.3cqw; translate: -50% 0; border-radius: 50%; background: #fff; }
+.phone-dock button:active img { transform: scale(0.9); }
+@media (hover: hover) { .phone-dock button:hover img { opacity: 1; transform: translateY(-0.8cqw); } }
 .phone-homebar {
   position: absolute; left: 50%; bottom: 0; z-index: 4; translate: -50% 0;
   width: 44cqw; height: 8cqw; padding: 0; border: 0; background: transparent; cursor: pointer;
@@ -278,8 +304,8 @@ html[lang="zh-TW"] .section-head h2 { font-weight: 400; }
 }
 .laser { touch-action: none; cursor: crosshair; }
 .laser-hint, .laser-count { position: absolute; left: 0; right: 0; z-index: 1; text-align: center; pointer-events: none; padding-inline: 8cqw; }
-.laser-hint { top: 17cqw; font-size: 4.6cqw; font-weight: 800; line-height: 1.35; }
-.laser-count { top: 31cqw; font-size: 3.6cqw; color: rgba(255, 255, 255, 0.7); font-variant-numeric: tabular-nums; }
+.laser-hint { top: 27cqw; font-size: 4.6cqw; font-weight: 800; line-height: 1.35; }
+.laser-count { top: 41cqw; font-size: 3.6cqw; color: rgba(255, 255, 255, 0.7); font-variant-numeric: tabular-nums; }
 
 /* One orchestrated arrival: the phone rises, then its icons pop in */
 @media (prefers-reduced-motion: no-preference) {
