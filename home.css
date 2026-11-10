@@ -118,6 +118,7 @@ html[lang="zh-TW"] .section-head h2 { font-weight: 400; }
 .screen-wallpaper::after { content: ""; position: absolute; inset: 0; background: rgba(15, 11, 51, 0.45); }
 
 .bar {
+  position: relative; z-index: 10;
   width: 100%; max-width: var(--wrap); margin: 0 auto;
   display: flex; align-items: center; gap: 16px 28px; flex-wrap: wrap;
   padding: 18px var(--pad);
@@ -167,7 +168,7 @@ html[lang="zh-TW"] .section-head h2 { font-weight: 400; }
   perspective: 1600px;
 }
 .phone-glow {
-  position: absolute; inset: -18% -40%; z-index: -1;
+  position: absolute; inset: -18% -40%; z-index: -1; pointer-events: none;
   background:
     radial-gradient(closest-side at 40% 45%, rgba(255, 122, 162, 0.55), transparent),
     radial-gradient(closest-side at 65% 60%, rgba(120, 92, 255, 0.55), transparent);
