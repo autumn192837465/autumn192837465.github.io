@@ -6,3 +6,4 @@ dist/
 .pnpm-store/
 *.tgz
 *.tsbuildinfo
+.taste-skill/

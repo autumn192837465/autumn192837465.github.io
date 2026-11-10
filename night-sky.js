@@ -17,8 +17,8 @@ function initializeNightSky() {
   }));
   // Clear the complete text/card areas, not just paint stars below the glyphs.
   const textAreas = [...document.querySelectorAll(
-    '.hero-copy, .portrait-frame, .site-header, .about-copy, .profile-card, '
-    + '.work-card, .experience-card, .education-card, h2, h3, p, nav, footer'
+    '.hero, .bar, .apps-stage, .app-pictures, .band, .lineup tr, .facts, .record-list li, '
+    + '.contact-portrait, .contact-links li, h2, h3, h4, p, nav, footer'
   )];
   let frame = 0, last = 0, drift = 0, width = 0, height = 0;
   function render(now) {

@@ -2,302 +2,325 @@ if (typeof document !== "undefined") document.documentElement.classList.add("js"
 
 const translations = {
   en: {
+    pageTitle: "Liu Chuan Feng | Unity Engineer, Tokyo",
     skip: "Skip to content",
+    navApps: "Apps",
+    navCredits: "Games",
     navAbout: "About",
-    navWork: "Work",
-    navExperience: "Experience",
-    navEducation: "Education",
     navContact: "Contact",
-    heroEyebrow: "Unity Engineer · Tokyo, Japan",
-    heroTitle: "Unity Engineer",
-    heroDescription: "More than five years of mobile game development experience across core gameplay, game systems, and mobile UI.",
-    viewWork: "View my work",
-    portraitAlt: "Liu Chuan Feng with a cat",
-    aboutTitle: "About",
-    aboutParagraph1: "I’m a Tokyo-based Unity Engineer with more than five years of experience in mobile game development, covering in-game and out-game features, UI architecture, asynchronous systems, testing, and performance.",
-    aboutParagraph2: "At Limit Break, I develop core gameplay and boss systems for Puzzle Panic. Previously at Rudel, I contributed to the development and live operation of three mobile games and later served as Lead Engineer.",
-    aboutParagraph3: "My games include Planet Drop, available on Google Play and the App Store, and Pattern Hero, currently in development.",
-    aboutParagraph4: "I use Chinese, Japanese, and English to communicate with team members in my day-to-day work.",
-    workTitle: "Work",
-    workIntro: "Professional game credits and original games.",
-    personalKicker: "Games",
-    personalTitle: "Personal games",
-    personalIntro: "Gameplay, availability, and current development status.",
-    soloProject: "Game",
-    availableNow: "Available now",
-    planetDropSubtitle: "Merge Puzzle",
-    planetDropDescription: "Drop planets into the container and merge matching ones into larger planets. Anticipate each bounce, manage the limited space, and choose roguelike upgrades that change planet size, gravity, scoring, and special effects before the board fills up.",
-    planetDropAlt: "Planet Drop game icon",
-    planetDropVideoTitle: "Planet Drop gameplay preview",
-    planetDropGamePage: "Game Page",
-    patternHeroSubtitle: "2D Action Game",
-    patternHeroDescription: "Choose combat abilities through a roulette system, then take them into real-time action stages. Adapt movement and attacks to the abilities you receive and fight through pixel-art encounters.",
-    gameplayTagsLabel: "Gameplay features",
-    planetTag1: "Physics merging",
-    planetTag2: "Space management",
-    planetTag3: "Roguelike upgrades",
-    planetTag4: "High-score challenge",
-    patternTag1: "Real-time combat",
-    patternTag2: "Roulette choices",
-    patternTag3: "Ability combinations",
-    patternTag4: "Pixel-art stages",
-    patternHeroAlt: "Pattern Hero game icon",
-    patternHeroVideoTitle: "Pattern Hero gameplay preview",
-    watchDemo: "Watch demo",
-    professionalKicker: "Professional credits",
-    professionalTitle: "Games I contributed to",
-    professionalIntro: "Selected games and the areas I contributed to within their development teams.",
-    ongoing: "In development",
-    softLaunch: "Soft launch",
-    released: "Released",
+    heroFact1: "Unity engineer at Limit Break",
+    heroFact2: "Based in Tokyo since 2020",
+    heroFact3: "Four apps of my own, live in the stores",
+    heroLead: "I build mobile games with a team by day, and plan, build and ship my own apps alone.",
+    heroCredit: "Sky from Planet Drop, one of my games",
+    heroCta: "See the apps",
+
+    appsTitle: "Apps I’ve<br>shipped",
+    appsIndexLabel: "Apps",
+    pdShort: "Game",
+    pdKind: "Merge puzzle game · iOS and Android",
+    pdText: "Drop planets into the jar and merge matching ones into bigger worlds. Before the board fills up, pick roguelike upgrades that change size, gravity and score.",
+    pdDate: "Released 24 August 2026",
+    gamePage: "Game page",
+    pdVideoAlt: "Planet Drop promotional video: planets falling and merging",
+    pdShotAlt: "Planet Drop upgrade choice screen with three roguelike upgrades",
+    osName: "Oshipass",
+    osShort: "Organiser",
+    osKind: "Fan-activity organiser · iOS and Android",
+    osText: "Days since you became a fan, ticket lotteries and payment deadlines, a calendar, savings goals and memories of every show, in one app. No account, and the data stays on the phone.",
+    osDate: "Released 2 November 2026",
+    demoVideo: "Demo video",
+    osShot1Alt: "Oshipass home screen counting 837 days as a fan",
+    osShot2Alt: "Oshipass ticket screen with the lottery result and payment deadline",
+    phName: "Paw Hunter",
+    phShort: "Game for cats",
+    phKind: "Touch game for cats · iPhone and iPad",
+    phText: "Mice, butterflies, koi and a dot of light run across the screen for your cat to catch. No ads during the hunt; speed, numbers and playground adjust to each cat.",
+    phDate: "Released 8 November 2026",
+    phShot1Alt: "Paw Hunter: a mouse running across a wooden floor",
+    phShot2Alt: "Paw Hunter: a koi swimming between lily pads",
+    bbName: "Bit by Bit",
+    bbShort: "Budget book",
+    bbKind: "Budget book · Android",
+    bbText: "A budget book that lives only on the phone: one-tap entries, monthly and category budgets, what you can still spend today, and a full JSON backup. In 18 languages.",
+    bbDate: "On Google Play",
+    bbShot1Alt: "Bit by Bit overview with this month’s remaining budget",
+    bbShot2Alt: "Bit by Bit entry screen with the calculator keypad",
+
+    worksTitle: "Coming next",
+    worksCaption: "Apps in review and in development",
+    colName: "Name",
+    colKind: "What it is",
+    colTech: "Built with",
+    colDemo: "Demo",
+    groupReview: "In App Store review",
+    groupDev: "In development",
+    iqKind: "Odd-one-out puzzle",
+    evKind: "Trip expense splitter",
+    alName: "AbyssLure",
+    alKind: "Deep-sea idle game",
+    drKind: "Creature collection",
+    phrKind: "2D action game",
+    demo: "Demo",
+    worksNote: "Store status as of 9 November 2026.",
+
+    creditsTitle: "Games I’ve built in teams",
+    ppAlt: "Puzzle Panic store art: a chef heroine above a match puzzle board",
+    ppBandSub: "Limit Break, 2026",
+    blAlt: "Blue Lock Project: World Champion key art",
+    kgAlt: "Kingdom Itadaki key art",
+    pp2Alt: "Puzzle Panic store art: three chefs on a puzzle board",
+    bandCaption: "Store art from each game’s App Store page, © Limit Break Inc. and Rudel Inc.",
+    ppMeta: "Limit Break · soft launch April 2026 in New Zealand, Australia and Singapore",
+    ppText: "Client engineer (Unity). Gameplay and boss systems, reward and out-game flows, async code with UniTask, unit tests and debug tools, root-cause fixes. Daily work with designers, planners and QA in Japan, the US and the Philippines.",
+    launchPost: "Launch post",
+    blMeta: "Rudel · released 2022",
+    kgMeta: "Rudel · released 2024",
+    dsMeta: "Rudel",
+    rudelText: "Features across gameplay, user interface and live-service systems, through launch and live operation.",
     officialSite: "Official site",
-    watchVideo: "Watch video",
-    blueLockVideoTitle: "Blue Lock Project: World Champion video",
-    kingdomVideoTitle: "Kingdom Itadaki video",
-    puzzleWorkDescription: "Developing gameplay systems, user interfaces, and supporting flows for a mobile puzzle game in an international team.",
-    puzzleRoleLabel: "Role",
-    puzzleRole: "Client Engineer (Unity)",
-    puzzleResponsibilitiesLabel: "Responsibilities",
-    puzzleResponsibility1: "Gameplay & Boss Systems",
-    puzzleResponsibility2: "Reward & Out-game Flows",
-    puzzleResponsibility3: "Async Processing with UniTask",
-    puzzleResponsibility4: "Unit Testing & Debug Tooling",
-    puzzleResponsibility5: "Root Cause Analysis & Quality Improvement",
-    puzzleCollaborationLabel: "Collaboration",
-    puzzleCollaboration1: "Designers · Planners · QA",
-    puzzleCollaboration2: "Japan · US · Philippines",
-    puzzleCollaboration3: "Japanese · English · Chinese",
-    puzzleTechLabel: "Tech",
-    releasedWorkDescription: "Contributed to mobile game features across gameplay, user interface, and live-service systems.",
-    locationLabel: "Location",
-    skillsLabel: "Core skills",
-    skillsValue: "Unity · C# · In-game / Out-game Development · UI Architecture · Async Systems · Unit Testing · Debug Tooling · Performance Optimization",
-    languagesLabel: "Languages",
-    languagesValue: "Chinese · Japanese · English",
+    trailer: "Trailer",
+
+    aboutTitle: "About",
+    factBased: "Based in",
+    factBasedValue: "Tokyo, Japan",
+    factLang: "Works in",
+    factTools: "Tools",
+    aboutText: "Five years of making mobile games in Tokyo, in teams and on my own.",
+    aboutMore: "Core gameplay and boss systems, out-game UI, live events, async code, tests and the tools that keep a team fast. At Rudel I worked on three live titles and became lead engineer; at Limit Break I build Puzzle Panic. Outside work, I take my own apps from idea to store page alone.",
+    recordTitle: "Record",
     experienceTitle: "Experience",
-    present: "Present",
-    projectLabel: "Project",
-    limitBreakDescription: "Leading core in-game development for Puzzle Panic, from gameplay and boss logic to reward flows, asynchronous systems, unit tests, and debugging tools. I work directly with designers, planners, and QA across international teams in Japanese, English, and Chinese.",
-    limitBreakHighlight1: "Gameplay and boss systems",
-    limitBreakHighlight2: "Quality, tests, and debugging tools",
-    limitBreakHighlight3: "Multilingual cross-team collaboration",
-    rudelRole: "Unity Engineer → Lead Engineer",
-    rudelDescription: "Built and operated mobile game features across three titles, focusing on out-game UI, live events, performance, and maintainable architecture. Later led a new project, establishing shared UI and scene-management foundations, coding standards, and reusable templates.",
-    rudelHighlight1: "Out-game UI and live events",
-    rudelHighlight2: "Performance and refactoring",
-    rudelHighlight3: "Shared foundations and team leadership",
-    pugnusRole: "Software Engineer",
-    pugnusDescription: "Developed industrial monitoring software for vibration sensors, including data processing and storage, real-time visualization, and mobile and email alerts for abnormal readings.",
-    pugnusHighlight1: "Sensor data processing and storage",
-    pugnusHighlight2: "Real-time visualization",
-    pugnusHighlight3: "Mobile and email alerting",
+    lbRole: "Unity engineer, Puzzle Panic",
+    present: "now",
+    rdRole: "Unity engineer, then lead engineer",
+    pgRole: "Software engineer, sensor monitoring",
     educationTitle: "Education",
     nctuName: "National Chiao Tung University",
-    nctuDegree: "Bachelor's Degree in Computer Science",
+    nctuDegree: "BSc in Computer Science",
     kindaiName: "Kindai University",
-    kindaiProgram: "Exchange Student",
-    contactTitle: "Contact",
-    contactDescription: "For professional opportunities or collaboration, please reach out through LinkedIn.",
-    footerText: "Unity Engineer · Tokyo, Japan"
+    kindaiProgram: "Exchange student",
+
+    contactSentence: "Open to Unity engineering roles, game collaborations and conversations about small apps.",
+    portraitAlt: "Liu Chuan Feng with his white cat",
+    contactTitle: "Get in touch",
+    contactNote: "Tokyo, Japan · I reply in English, 中文 or 日本語",
+    footWhat: "Liu Chuan Feng, Unity engineer in Tokyo",
+    privacy: "Privacy policy",
   },
+
   "zh-TW": {
-    skip: "跳至主要內容",
+    pageTitle: "Liu Chuan Feng | Unity 工程師・東京",
+    skip: "跳到主要內容",
+    navApps: "App",
+    navCredits: "參與作品",
     navAbout: "關於我",
-    navWork: "作品",
-    navExperience: "工作經歷",
-    navEducation: "學歷",
-    navContact: "聯絡方式",
-    heroEyebrow: "Unity 工程師 · 日本東京",
-    heroTitle: "Unity 工程師",
-    heroDescription: "具五年以上行動遊戲開發經驗，主要負責核心玩法、遊戲系統與行動裝置 UI。",
-    viewWork: "查看我的作品",
-    portraitAlt: "劉川楓與貓的合照",
-    aboutTitle: "關於我",
-    aboutParagraph1: "目前於東京從事行動遊戲開發，具五年以上經驗，工作範圍涵蓋 In-game、Out-game、UI 架構、非同步處理、測試與效能改善。",
-    aboutParagraph2: "現於 Limit Break 負責 Puzzle Panic 的核心玩法與 Boss 系統。過去於 Rudel 參與三款行動遊戲的開發與營運，並曾擔任 Lead Engineer。",
-    aboutParagraph3: "個人遊戲包括已於 Google Play 與 App Store 上架的 Planet Drop，以及目前開發中的 Pattern Hero。",
-    aboutParagraph4: "平時使用中文、日文與英文和團隊成員溝通。",
-    workTitle: "作品",
-    workIntro: "商業遊戲開發經歷與個人遊戲作品。",
-    personalKicker: "遊戲",
-    personalTitle: "個人遊戲",
-    personalIntro: "遊戲玩法、上架狀態與目前開發進度。",
-    soloProject: "遊戲",
-    availableNow: "現已上架",
-    planetDropSubtitle: "星球合成益智遊戲",
-    planetDropDescription: "讓行星落入容器，相同行星接觸後會合成為更大的行星。玩家需要預判落點與彈跳，在有限空間內安排合成順序，並選擇改變尺寸、重力、得分與特殊效果的 Roguelike 強化，在盤面堆滿前取得更高分數。",
-    planetDropAlt: "Planet Drop 遊戲圖示",
-    planetDropVideoTitle: "Planet Drop 遊戲預覽",
-    planetDropGamePage: "遊戲專頁",
-    patternHeroSubtitle: "2D 動作遊戲",
-    patternHeroDescription: "透過輪盤選擇本局的戰鬥能力，再進入即時動作關卡。玩家需要配合取得的能力調整移動與攻擊，在像素風格的戰鬥中應對敵人。",
-    gameplayTagsLabel: "玩法特色",
-    planetTag1: "物理合成",
-    planetTag2: "空間管理",
-    planetTag3: "Roguelike 強化",
-    planetTag4: "高分挑戰",
-    patternTag1: "即時戰鬥",
-    patternTag2: "輪盤選擇",
-    patternTag3: "能力組合",
-    patternTag4: "像素風格關卡",
-    patternHeroAlt: "Pattern Hero 遊戲圖示",
-    patternHeroVideoTitle: "Pattern Hero 遊戲預覽",
-    watchDemo: "觀看 Demo",
-    professionalKicker: "參與作品",
-    professionalTitle: "參與開發的遊戲",
-    professionalIntro: "負責領域包含核心玩法、UI、營運功能與開發工具。",
-    ongoing: "開發中",
-    softLaunch: "限區測試",
-    released: "已發行",
+    navContact: "聯絡",
+    heroFact1: "Limit Break 的 Unity 工程師",
+    heroFact2: "2020 年起在東京工作",
+    heroFact3: "四款個人 App 已上架",
+    heroLead: "平常在東京的團隊裡開發手機遊戲，也一個人從企劃、開發到上架自己的 App。",
+    heroCredit: "背景：我的遊戲 Planet Drop 的星空",
+    heroCta: "看看我的 App",
+
+    appsTitle: "已上架的<br>App",
+    appsIndexLabel: "App 列表",
+    pdShort: "遊戲",
+    pdKind: "合成益智遊戲 · iOS 與 Android",
+    pdText: "把行星丟進容器，相同的行星會合成更大的星球。在盤面塞滿前，選擇能改變大小、重力與分數的 Roguelike 強化。",
+    pdDate: "2026 年 8 月 24 日上架",
+    gamePage: "遊戲介紹頁",
+    pdVideoAlt: "Planet Drop 宣傳影片：行星落下並合成",
+    pdShotAlt: "Planet Drop 的強化選擇畫面，有三個 Roguelike 強化",
+    osName: "追星護照",
+    osShort: "追星管理",
+    osKind: "追星管理 App · iOS 與 Android",
+    osText: "追星天數、門票抽選與付款期限、行事曆、存錢目標和每場演出的回憶，全部整理在一個 App。不需要帳號，資料只存在手機裡。",
+    osDate: "2026 年 11 月 2 日上架",
+    demoVideo: "示範影片",
+    osShot1Alt: "追星護照首頁，顯示追星第 837 天",
+    osShot2Alt: "追星護照的門票畫面，顯示抽選結果與付款期限",
+    phName: "肉球獵人",
+    phShort: "給貓咪的遊戲",
+    phKind: "給貓咪玩的觸控遊戲 · iPhone 與 iPad",
+    phText: "老鼠、蝴蝶、錦鯉和光點在螢幕上跑動，讓貓咪來抓。狩獵途中不出現廣告，速度、數量和場地都能依每隻貓調整。",
+    phDate: "2026 年 11 月 8 日上架",
+    phShot1Alt: "肉球獵人：一隻老鼠跑過木地板",
+    phShot2Alt: "肉球獵人：錦鯉在睡蓮之間游動",
+    bbName: "一點一滴記帳本",
+    bbShort: "記帳",
+    bbKind: "記帳 App · Android",
+    bbText: "只存在手機裡的記帳 App：一鍵記帳、月預算與分類預算、顯示今天還能花多少，並可完整 JSON 備份。支援 18 種語言。",
+    bbDate: "已在 Google Play 上架",
+    bbShot1Alt: "一點一滴記帳本的總覽，顯示本月剩餘預算",
+    bbShot2Alt: "一點一滴記帳本的記帳畫面與計算機鍵盤",
+
+    worksTitle: "接下來的作品",
+    worksCaption: "審查中與開發中的作品",
+    colName: "名稱",
+    colKind: "類型",
+    colTech: "開發工具",
+    colDemo: "示範",
+    groupReview: "App Store 審查中",
+    groupDev: "開發中",
+    iqKind: "找不同益智遊戲",
+    evKind: "旅行分帳 App",
+    alName: "深淵餌燈",
+    alKind: "深海放置遊戲",
+    drKind: "生物養成收集",
+    phrKind: "2D 動作遊戲",
+    demo: "示範影片",
+    worksNote: "審查狀態以 2026 年 11 月 9 日為準。",
+
+    creditsTitle: "在團隊中參與開發的遊戲",
+    ppAlt: "Puzzle Panic 商店圖：廚師女主角與消除盤面",
+    ppBandSub: "Limit Break，2026",
+    blAlt: "藍色監獄 Project: World Champion 主視覺",
+    kgAlt: "王者天下 頂天 主視覺",
+    pp2Alt: "Puzzle Panic 商店圖：三位廚師與消除盤面",
+    bandCaption: "圖片取自各遊戲的 App Store 頁面，© Limit Break Inc. 與 Rudel Inc.",
+    ppMeta: "Limit Break · 2026 年 4 月於紐西蘭、澳洲、新加坡測試上線",
+    ppText: "用戶端工程師（Unity）。負責玩法與 Boss 系統、獎勵與外圍流程、UniTask 非同步處理、單元測試與除錯工具，以及問題根因分析。每天與日本、美國、菲律賓的設計、企劃和 QA 合作。",
+    launchPost: "上線公告",
+    blMeta: "Rudel · 2022 年上線",
+    kgMeta: "Rudel · 2024 年上線",
+    dsMeta: "Rudel",
+    rudelText: "參與玩法、UI 與營運系統等功能開發，從上線一路到營運。",
     officialSite: "官方網站",
-    watchVideo: "觀看影片",
-    blueLockVideoTitle: "Blue Lock Project: World Champion 影片",
-    kingdomVideoTitle: "Kingdom Itadaki 影片",
-    puzzleWorkDescription: "在國際團隊中，參與行動益智遊戲的遊戲系統、使用者介面與相關流程開發。",
-    puzzleRoleLabel: "職位",
-    puzzleRole: "客戶端工程師（Unity）",
-    puzzleResponsibilitiesLabel: "負責領域",
-    puzzleResponsibility1: "遊戲內與 Boss 系統",
-    puzzleResponsibility2: "獎勵流程與遊戲外功能",
-    puzzleResponsibility3: "使用 UniTask 的非同步處理",
-    puzzleResponsibility4: "單元測試與除錯工具開發",
-    puzzleResponsibility5: "原因分析與品質改善",
-    puzzleCollaborationLabel: "團隊協作",
-    puzzleCollaboration1: "與設計師、企劃及 QA 調整規格",
-    puzzleCollaboration2: "日本、美國與菲律賓團隊",
-    puzzleCollaboration3: "日語、英語與中文",
-    puzzleTechLabel: "技術",
-    releasedWorkDescription: "參與行動遊戲的遊戲玩法、使用者介面與營運系統功能開發。",
-    locationLabel: "所在地",
-    skillsLabel: "核心技能",
-    skillsValue: "Unity · C# · 遊戲內／遊戲外功能開發 · UI 架構 · 非同步處理 · 單元測試 · 除錯工具 · 效能最佳化",
-    languagesLabel: "語言",
-    languagesValue: "中文 · 日文 · 英文",
+    trailer: "宣傳影片",
+
+    aboutTitle: "關於我",
+    factBased: "所在地",
+    factBasedValue: "日本東京",
+    factLang: "工作語言",
+    factTools: "工具",
+    aboutText: "在東京開發手機遊戲五年，在團隊裡，也一個人做。",
+    aboutMore: "核心玩法與 Boss 系統、外圍 UI、活動、非同步處理、測試，以及讓團隊更快的工具。在 Rudel 參與三款營運中的遊戲並擔任主程式；現在於 Limit Break 開發 Puzzle Panic。工作之外，我一個人把自己的 App 從點子做到上架。",
+    recordTitle: "經歷",
     experienceTitle: "工作經歷",
-    present: "現在",
-    projectLabel: "專案",
-    limitBreakDescription: "目前主要負責 Puzzle Panic 的 In-game 領域，涵蓋遊戲與 Boss 邏輯、獎勵流程、非同步處理、單元測試及除錯工具。並以日文、英文與中文，直接和海外團隊的設計、企劃及 QA 協作。",
-    limitBreakHighlight1: "遊戲與 Boss 系統",
-    limitBreakHighlight2: "品質、測試與除錯工具",
-    limitBreakHighlight3: "多語言跨團隊協作",
-    rudelRole: "Unity 工程師 → Lead Engineer",
-    rudelDescription: "參與三款行動遊戲的開發與營運，重點涵蓋 Out-game UI、活動功能、效能改善及可維護架構。後期擔任新專案 Lead Engineer，建立共用 UI、場景管理基盤、程式規範與可重用模板。",
-    rudelHighlight1: "Out-game UI 與活動功能",
-    rudelHighlight2: "效能改善與重構",
-    rudelHighlight3: "共用基盤與團隊帶領",
-    pugnusRole: "軟體工程師",
-    pugnusDescription: "開發振動感測器的工業監控軟體，包含資料處理與儲存、即時視覺化，以及異常數值的行動裝置與電子郵件通知功能。",
-    pugnusHighlight1: "感測資料處理與儲存",
-    pugnusHighlight2: "即時資料視覺化",
-    pugnusHighlight3: "行動裝置與郵件通知",
+    lbRole: "Unity 工程師，Puzzle Panic",
+    present: "至今",
+    rdRole: "Unity 工程師，後擔任主程式",
+    pgRole: "軟體工程師，感測器監控系統",
     educationTitle: "學歷",
     nctuName: "國立交通大學",
-    nctuDegree: "資訊工程學系 學士",
+    nctuDegree: "資訊工程學士",
     kindaiName: "近畿大學",
     kindaiProgram: "交換學生",
-    contactTitle: "聯絡方式",
-    contactDescription: "工作機會與合作相關聯絡，請透過 LinkedIn。",
-    footerText: "Unity 工程師 · 日本東京"
+
+    contactSentence: "歡迎與我聊 Unity 工程職缺、遊戲合作，或任何關於小型 App 的想法。",
+    portraitAlt: "Liu Chuan Feng 和他的白貓",
+    contactTitle: "聯絡我",
+    contactNote: "日本東京 · 可用中文、日本語或 English 回覆",
+    footWhat: "Liu Chuan Feng，東京的 Unity 工程師",
+    privacy: "隱私權政策",
   },
+
   ja: {
-    skip: "メインコンテンツへ移動",
+    pageTitle: "Liu Chuan Feng | Unity エンジニア・東京",
+    skip: "本文へスキップ",
+    navApps: "アプリ",
+    navCredits: "参加タイトル",
     navAbout: "プロフィール",
-    navWork: "作品",
-    navExperience: "職務経歴",
-    navEducation: "学歴",
-    navContact: "お問い合わせ",
-    heroEyebrow: "Unityエンジニア · 東京",
-    heroTitle: "Unityエンジニア",
-    heroDescription: "モバイルゲーム開発5年以上。コアゲームプレイ、ゲームシステム、モバイルUIを担当しています。",
-    viewWork: "作品を見る",
-    portraitAlt: "猫と一緒に写る劉川楓",
-    aboutTitle: "プロフィール",
-    aboutParagraph1: "東京でモバイルゲーム開発に携わり、5年以上の経験があります。インゲーム、アウトゲーム、UI設計、非同期処理、テスト、パフォーマンス改善を担当してきました。",
-    aboutParagraph2: "現在はLimit Breakで『Puzzle Panic』のコアゲームプレイとボスシステムを担当しています。以前はRudelで3タイトルの開発・運用に携わり、リードエンジニアも務めました。",
-    aboutParagraph3: "個人ゲームとして、Google PlayとApp Storeで配信中の『Planet Drop』と、開発中の『Pattern Hero』があります。",
-    aboutParagraph4: "普段の業務では、中国語・日本語・英語を使ってチームメンバーとコミュニケーションを取っています。",
-    workTitle: "作品",
-    workIntro: "商業ゲームの開発実績と個人ゲーム作品。",
-    personalKicker: "ゲーム",
-    personalTitle: "個人ゲーム",
-    personalIntro: "ゲームプレイ、配信状況、現在の開発状況。",
-    soloProject: "ゲーム",
-    availableNow: "配信中",
-    planetDropSubtitle: "マージパズル",
-    planetDropDescription: "惑星を容器へ落とし、同じ惑星を接触させてより大きな惑星へマージします。落下位置と跳ね方を予測し、限られた空間を管理しながら、サイズ、重力、スコア、特殊効果を変えるローグライク強化を選び、盤面が埋まる前にハイスコアを目指します。",
-    planetDropAlt: "Planet Dropのゲームアイコン",
-    planetDropVideoTitle: "Planet Drop ゲームプレイ動画",
-    planetDropGamePage: "ゲーム紹介",
-    patternHeroSubtitle: "2Dアクションゲーム",
-    patternHeroDescription: "ルーレットでそのランの戦闘能力を選び、リアルタイムのアクションステージへ進みます。獲得した能力に合わせて移動と攻撃を調整し、ピクセルアートの戦闘で敵に対応します。",
-    gameplayTagsLabel: "ゲームプレイの特徴",
-    planetTag1: "物理マージ",
-    planetTag2: "スペース管理",
-    planetTag3: "ローグライク強化",
-    planetTag4: "ハイスコア挑戦",
-    patternTag1: "リアルタイム戦闘",
-    patternTag2: "ルーレット選択",
-    patternTag3: "能力の組み合わせ",
-    patternTag4: "ピクセルアートステージ",
-    patternHeroAlt: "Pattern Heroのゲームアイコン",
-    patternHeroVideoTitle: "Pattern Hero ゲームプレイ動画",
-    watchDemo: "デモを見る",
-    professionalKicker: "参加作品",
-    professionalTitle: "開発に携わったゲーム",
-    professionalIntro: "コアゲームプレイ、UI、運用機能、開発ツールなどの担当領域を紹介します。",
-    ongoing: "開発中",
-    softLaunch: "ソフトローンチ",
-    released: "リリース済み",
+    navContact: "連絡先",
+    heroFact1: "Limit Break の Unity エンジニア",
+    heroFact2: "2020 年から東京で勤務",
+    heroFact3: "個人開発アプリ 4 本を公開中",
+    heroLead: "チームでモバイルゲームを開発しながら、個人でも企画から公開までアプリを手がけています。",
+    heroCredit: "背景：自作ゲーム Planet Drop の星空",
+    heroCta: "アプリを見る",
+
+    appsTitle: "公開中の<br>アプリ",
+    appsIndexLabel: "アプリ一覧",
+    pdShort: "ゲーム",
+    pdKind: "マージパズルゲーム · iOS・Android",
+    pdText: "惑星を落とし、同じ惑星同士を合体させて大きくしていくパズル。盤面が埋まる前に、サイズ・重力・スコアを変えるローグライク強化を選びます。",
+    pdDate: "2026 年 8 月 24 日リリース",
+    gamePage: "ゲームページ",
+    pdVideoAlt: "Planet Drop のプロモーション動画：惑星が落ちて合体する様子",
+    pdShotAlt: "Planet Drop の強化選択画面（ローグライク強化 3 種）",
+    osName: "推しパス",
+    osShort: "推し活管理",
+    osKind: "推し活管理アプリ · iOS・Android",
+    osText: "推し日数、チケットの当落と入金期限、カレンダー、推し貯金、参戦の思い出をひとつのアプリで管理。アカウント不要で、データは端末内に保存されます。",
+    osDate: "2026 年 11 月 2 日リリース",
+    demoVideo: "デモ動画",
+    osShot1Alt: "推しパスのホーム画面（推して 837 日目）",
+    osShot2Alt: "推しパスのチケット画面（当落と入金期限）",
+    phName: "肉球ハンター",
+    phShort: "猫向けゲーム",
+    phKind: "猫向けタッチゲーム · iPhone・iPad",
+    phText: "走るネズミ、舞う蝶、泳ぐコイ、光の点を猫がタッチして遊ぶゲーム。狩りの最中は広告なし。速度・数・遊び場を猫ごとに調整できます。",
+    phDate: "2026 年 11 月 8 日リリース",
+    phShot1Alt: "肉球ハンター：木の床を走るネズミ",
+    phShot2Alt: "肉球ハンター：睡蓮の間を泳ぐコイ",
+    bbName: "コツコツ家計簿",
+    bbShort: "家計簿",
+    bbKind: "家計簿アプリ · Android",
+    bbText: "端末の中だけで完結する家計簿。よく使う記録はワンタップ、月とカテゴリの予算、今日あといくら使えるかを表示し、JSON で完全バックアップ。18 言語に対応。",
+    bbDate: "Google Play で公開中",
+    bbShot1Alt: "コツコツ家計簿の概要画面（今月の残り予算）",
+    bbShot2Alt: "コツコツ家計簿の入力画面と電卓キー",
+
+    worksTitle: "次の作品",
+    worksCaption: "審査中・開発中の作品",
+    colName: "名前",
+    colKind: "ジャンル",
+    colTech: "開発環境",
+    colDemo: "デモ",
+    groupReview: "App Store 審査中",
+    groupDev: "開発中",
+    iqKind: "仲間はずれ探しパズル",
+    evKind: "旅行の割り勘アプリ",
+    alName: "深淵餌燈",
+    alKind: "深海放置ゲーム",
+    drKind: "育成・コレクション",
+    phrKind: "2D アクション",
+    demo: "デモ動画",
+    worksNote: "審査状況は 2026 年 11 月 9 日時点。",
+
+    creditsTitle: "チームで開発したタイトル",
+    ppAlt: "Puzzle Panic のストア画像：シェフのヒロインとパズル盤面",
+    ppBandSub: "Limit Break、2026",
+    blAlt: "ブルーロック Project: World Champion のキービジュアル",
+    kgAlt: "キングダム 頂天 のキービジュアル",
+    pp2Alt: "Puzzle Panic のストア画像：3 人のシェフとパズル盤面",
+    bandCaption: "画像は各タイトルの App Store ページより。© Limit Break Inc.、Rudel Inc.",
+    ppMeta: "Limit Break · 2026 年 4 月にニュージーランド・オーストラリア・シンガポールでソフトローンチ",
+    ppText: "クライアントエンジニア（Unity）。ゲームプレイとボスシステム、報酬・アウトゲームの導線、UniTask による非同期処理、ユニットテストとデバッグツール、不具合の原因分析を担当。日本・アメリカ・フィリピンのデザイナー、プランナー、QA と日々連携しています。",
+    launchPost: "リリース告知",
+    blMeta: "Rudel · 2022 年リリース",
+    kgMeta: "Rudel · 2024 年リリース",
+    dsMeta: "Rudel",
+    rudelText: "ゲームプレイ、UI、運営系システムの機能開発を、リリースから運営まで担当。",
     officialSite: "公式サイト",
-    watchVideo: "動画を見る",
-    blueLockVideoTitle: "ブルーロック Project: World Champion 動画",
-    kingdomVideoTitle: "キングダム 頂天 動画",
-    puzzleWorkDescription: "国際的なチームで、モバイルパズルゲームのゲームシステム、UI、関連フローを開発しています。",
-    puzzleRoleLabel: "担当職種",
-    puzzleRole: "クライアントエンジニア（Unity）",
-    puzzleResponsibilitiesLabel: "担当領域",
-    puzzleResponsibility1: "インゲーム・ボスシステム",
-    puzzleResponsibility2: "報酬フロー・アウトゲーム機能",
-    puzzleResponsibility3: "UniTaskを用いた非同期処理",
-    puzzleResponsibility4: "Unit Test・デバッグツール開発",
-    puzzleResponsibility5: "原因分析・品質改善",
-    puzzleCollaborationLabel: "チーム連携",
-    puzzleCollaboration1: "デザイナー・プランナー・QAとの仕様調整",
-    puzzleCollaboration2: "日本・米国・フィリピン拠点との連携",
-    puzzleCollaboration3: "日本語・英語・中国語",
-    puzzleTechLabel: "技術",
-    releasedWorkDescription: "ゲームプレイ、UI、運用システムなど、モバイルゲームの機能開発に携わりました。",
-    locationLabel: "所在地",
-    skillsLabel: "主なスキル",
-    skillsValue: "Unity · C# · インゲーム／アウトゲーム開発 · UIアーキテクチャ · 非同期システム · Unit Test · デバッグツール · パフォーマンス最適化",
-    languagesLabel: "言語",
-    languagesValue: "中国語 · 日本語 · 英語",
-    experienceTitle: "職務経歴",
+    trailer: "PV",
+
+    aboutTitle: "プロフィール",
+    factBased: "拠点",
+    factBasedValue: "東京",
+    factLang: "使用言語",
+    factTools: "ツール",
+    aboutText: "東京でモバイルゲームを作って 5 年。チームでも、一人でも。",
+    aboutMore: "コアゲームプレイとボス、アウトゲーム UI、イベント、非同期処理、テスト、チームを速くするツールまで。Rudel では運営中の 3 タイトルに参加しリードエンジニアを担当、現在は Limit Break で Puzzle Panic を開発しています。仕事の外では、自分のアプリを企画からストア公開まで一人で手がけています。",
+    recordTitle: "経歴",
+    experienceTitle: "職歴",
+    lbRole: "Unity エンジニア、Puzzle Panic",
     present: "現在",
-    projectLabel: "プロジェクト",
-    limitBreakDescription: "『Puzzle Panic』のインゲーム領域を主担当とし、ゲーム・ボスロジック、報酬フロー、非同期処理、Unit Test、デバッグツールを開発。日本語・英語・中国語で海外拠点のデザイナー、プランナー、QAと直接連携しています。",
-    limitBreakHighlight1: "ゲーム・ボスシステム",
-    limitBreakHighlight2: "品質、テスト、デバッグツール",
-    limitBreakHighlight3: "多言語でのチーム連携",
-    rudelRole: "Unityエンジニア → リードエンジニア",
-    rudelDescription: "3タイトルの開発・運用に携わり、アウトゲームUI、イベント機能、性能改善、保守性の高い設計を担当。後半は新規プロジェクトのリードエンジニアとして、共通UI・シーン管理基盤、コーディングルール、テンプレートを整備しました。",
-    rudelHighlight1: "アウトゲームUI・イベント機能",
-    rudelHighlight2: "性能改善・リファクタリング",
-    rudelHighlight3: "共通基盤・チームリード",
-    pugnusRole: "ソフトウェアエンジニア",
-    pugnusDescription: "振動センサーを用いた産業設備向け監視ソフトウェアを開発。データ処理・保存、リアルタイム可視化、異常値のスマートフォン・メール通知機能を担当しました。",
-    pugnusHighlight1: "センサーデータの処理・保存",
-    pugnusHighlight2: "リアルタイム可視化",
-    pugnusHighlight3: "スマートフォン・メール通知",
+    rdRole: "Unity エンジニア、のちリードエンジニア",
+    pgRole: "ソフトウェアエンジニア、センサー監視",
     educationTitle: "学歴",
-    nctuName: "国立交通大学",
-    nctuDegree: "情報工学 学士",
+    nctuName: "国立交通大学（台湾）",
+    nctuDegree: "資訊工程学科 学士",
     kindaiName: "近畿大学",
-    kindaiProgram: "交換留学生",
+    kindaiProgram: "交換留学",
+
+    contactSentence: "Unity エンジニアのお仕事、ゲームの協業、小さなアプリのご相談など、お気軽にご連絡ください。",
+    portraitAlt: "白い猫と一緒の Liu Chuan Feng",
     contactTitle: "お問い合わせ",
-    contactDescription: "仕事やコラボレーションのご相談は、LinkedInよりご連絡ください。",
-    footerText: "Unityエンジニア · 東京"
-  }
+    contactNote: "東京 · 日本語・中文・English で返信できます",
+    footWhat: "Liu Chuan Feng、東京の Unity エンジニア",
+    privacy: "プライバシーポリシー",
+  },
 };
 
 const supportedLanguages = ["en", "zh-TW", "ja"];
@@ -312,26 +335,28 @@ function normalizeLanguage(language) {
 function setLanguage(language) {
   const selected = supportedLanguages.includes(language) ? language : "en";
   const dictionary = translations[selected];
+  const fallback = translations.en;
+  const text = (key) => dictionary[key] ?? fallback[key];
 
   document.documentElement.lang = selected;
+  if (text("pageTitle")) document.title = text("pageTitle");
+
   document.querySelectorAll("[data-i18n]").forEach((element) => {
-    const key = element.dataset.i18n;
-    if (dictionary[key]) element.textContent = dictionary[key];
+    const value = text(element.dataset.i18n);
+    if (value) element.textContent = value;
   });
-
+  // Only strings from the dictionary above, never user input.
+  document.querySelectorAll("[data-i18n-html]").forEach((element) => {
+    const value = text(element.dataset.i18nHtml);
+    if (value) element.innerHTML = value;
+  });
   document.querySelectorAll("[data-i18n-alt]").forEach((element) => {
-    const key = element.dataset.i18nAlt;
-    if (dictionary[key]) element.alt = dictionary[key];
+    const value = text(element.dataset.i18nAlt);
+    if (value) element.alt = value;
   });
-
-  document.querySelectorAll("[data-i18n-title]").forEach((element) => {
-    const key = element.dataset.i18nTitle;
-    if (dictionary[key]) element.title = dictionary[key];
-  });
-
   document.querySelectorAll("[data-i18n-aria]").forEach((element) => {
-    const key = element.dataset.i18nAria;
-    if (dictionary[key]) element.setAttribute("aria-label", dictionary[key]);
+    const value = text(element.dataset.i18nAria);
+    if (value) element.setAttribute("aria-label", value);
   });
 
   document.querySelectorAll("[data-lang]").forEach((button) => {
@@ -348,72 +373,152 @@ function setLanguage(language) {
 }
 
 function getInitialLanguage() {
+  const fromUrl = new URLSearchParams(window.location.search).get("lang");
+  if (fromUrl) return normalizeLanguage(fromUrl);
   try {
     const saved = window.localStorage.getItem("portfolio-language");
     if (saved && supportedLanguages.includes(saved)) return saved;
   } catch {
-    // Fall back to browser language.
+    // Fall back to the browser language.
   }
-
   return normalizeLanguage(navigator.languages?.[0] || navigator.language);
 }
 
-function loadTwitterWidgets() {
-  const embed = document.querySelector(".puzzle-social-embed");
-  if (!embed) return;
+const reduceMotion = () => window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  const loadEmbed = () => window.twttr?.widgets?.load(embed);
-  const existingScript = document.querySelector('script[src="https://platform.x.com/widgets.js"]');
-  if (existingScript) {
-    if (window.twttr?.widgets) loadEmbed();
-    else existingScript.addEventListener("load", loadEmbed, { once: true });
-    return;
+/* Entrances: the parts of each section rise in order, once. */
+function initializeReveals() {
+  const hero = [".hero-name span", ".hero-facts li", ".hero-lead", ".hero-foot > *"];
+  document.querySelectorAll(hero.join(",")).forEach((element, index) => {
+    element.style.setProperty("--i", String(index));
+  });
+
+  const parts = [
+    ".lineup tr", ".works-note",
+    ".band-panel", ".band-caption", ".credit",
+    ".facts > div", ".about-text", ".about-more", ".record-word", ".record",
+    ".contact-sentence", ".contact-portrait", ".contact-links", ".foot > *",
+  ];
+  const items = [...document.querySelectorAll(parts.join(","))];
+  if (reduceMotion() || !("IntersectionObserver" in window)) return;
+  items.forEach((element) => element.setAttribute("data-reveal", ""));
+
+  const observer = new IntersectionObserver((entries) => {
+    entries
+      .filter((entry) => entry.isIntersecting)
+      .map((entry) => entry.target)
+      .sort((a, b) => (a.compareDocumentPosition(b) & Node.DOCUMENT_POSITION_FOLLOWING ? -1 : 1))
+      .forEach((element, index) => {
+        element.style.setProperty("--i", String(Math.min(index, 8)));
+        element.classList.add("is-in");
+        observer.unobserve(element);
+      });
+  }, { rootMargin: "0px 0px -10% 0px", threshold: 0.08 });
+  items.forEach((element) => observer.observe(element));
+
+  // Never leave anything hidden if the observer misses it.
+  window.setTimeout(() => {
+    items.forEach((element) => {
+      const rect = element.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom > 0) element.classList.add("is-in");
+    });
+  }, 1600);
+}
+
+/* The app stage: 0.7 of a viewport of scroll per app on wide screens; tap a name to jump.
+   Keep STEP in sync with the .apps height in home.css. */
+const STEP = 0.7;
+
+function initializeApps() {
+  const section = document.querySelector(".apps");
+  if (!section) return;
+  const apps = [...section.querySelectorAll(".app")];
+  const buttons = [...section.querySelectorAll("[data-go]")];
+  const wide = window.matchMedia("(min-width: 900px)");
+  let current = 0;
+  let previousTimer = 0;
+  let ticking = false;
+
+  const videos = [...section.querySelectorAll("video")];
+  if (reduceMotion()) videos.forEach((video) => { video.controls = true; });
+
+  function syncVideos() {
+    videos.forEach((video) => {
+      const app = video.closest(".app");
+      const rect = video.getBoundingClientRect();
+      const visible = rect.bottom > 0 && rect.top < window.innerHeight;
+      const shouldPlay = !reduceMotion() && visible && (!wide.matches || app.classList.contains("is-current"));
+      if (shouldPlay && video.paused) {
+        video.preload = "auto";
+        video.play().catch(() => {});
+      } else if (!shouldPlay && !video.paused) {
+        video.pause();
+      }
+    });
   }
 
-  const script = document.createElement("script");
-  script.src = "https://platform.x.com/widgets.js";
-  script.async = true;
-  script.charset = "utf-8";
-  script.addEventListener("load", loadEmbed, { once: true });
-  document.head.appendChild(script);
+  function show(index) {
+    if (index === current && apps[index].classList.contains("is-current")) return;
+    apps.forEach((app) => app.classList.remove("is-prev"));
+    apps[current].classList.add("is-prev");
+    apps.forEach((app, i) => app.classList.toggle("is-current", i === index));
+    buttons.forEach((button, i) => {
+      if (i === index) button.setAttribute("aria-current", "true");
+      else button.removeAttribute("aria-current");
+    });
+    current = index;
+    window.clearTimeout(previousTimer);
+    previousTimer = window.setTimeout(() => apps.forEach((app) => app.classList.remove("is-prev")), 950);
+  }
+
+  function update() {
+    ticking = false;
+    if (wide.matches) {
+      const top = section.getBoundingClientRect().top;
+      const step = window.innerHeight * STEP;
+      const index = Math.max(0, Math.min(apps.length - 1, Math.floor((-top + step * 0.5) / step)));
+      show(index);
+    }
+    syncVideos();
+  }
+
+  function request() {
+    if (!ticking) {
+      ticking = true;
+      window.requestAnimationFrame(update);
+    }
+  }
+
+  buttons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const index = Number(button.dataset.go);
+      const top = section.getBoundingClientRect().top + window.scrollY + index * window.innerHeight * STEP;
+      window.scrollTo({ top: top + 2, behavior: reduceMotion() ? "auto" : "smooth" });
+    });
+  });
+
+  window.addEventListener("scroll", request, { passive: true });
+  window.addEventListener("resize", request, { passive: true });
+  wide.addEventListener("change", request);
+  update();
 }
 
 function initializePortfolio() {
-  if (!document.querySelector(".site-header")) return;
+  if (!document.querySelector(".home")) return;
 
   document.querySelectorAll("[data-lang]").forEach((button) => {
     button.addEventListener("click", () => setLanguage(button.dataset.lang));
   });
 
   const currentYear = document.getElementById("current-year");
-  if (currentYear) currentYear.textContent = new Date().getFullYear();
-
-  const revealItems = document.querySelectorAll(".section-reveal");
-  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  if (reduceMotion || !("IntersectionObserver" in window)) {
-    revealItems.forEach((item) => item.classList.add("is-visible"));
-  } else {
-    try {
-      const revealObserver = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.intersectionRatio >= 0.12) {
-            entry.target.classList.add("is-visible");
-            return;
-          }
-
-          if (!entry.isIntersecting) {
-            entry.target.classList.remove("is-visible");
-          }
-        });
-      }, { threshold: [0, 0.12], rootMargin: "0px 0px -8% 0px" });
-      revealItems.forEach((item) => revealObserver.observe(item));
-    } catch {
-      revealItems.forEach((item) => item.classList.add("is-visible"));
-    }
-  }
+  if (currentYear) currentYear.textContent = String(new Date().getFullYear());
 
   setLanguage(getInitialLanguage());
-  loadTwitterWidgets();
+  initializeReveals();
+  initializeApps();
 }
 
-if (typeof document !== "undefined") initializePortfolio();
+if (typeof document !== "undefined") {
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", initializePortfolio, { once: true });
+  else initializePortfolio();
+}
