@@ -4,19 +4,27 @@ const translations = {
   en: {
     pageTitle: "Liu Chuan Feng | Unity Engineer, Tokyo",
     skip: "Skip to content",
-    navApps: "Apps",
     navWork: "Work",
     navAbout: "About",
     navContact: "Contact",
     heroLead: "Unity engineer in Tokyo. I build games at Limit Break, and make my own apps on the side.",
     heroCta: "Message me on LinkedIn",
-    iconsLabel: "My apps",
-    iconsNote: "Bright icons are live on the App Store or Google Play. Tap one to read about it.",
-    statusReview: "In review",
-    statusDev: "In development",
 
     appsTitle: "Apps I’ve released",
-    appsIntro: "Each one planned, built, published and promoted by me alone.",
+    appsIntro: "Four apps, each planned, built, published and promoted by me alone.",
+    navGames: "Games",
+    navTools: "Tools",
+    phoneLabel: "My phone with the apps I’ve released",
+    phoneHint: "Tap an app on the phone to open it.",
+    phoneHome: "Back to the home screen",
+    widgetCity: "Tokyo",
+    moreAbout: "Read about it",
+    phCatchHint: "Catch the light, like a cat would.",
+    phCaught: "Caught",
+    catGames: "Games",
+    catGamesText: "One for people, one for cats.",
+    catTools: "Tools",
+    catToolsText: "For everyday life. No account, and the data stays on the phone.",
     pdKind: "Merge puzzle game for iOS and Android",
     pdText: "Drop planets into the jar and merge matching ones into bigger worlds. Before the board fills up, pick roguelike upgrades that change size, gravity and score.",
     pdDate: "Released 24 August 2026",
@@ -47,14 +55,6 @@ const translations = {
     bbShot2Alt: "Bit by Bit entry screen with the calculator keypad",
     bbShot3Alt: "Bit by Bit calendar of daily spending",
 
-    nextTitle: "Coming next",
-    iqKind: "Spot the odd one out among moving shapes",
-    evKind: "Split trip expenses in 12 currencies",
-    alName: "AbyssLure",
-    alKind: "Idle game set in a deep, dark sea",
-    drKind: "Raise and collect sea creatures in a gothic lab",
-    phrKind: "2D action with abilities picked by roulette",
-    nextNote: "Store status as of 9 November 2026.",
 
     workTitle: "Games I’ve worked on",
     workIntro: "Mobile games built with teams in Tokyo.",
@@ -101,19 +101,27 @@ const translations = {
   "zh-TW": {
     pageTitle: "Liu Chuan Feng | Unity 工程師・東京",
     skip: "跳到主要內容",
-    navApps: "App",
     navWork: "參與作品",
     navAbout: "關於我",
     navContact: "聯絡",
     heroLead: "東京的 Unity 工程師。在 Limit Break 開發遊戲，也用自己的時間做 App。",
     heroCta: "在 LinkedIn 聯絡我",
-    iconsLabel: "我的 App",
-    iconsNote: "亮著的圖示代表已在 App Store 或 Google Play 上架。點圖示看介紹。",
-    statusReview: "審查中",
-    statusDev: "開發中",
 
     appsTitle: "已上架的 App",
-    appsIntro: "每一款都由我一個人企劃、開發、上架與宣傳。",
+    appsIntro: "四款 App，每一款都由我一個人企劃、開發、上架與宣傳。",
+    navGames: "遊戲",
+    navTools: "工具",
+    phoneLabel: "我的手機，裡面是已上架的 App",
+    phoneHint: "點手機上的 App，打開看看。",
+    phoneHome: "回到主畫面",
+    widgetCity: "東京",
+    moreAbout: "看介紹",
+    phCatchHint: "像貓一樣，抓住那個光點。",
+    phCaught: "抓到",
+    catGames: "遊戲",
+    catGamesText: "一款給人玩，一款給貓玩。",
+    catTools: "工具",
+    catToolsText: "日常用的小工具。不用註冊，資料只存在手機裡。",
     pdKind: "合成益智遊戲，支援 iOS 與 Android",
     pdText: "把行星丟進容器，相同的行星會合成更大的星球。在盤面塞滿前，選擇能改變大小、重力與分數的 Roguelike 強化。",
     pdDate: "2026 年 8 月 24 日上架",
@@ -144,14 +152,6 @@ const translations = {
     bbShot2Alt: "一點一滴記帳本的記帳畫面與計算機鍵盤",
     bbShot3Alt: "一點一滴記帳本的每日支出行事曆",
 
-    nextTitle: "接下來的作品",
-    iqKind: "在一群動態圖形中找出不一樣的那個",
-    evKind: "旅行分帳，支援 12 種貨幣",
-    alName: "深淵餌燈",
-    alKind: "以黑暗深海為舞台的放置遊戲",
-    drKind: "在哥德風海洋研究室培育、收集海洋生物",
-    phrKind: "用輪盤抽能力的 2D 動作遊戲",
-    nextNote: "審查狀態以 2026 年 11 月 9 日為準。",
 
     workTitle: "參與開發的遊戲",
     workIntro: "在東京與團隊一起開發的手機遊戲。",
@@ -198,19 +198,27 @@ const translations = {
   ja: {
     pageTitle: "Liu Chuan Feng | Unity エンジニア・東京",
     skip: "本文へスキップ",
-    navApps: "アプリ",
     navWork: "参加タイトル",
     navAbout: "プロフィール",
     navContact: "連絡先",
     heroLead: "東京の Unity エンジニア。Limit Break でゲームを開発しながら、個人でもアプリを作っています。",
     heroCta: "LinkedIn で連絡する",
-    iconsLabel: "自作アプリ",
-    iconsNote: "明るいアイコンは App Store または Google Play で公開中です。タップすると紹介に移動します。",
-    statusReview: "審査中",
-    statusDev: "開発中",
 
     appsTitle: "公開中のアプリ",
-    appsIntro: "どれも企画・開発・公開・宣伝まで一人で手がけました。",
+    appsIntro: "4 本のアプリ。どれも企画・開発・公開・宣伝まで一人で手がけました。",
+    navGames: "ゲーム",
+    navTools: "ツール",
+    phoneLabel: "公開中のアプリが入った私のスマホ",
+    phoneHint: "スマホのアプリをタップして開いてみてください。",
+    phoneHome: "ホーム画面に戻る",
+    widgetCity: "東京",
+    moreAbout: "紹介を見る",
+    phCatchHint: "猫になったつもりで、光をつかまえて。",
+    phCaught: "キャッチ",
+    catGames: "ゲーム",
+    catGamesText: "人が遊ぶものと、猫が遊ぶもの。",
+    catTools: "ツール",
+    catToolsText: "毎日の暮らしに。登録不要で、データはスマホの中だけに残ります。",
     pdKind: "マージパズルゲーム（iOS・Android）",
     pdText: "惑星を落とし、同じ惑星同士を合体させて大きくしていくパズル。盤面が埋まる前に、サイズ・重力・スコアを変えるローグライク強化を選びます。",
     pdDate: "2026 年 8 月 24 日リリース",
@@ -241,14 +249,6 @@ const translations = {
     bbShot2Alt: "コツコツ家計簿の入力画面と電卓キー",
     bbShot3Alt: "コツコツ家計簿の日別支出カレンダー",
 
-    nextTitle: "次の作品",
-    iqKind: "動く図形の中から仲間はずれを探すパズル",
-    evKind: "12 通貨に対応した旅行の割り勘アプリ",
-    alName: "深淵餌燈",
-    alKind: "暗い深海が舞台の放置ゲーム",
-    drKind: "ゴシックな海の研究室で生き物を育てて集める",
-    phrKind: "ルーレットで能力を選ぶ 2D アクション",
-    nextNote: "審査状況は 2026 年 11 月 9 日時点です。",
 
     workTitle: "参加したタイトル",
     workIntro: "東京でチームと一緒に開発したモバイルゲームです。",
@@ -347,11 +347,12 @@ function getInitialLanguage() {
   return normalizeLanguage(navigator.languages?.[0] || navigator.language);
 }
 
-/* The Planet Drop clip plays only while it is on screen, and never under reduced motion. */
+const reduceMotion = () => window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+/* The Planet Drop clip in its band plays only while it is on screen, and never under reduced motion. */
 function initializeVideos() {
-  const videos = document.querySelectorAll("video");
-  const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  if (reduce || !("IntersectionObserver" in window)) {
+  const videos = document.querySelectorAll("video[data-autoplay]");
+  if (reduceMotion() || !("IntersectionObserver" in window)) {
     videos.forEach((video) => { video.controls = true; });
     return;
   }
@@ -368,18 +369,194 @@ function initializeVideos() {
   videos.forEach((video) => observer.observe(video));
 }
 
+/* Tokyo time on the phone's status bar and clock widget. */
+function initializeClock() {
+  const tick = () => {
+    const now = new Date();
+    const lang = document.documentElement.lang || "en";
+    const time = new Intl.DateTimeFormat("en-GB", { timeZone: "Asia/Tokyo", hour: "numeric", minute: "2-digit", hour12: false }).format(now);
+    const date = new Intl.DateTimeFormat(lang, { timeZone: "Asia/Tokyo", weekday: "long", month: "long", day: "numeric" }).format(now);
+    document.querySelectorAll("[data-clock]").forEach((el) => { el.textContent = time; });
+    document.querySelectorAll("[data-date]").forEach((el) => { el.textContent = date; });
+  };
+  tick();
+  setInterval(tick, 15000);
+  return tick;
+}
+
+/* Paw Hunter's laser dot: it wanders, darts away from a finger, and can be caught. */
+function createLaser(canvas, counter) {
+  const ctx = canvas.getContext("2d");
+  let w = 0, h = 0, raf = 0, last = 0, caught = 0;
+  const dot = { x: 0, y: 0, vx: 0, vy: 0, tx: 0, ty: 0 };
+  const pointer = { x: -999, y: -999 };
+  const bursts = [];
+  const pick = () => { dot.tx = w * (0.12 + Math.random() * 0.76); dot.ty = h * (0.3 + Math.random() * 0.55); };
+  function size() {
+    const r = Math.min(devicePixelRatio || 1, 2);
+    w = canvas.clientWidth; h = canvas.clientHeight;
+    canvas.width = Math.round(w * r); canvas.height = Math.round(h * r);
+    ctx.setTransform(r, 0, 0, r, 0, 0);
+    if (!dot.x) { dot.x = w / 2; dot.y = h * 0.6; pick(); }
+  }
+  function frame(now) {
+    const dt = Math.min((now - (last || now)) / 16.7, 3); last = now;
+    let ax = (dot.tx - dot.x) * 0.004, ay = (dot.ty - dot.y) * 0.004;
+    const dx = dot.x - pointer.x, dy = dot.y - pointer.y, d = Math.hypot(dx, dy);
+    if (d < 80 && d > 0) { ax += (dx / d) * 1.1 * (1 - d / 80); ay += (dy / d) * 1.1 * (1 - d / 80); }
+    dot.vx = (dot.vx + ax * dt) * 0.9; dot.vy = (dot.vy + ay * dt) * 0.9;
+    dot.x = Math.max(14, Math.min(w - 14, dot.x + dot.vx * dt));
+    dot.y = Math.max(h * 0.25, Math.min(h - 70, dot.y + dot.vy * dt));
+    if (Math.hypot(dot.tx - dot.x, dot.ty - dot.y) < 16 || Math.random() < 0.006) pick();
+    ctx.clearRect(0, 0, w, h);
+    for (let i = bursts.length - 1; i >= 0; i--) {
+      const b = bursts[i]; b.t += dt;
+      const k = b.t / 40; if (k >= 1) { bursts.splice(i, 1); continue; }
+      ctx.strokeStyle = `rgba(255,120,150,${1 - k})`; ctx.lineWidth = 2;
+      ctx.beginPath(); ctx.arc(b.x, b.y, 8 + k * 46, 0, Math.PI * 2); ctx.stroke();
+    }
+    const g = ctx.createRadialGradient(dot.x, dot.y, 0, dot.x, dot.y, 22);
+    g.addColorStop(0, "rgba(255,255,255,1)"); g.addColorStop(0.18, "rgba(255,40,60,1)"); g.addColorStop(1, "rgba(255,0,40,0)");
+    ctx.fillStyle = g; ctx.beginPath(); ctx.arc(dot.x, dot.y, 22, 0, Math.PI * 2); ctx.fill();
+    raf = requestAnimationFrame(frame);
+  }
+  const local = (e) => { const r = canvas.getBoundingClientRect(); return [e.clientX - r.left, e.clientY - r.top]; };
+  canvas.addEventListener("pointermove", (e) => { [pointer.x, pointer.y] = local(e); });
+  canvas.addEventListener("pointerleave", () => { pointer.x = pointer.y = -999; });
+  canvas.addEventListener("pointerdown", (e) => {
+    const [x, y] = local(e);
+    if (Math.hypot(dot.x - x, dot.y - y) < 34) {
+      caught += 1; counter.textContent = String(caught);
+      bursts.push({ x: dot.x, y: dot.y, t: 0 });
+      dot.x = w * (0.15 + Math.random() * 0.7); dot.y = h * (0.35 + Math.random() * 0.45); pick();
+      navigator.vibrate?.(15);
+    } else {
+      [pointer.x, pointer.y] = [x, y];
+    }
+  });
+  return {
+    start() { size(); last = 0; cancelAnimationFrame(raf); raf = requestAnimationFrame(frame); },
+    stop() { cancelAnimationFrame(raf); raf = 0; },
+  };
+}
+
+/* The phone in the hero: tap an icon and the app opens out of it, iOS-style. */
+function initializePhone() {
+  const phone = document.querySelector(".phone");
+  if (!phone) return;
+  const screen = phone.querySelector(".phone-screen");
+  const homebar = phone.querySelector(".phone-homebar");
+  const stage = phone.closest(".screen");
+  const laserView = phone.querySelector('[data-view="paw-hunter"]');
+  const laser = createLaser(laserView.querySelector("canvas"), laserView.querySelector("[data-caught]"));
+  let open = null, slideTimer = 0, launcher = null;
+
+  const animate = (el, frames, ms) => (reduceMotion() || !el.animate ? Promise.resolve() : el.animate(frames, { duration: ms, easing: "cubic-bezier(0.22, 1, 0.36, 1)" }).finished.catch(() => {}));
+  const originOf = (icon) => {
+    const a = icon.getBoundingClientRect(), b = screen.getBoundingClientRect();
+    return `${a.left + a.width / 2 - b.left}px ${a.top + a.height / 2 - b.top}px`;
+  };
+  const scale = (icon) => icon.getBoundingClientRect().width / screen.getBoundingClientRect().width;
+
+  function startView(view) {
+    const video = view.querySelector("video");
+    if (video) { video.preload = "auto"; video.currentTime = 0; video.play().catch(() => { video.controls = true; }); }
+    const slides = [...view.querySelectorAll(".slides img")];
+    if (slides.length) {
+      let i = 0;
+      slides.forEach((img, n) => { img.loading = "eager"; img.classList.toggle("is-current", n === 0); });
+      if (!reduceMotion()) slideTimer = setInterval(() => {
+        slides[i].classList.remove("is-current"); i = (i + 1) % slides.length; slides[i].classList.add("is-current");
+      }, 2400);
+    }
+    if (view === laserView) laser.start();
+  }
+  function stopView(view) {
+    view.querySelector("video")?.pause();
+    clearInterval(slideTimer);
+    if (view === laserView) laser.stop();
+  }
+
+  async function openApp(name, icon) {
+    if (open) return;
+    const view = phone.querySelector(`[data-view="${name}"]`);
+    if (!view) return;
+    open = view; launcher = icon;
+    phone.classList.remove("is-tracking");
+    ["--ry", "--rx", "--gx"].forEach((p) => phone.style.removeProperty(p));
+    phone.classList.add("is-open");
+    view.hidden = false; homebar.hidden = false;
+    startView(view);
+    view.style.transformOrigin = originOf(icon);
+    await animate(view, [
+      { transform: `scale(${scale(icon)})`, borderRadius: "40%", opacity: 0.4 },
+      { transform: "scale(1)", borderRadius: "0%", opacity: 1 },
+    ], 520);
+    homebar.focus({ preventScroll: true });
+  }
+  async function closeApp(focusIcon = true) {
+    if (!open) return;
+    const view = open; open = null;
+    phone.classList.remove("is-open");
+    await animate(view, [
+      { transform: "scale(1)", borderRadius: "0%", opacity: 1 },
+      { transform: `scale(${scale(launcher)})`, borderRadius: "40%", opacity: 0 },
+    ], 380);
+    stopView(view);
+    view.hidden = true; homebar.hidden = true;
+    if (focusIcon) launcher?.focus({ preventScroll: true });
+  }
+
+  phone.querySelectorAll(".launch").forEach((icon) => {
+    icon.setAttribute("role", "button");
+    icon.addEventListener("click", (event) => { event.preventDefault(); openApp(icon.dataset.app, icon); });
+  });
+  homebar.addEventListener("click", () => closeApp());
+  phone.querySelectorAll(".phone-sheet a").forEach((link) => link.addEventListener("click", () => closeApp(false)));
+  document.addEventListener("keydown", (event) => { if (event.key === "Escape") closeApp(); });
+  // Swipe up from the bottom edge goes home, as on a real phone.
+  let startY = null;
+  screen.addEventListener("pointerdown", (e) => { const r = screen.getBoundingClientRect(); startY = e.clientY > r.bottom - 48 ? e.clientY : null; });
+  screen.addEventListener("pointerup", (e) => { if (startY !== null && startY - e.clientY > 40) closeApp(); startY = null; });
+
+  // The phone leans toward the pointer.
+  if (!reduceMotion() && window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
+    let frame = 0;
+    stage.addEventListener("pointermove", (e) => {
+      if (frame) return;
+      frame = requestAnimationFrame(() => {
+        frame = 0;
+        if (phone.classList.contains("is-open")) return;
+        const r = stage.getBoundingClientRect();
+        const x = (e.clientX - r.left) / r.width - 0.5, y = (e.clientY - r.top) / r.height - 0.5;
+        phone.classList.add("is-tracking");
+        phone.style.setProperty("--ry", `${-14 + x * 22}deg`);
+        phone.style.setProperty("--rx", `${6 - y * 14}deg`);
+        phone.style.setProperty("--gx", `${30 + x * 60}%`);
+      });
+    });
+    stage.addEventListener("pointerleave", () => {
+      phone.classList.remove("is-tracking");
+      ["--ry", "--rx", "--gx"].forEach((p) => phone.style.removeProperty(p));
+    });
+  }
+}
+
 function initializePortfolio() {
   if (!document.querySelector(".home")) return;
+  const refreshClock = initializeClock();
 
   document.querySelectorAll("[data-lang]").forEach((button) => {
-    button.addEventListener("click", () => setLanguage(button.dataset.lang));
+    button.addEventListener("click", () => { setLanguage(button.dataset.lang); refreshClock(); });
   });
 
   const currentYear = document.getElementById("current-year");
   if (currentYear) currentYear.textContent = String(new Date().getFullYear());
 
   setLanguage(getInitialLanguage());
+  refreshClock();
   initializeVideos();
+  initializePhone();
 }
 
 if (typeof document !== "undefined") {

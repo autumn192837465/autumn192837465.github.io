@@ -23,7 +23,8 @@
     <nav class="bar" aria-label="Primary">
       <a class="bar-name" href="#top">Liu Chuan Feng</a>
       <div class="bar-links">
-        <a href="#apps" data-i18n="navApps">Apps</a>
+        <a href="#games" data-i18n="navGames">Games</a>
+        <a href="#tools" data-i18n="navTools">Tools</a>
         <a href="#work" data-i18n="navWork">Work</a>
         <a href="#about" data-i18n="navAbout">About</a>
         <a href="#contact" data-i18n="navContact">Contact</a>
@@ -37,45 +38,73 @@
 
     <div class="screen-inner">
       <div class="screen-intro">
-        <h1 class="screen-name">Liu Chuan Feng</h1>
+        <h1 class="screen-name">Liu Chuan<br>Feng</h1>
         <p class="screen-lead" data-i18n="heroLead">Unity engineer in Tokyo. I build games at Limit Break, and make my own apps on the side.</p>
         <div class="screen-actions">
           <a class="button" href="https://www.linkedin.com/in/%E5%B7%9D%E6%A5%93-%E5%8A%89-a3a732196/?locale=zh" target="_blank" rel="noreferrer" data-i18n="heroCta">Message me on LinkedIn</a>
           <a class="screen-link" href="https://github.com/autumn192837465" target="_blank" rel="noreferrer">GitHub</a>
         </div>
+        <p class="phone-hint" data-i18n="phoneHint">Tap an app on the phone to open it.</p>
       </div>
 
-      <div class="springboard">
-        <ul class="icons" aria-label="My apps" data-i18n-aria="iconsLabel">
-          <li class="icon" style="--i:0">
-            <a href="#app-planet-drop"><img src="assets/icons/planet-drop.png" width="256" height="256" alt=""><span class="icon-name">Planet Drop</span></a>
-          </li>
-          <li class="icon" style="--i:1">
-            <a href="#app-oshipass"><img src="assets/icons/oshipass.png" width="256" height="256" alt=""><span class="icon-name" data-i18n="osName">Oshipass</span></a>
-          </li>
-          <li class="icon" style="--i:2">
-            <a href="#app-paw-hunter"><img src="assets/icons/paw-hunter.png" width="256" height="256" alt=""><span class="icon-name" data-i18n="phName">Paw Hunter</span></a>
-          </li>
-          <li class="icon" style="--i:3">
-            <a href="#app-bit-by-bit"><img src="assets/icons/kotsukotsu.png" width="256" height="256" alt=""><span class="icon-name" data-i18n="bbName">Bit by Bit</span></a>
-          </li>
-          <li class="icon is-waiting" style="--i:4">
-            <a href="#next"><img src="assets/icons/iq-dare.png" width="256" height="256" alt=""><span class="icon-name">IQ Dare</span><span class="icon-state" data-i18n="statusReview">In review</span></a>
-          </li>
-          <li class="icon is-waiting" style="--i:5">
-            <a href="#next"><img src="assets/icons/evenli.png" width="256" height="256" alt=""><span class="icon-name">Evenli</span><span class="icon-state" data-i18n="statusReview">In review</span></a>
-          </li>
-          <li class="icon is-waiting" style="--i:6">
-            <a href="#next"><img src="assets/icons/abysslure.png" width="256" height="256" alt=""><span class="icon-name" data-i18n="alName">AbyssLure</span><span class="icon-state" data-i18n="statusReview">In review</span></a>
-          </li>
-          <li class="icon is-building" style="--i:7">
-            <a href="#next"><img src="assets/icons/driftling.png" width="256" height="256" alt=""><span class="icon-name">Driftling</span><span class="icon-state" data-i18n="statusDev">In development</span></a>
-          </li>
-          <li class="icon is-building icon-pixel" style="--i:8">
-            <a href="#next"><img src="assets/icons/pattern-hero.png" width="256" height="256" alt=""><span class="icon-name">Pattern Hero</span><span class="icon-state" data-i18n="statusDev">In development</span></a>
-          </li>
-        </ul>
-        <p class="springboard-note" data-i18n="iconsNote">Bright icons are live on the App Store or Google Play. Tap one to read about it.</p>
+      <div class="phone-stage">
+        <div class="phone-glow" aria-hidden="true"></div>
+        <div class="phone" role="group" aria-label="My phone with the apps I’ve released" data-i18n-aria="phoneLabel">
+          <div class="phone-screen">
+            <div class="phone-status" aria-hidden="true">
+              <span class="phone-clock" data-clock>9:41</span>
+              <span class="phone-island"></span>
+              <span class="phone-glyphs"><i></i><i></i><i></i><b></b></span>
+            </div>
+
+            <div class="phone-home">
+              <p class="phone-widget">
+                <span class="widget-city" data-i18n="widgetCity">Tokyo</span>
+                <span class="widget-time" data-clock>9:41</span>
+                <span class="widget-date" data-date></span>
+              </p>
+              <div class="folder">
+                <p class="folder-name" data-i18n="catGames">Games</p>
+                <ul>
+                  <li><a class="launch" href="#app-planet-drop" data-app="planet-drop"><img src="assets/icons/planet-drop.png" width="256" height="256" alt=""><span>Planet Drop</span></a></li>
+                  <li><a class="launch" href="#app-paw-hunter" data-app="paw-hunter"><img src="assets/icons/paw-hunter.png" width="256" height="256" alt=""><span data-i18n="phName">Paw Hunter</span></a></li>
+                </ul>
+              </div>
+              <div class="folder">
+                <p class="folder-name" data-i18n="catTools">Tools</p>
+                <ul>
+                  <li><a class="launch" href="#app-oshipass" data-app="oshipass"><img src="assets/icons/oshipass.png" width="256" height="256" alt=""><span data-i18n="osName">Oshipass</span></a></li>
+                  <li><a class="launch" href="#app-bit-by-bit" data-app="bit-by-bit"><img src="assets/icons/kotsukotsu.png" width="256" height="256" alt=""><span data-i18n="bbName">Bit by Bit</span></a></li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="phone-app" data-view="planet-drop" style="--app-bg:#1d1047" hidden>
+              <video src="assets/video/planet-drop-loop.mp4" poster="assets/video/planet-drop-poster.jpg" muted loop playsinline preload="none" aria-hidden="true"></video>
+              <div class="phone-sheet"><img src="assets/icons/planet-drop.png" width="256" height="256" alt=""><p><strong>Planet Drop</strong><a href="#app-planet-drop" data-i18n="moreAbout">Read about it</a></p></div>
+            </div>
+            <div class="phone-app" data-view="paw-hunter" style="--app-bg:#151a33" hidden>
+              <canvas class="laser" aria-hidden="true"></canvas>
+              <p class="laser-hint" data-i18n="phCatchHint">Catch the light, like a cat would.</p>
+              <p class="laser-count"><span data-i18n="phCaught">Caught</span> <span data-caught>0</span></p>
+              <div class="phone-sheet"><img src="assets/icons/paw-hunter.png" width="256" height="256" alt=""><p><strong data-i18n="phName">Paw Hunter</strong><a href="#app-paw-hunter" data-i18n="moreAbout">Read about it</a></p></div>
+            </div>
+            <div class="phone-app" data-view="oshipass" style="--app-bg:#f6a9c6" hidden>
+              <div class="slides" aria-hidden="true">
+                <img src="assets/apps/oshipass-1.webp" alt="" loading="lazy"><img src="assets/apps/oshipass-2.webp" alt="" loading="lazy"><img src="assets/apps/oshipass-3.webp" alt="" loading="lazy"><img src="assets/apps/oshipass-4.webp" alt="" loading="lazy">
+              </div>
+              <div class="phone-sheet"><img src="assets/icons/oshipass.png" width="256" height="256" alt=""><p><strong data-i18n="osName">Oshipass</strong><a href="#app-oshipass" data-i18n="moreAbout">Read about it</a></p></div>
+            </div>
+            <div class="phone-app" data-view="bit-by-bit" style="--app-bg:#e46b55" hidden>
+              <div class="slides" aria-hidden="true">
+                <img src="assets/apps/kotsukotsu-1.webp" alt="" loading="lazy"><img src="assets/apps/kotsukotsu-2.webp" alt="" loading="lazy"><img src="assets/apps/kotsukotsu-3.webp" alt="" loading="lazy"><img src="assets/apps/kotsukotsu-4.webp" alt="" loading="lazy">
+              </div>
+              <div class="phone-sheet"><img src="assets/icons/kotsukotsu.png" width="256" height="256" alt=""><p><strong data-i18n="bbName">Bit by Bit</strong><a href="#app-bit-by-bit" data-i18n="moreAbout">Read about it</a></p></div>
+            </div>
+
+            <button class="phone-homebar" type="button" aria-label="Back to the home screen" data-i18n-aria="phoneHome" hidden></button>
+          </div>
+        </div>
       </div>
     </div>
   </header>
@@ -85,13 +114,17 @@
     <section class="apps" id="apps" aria-labelledby="apps-title">
       <div class="section-head">
         <h2 id="apps-title" data-i18n="appsTitle">Apps I’ve released</h2>
-        <p data-i18n="appsIntro">Each one planned, built, published and promoted by me alone.</p>
+        <p data-i18n="appsIntro">Four apps, each planned, built, published and promoted by me alone.</p>
       </div>
 
-      <article class="app" id="app-planet-drop" aria-labelledby="t-pd">
+      <div class="category" id="games" aria-labelledby="cat-games">
+        <div class="category-head"><h3 id="cat-games" data-i18n="catGames">Games</h3><p data-i18n="catGamesText">One for people, one for cats.</p></div>
+      </div>
+      <article class="app is-planet" id="app-planet-drop" aria-labelledby="t-pd">
+        <div class="app-inner">
         <div class="app-text">
           <img class="app-icon" src="assets/icons/planet-drop.png" width="256" height="256" alt="">
-          <h3 id="t-pd">Planet Drop</h3>
+          <h4 id="t-pd">Planet Drop</h4>
           <p class="app-kind" data-i18n="pdKind">Merge puzzle game for iOS and Android</p>
           <p data-i18n="pdText">Drop planets into the jar and merge matching ones into bigger worlds. Before the board fills up, pick roguelike upgrades that change size, gravity and score.</p>
           <p class="app-date" data-i18n="pdDate">Released 24 August 2026</p>
@@ -102,16 +135,39 @@
           </ul>
         </div>
         <div class="app-shots">
-          <video src="assets/video/planet-drop-loop.mp4" poster="assets/video/planet-drop-poster.jpg" width="540" height="960" muted loop playsinline preload="none" aria-label="Planet Drop promotional video: planets falling and merging" data-i18n-aria="pdVideoAlt"></video>
+          <video src="assets/video/planet-drop-loop.mp4" poster="assets/video/planet-drop-poster.jpg" width="540" height="960" muted loop playsinline preload="none" data-autoplay aria-label="Planet Drop promotional video: planets falling and merging" data-i18n-aria="pdVideoAlt"></video>
           <img src="assets/apps/planet-drop-3.webp" width="718" height="1560" loading="lazy" alt="Planet Drop upgrade choice screen with three roguelike upgrades" data-i18n-alt="pdShotAlt">
           <img src="assets/apps/planet-drop-4.webp" width="718" height="1560" loading="lazy" alt="Planet Drop result screen with the score and stardust reward" data-i18n-alt="pdShot2Alt">
         </div>
+        </div>
       </article>
-
-      <article class="app" id="app-oshipass" aria-labelledby="t-os">
+      <article class="app is-paw" id="app-paw-hunter" aria-labelledby="t-ph">
+        <div class="app-inner">
+        <div class="app-text">
+          <img class="app-icon" src="assets/icons/paw-hunter.png" width="256" height="256" alt="">
+          <h4 id="t-ph" data-i18n="phName">Paw Hunter</h4>
+          <p class="app-kind" data-i18n="phKind">Touch game for cats, on iPhone and iPad</p>
+          <p data-i18n="phText">Mice, butterflies, koi and a dot of light run across the screen for your cat to catch. No ads during the hunt; speed, numbers and playground adjust to each cat.</p>
+          <p class="app-date" data-i18n="phDate">Released 8 November 2026</p>
+          <ul class="app-links">
+            <li><a href="https://apps.apple.com/jp/app/id6826493325" target="_blank" rel="noreferrer">App Store</a></li>
+          </ul>
+        </div>
+        <div class="app-shots">
+          <img src="assets/apps/paw-hunter-1.webp" width="718" height="1560" loading="lazy" alt="Paw Hunter: a mouse running across a wooden floor" data-i18n-alt="phShot1Alt">
+          <img src="assets/apps/paw-hunter-2.webp" width="718" height="1560" loading="lazy" alt="Paw Hunter: a butterfly over grass" data-i18n-alt="phShot3Alt">
+          <img src="assets/apps/paw-hunter-3.webp" width="718" height="1560" loading="lazy" alt="Paw Hunter: a koi swimming between lily pads" data-i18n-alt="phShot2Alt">
+        </div>
+        </div>
+      </article>
+      <div class="category" id="tools" aria-labelledby="cat-tools">
+        <div class="category-head"><h3 id="cat-tools" data-i18n="catTools">Tools</h3><p data-i18n="catToolsText">For everyday life. No account, and the data stays on the phone.</p></div>
+      </div>
+      <article class="app is-oshi" id="app-oshipass" aria-labelledby="t-os">
+        <div class="app-inner">
         <div class="app-text">
           <img class="app-icon" src="assets/icons/oshipass.png" width="256" height="256" alt="">
-          <h3 id="t-os" data-i18n="osName">Oshipass</h3>
+          <h4 id="t-os" data-i18n="osName">Oshipass</h4>
           <p class="app-kind" data-i18n="osKind">Organiser for fans, on iOS and Android</p>
           <p data-i18n="osText">Days since you became a fan, ticket lotteries and payment deadlines, a calendar, savings goals and memories of every show, in one app. No account, and the data stays on the phone.</p>
           <p class="app-date" data-i18n="osDate">Released 2 November 2026</p>
@@ -126,30 +182,13 @@
           <img src="assets/apps/oshipass-2.webp" width="718" height="1560" loading="lazy" alt="Oshipass ticket screen with the lottery result and payment deadline" data-i18n-alt="osShot2Alt">
           <img src="assets/apps/oshipass-4.webp" width="718" height="1560" loading="lazy" alt="Oshipass savings goal for a trip to a concert" data-i18n-alt="osShot3Alt">
         </div>
-      </article>
-
-      <article class="app" id="app-paw-hunter" aria-labelledby="t-ph">
-        <div class="app-text">
-          <img class="app-icon" src="assets/icons/paw-hunter.png" width="256" height="256" alt="">
-          <h3 id="t-ph" data-i18n="phName">Paw Hunter</h3>
-          <p class="app-kind" data-i18n="phKind">Touch game for cats, on iPhone and iPad</p>
-          <p data-i18n="phText">Mice, butterflies, koi and a dot of light run across the screen for your cat to catch. No ads during the hunt; speed, numbers and playground adjust to each cat.</p>
-          <p class="app-date" data-i18n="phDate">Released 8 November 2026</p>
-          <ul class="app-links">
-            <li><a href="https://apps.apple.com/jp/app/id6826493325" target="_blank" rel="noreferrer">App Store</a></li>
-          </ul>
-        </div>
-        <div class="app-shots">
-          <img src="assets/apps/paw-hunter-1.webp" width="718" height="1560" loading="lazy" alt="Paw Hunter: a mouse running across a wooden floor" data-i18n-alt="phShot1Alt">
-          <img src="assets/apps/paw-hunter-2.webp" width="718" height="1560" loading="lazy" alt="Paw Hunter: a butterfly over grass" data-i18n-alt="phShot3Alt">
-          <img src="assets/apps/paw-hunter-3.webp" width="718" height="1560" loading="lazy" alt="Paw Hunter: a koi swimming between lily pads" data-i18n-alt="phShot2Alt">
         </div>
       </article>
-
-      <article class="app" id="app-bit-by-bit" aria-labelledby="t-bb">
+      <article class="app is-bit" id="app-bit-by-bit" aria-labelledby="t-bb">
+        <div class="app-inner">
         <div class="app-text">
           <img class="app-icon" src="assets/icons/kotsukotsu.png" width="256" height="256" alt="">
-          <h3 id="t-bb" data-i18n="bbName">Bit by Bit</h3>
+          <h4 id="t-bb" data-i18n="bbName">Bit by Bit</h4>
           <p class="app-kind" data-i18n="bbKind">Budget book for Android</p>
           <p data-i18n="bbText">A budget book that lives only on the phone: one-tap entries, monthly and category budgets, what you can still spend today, and a full JSON backup. In 18 languages.</p>
           <p class="app-date" data-i18n="bbDate">Available on Google Play</p>
@@ -162,54 +201,8 @@
           <img src="assets/apps/kotsukotsu-2.webp" width="720" height="1280" loading="lazy" alt="Bit by Bit entry screen with the calculator keypad" data-i18n-alt="bbShot2Alt">
           <img src="assets/apps/kotsukotsu-4.webp" width="720" height="1280" loading="lazy" alt="Bit by Bit calendar of daily spending" data-i18n-alt="bbShot3Alt">
         </div>
+        </div>
       </article>
-
-      <div class="next" id="next">
-        <h3 class="next-title" data-i18n="nextTitle">Coming next</h3>
-        <ul class="next-list">
-          <li class="next-item">
-            <img src="assets/icons/iq-dare.png" width="256" height="256" alt="">
-            <div>
-              <p class="next-name">IQ Dare</p>
-              <p data-i18n="iqKind">Spot the odd one out among moving shapes</p>
-              <p class="next-state"><span data-i18n="statusReview">In review</span> <a href="https://drive.google.com/file/d/1B7lXADb7hGCfK8_O23rCXb7NLckP7BJN/view?usp=drive_link" target="_blank" rel="noreferrer" data-i18n="demoVideo">Demo video</a></p>
-            </div>
-          </li>
-          <li class="next-item">
-            <img src="assets/icons/evenli.png" width="256" height="256" alt="">
-            <div>
-              <p class="next-name">Evenli</p>
-              <p data-i18n="evKind">Split trip expenses in 12 currencies</p>
-              <p class="next-state"><span data-i18n="statusReview">In review</span> <a href="https://drive.google.com/file/d/1Edjm6UZy6BY9hcwzJPHXIAYgFcLEL172/view?usp=drive_link" target="_blank" rel="noreferrer" data-i18n="demoVideo">Demo video</a></p>
-            </div>
-          </li>
-          <li class="next-item">
-            <img src="assets/icons/abysslure.png" width="256" height="256" alt="">
-            <div>
-              <p class="next-name" data-i18n="alName">AbyssLure</p>
-              <p data-i18n="alKind">Idle game set in a deep, dark sea</p>
-              <p class="next-state"><span data-i18n="statusReview">In review</span> <a href="https://drive.google.com/file/d/1yj14P_4hJN_GIzMMqTBqpTFiccGYao0t/view?usp=drive_link" target="_blank" rel="noreferrer" data-i18n="demoVideo">Demo video</a></p>
-            </div>
-          </li>
-          <li class="next-item">
-            <img src="assets/icons/driftling.png" width="256" height="256" alt="">
-            <div>
-              <p class="next-name">Driftling</p>
-              <p data-i18n="drKind">Raise and collect sea creatures in a gothic lab</p>
-              <p class="next-state"><span data-i18n="statusDev">In development</span> <a href="https://drive.google.com/file/d/1g5a9vc3-Wd7LZQBwNuzGXm_2vwoCrP7M/view?usp=drive_link" target="_blank" rel="noreferrer" data-i18n="demoVideo">Demo video</a></p>
-            </div>
-          </li>
-          <li class="next-item icon-pixel">
-            <img src="assets/icons/pattern-hero.png" width="256" height="256" alt="">
-            <div>
-              <p class="next-name">Pattern Hero</p>
-              <p data-i18n="phrKind">2D action with abilities picked by roulette</p>
-              <p class="next-state"><span data-i18n="statusDev">In development</span> <a href="https://youtu.be/Rprae23Zl88" target="_blank" rel="noreferrer" data-i18n="demoVideo">Demo video</a></p>
-            </div>
-          </li>
-        </ul>
-        <p class="note" data-i18n="nextNote">Store status as of 9 November 2026.</p>
-      </div>
     </section>
 
     <!-- Professional work -->
