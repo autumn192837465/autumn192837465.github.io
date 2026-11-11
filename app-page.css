@@ -1,0 +1,169 @@
+/* App pages (/paw-hunter/, /oshipass/, /bit-by-bit/, /evenli/).
+   A page someone can be sent to download one app: each app keeps its own colour field from the homepage band,
+   the store buttons are on the first screen, and the rest answers what it does and what it costs.
+   Each page sets its colours on :root in its own <style>. */
+
+:root {
+  --font: "M PLUS Rounded 1c", "Hiragino Maru Gothic ProN", "Hiragino Sans", "PingFang TC", "Noto Sans JP", sans-serif;
+  --t-small: 0.875rem;
+  --t-body: 1.0625rem;
+  --t-h3: 1.25rem;
+  --t-lead: clamp(1.25rem, 1.05rem + 0.8vw, 1.625rem);
+  --t-h2: clamp(1.875rem, 1.4rem + 2vw, 2.75rem);
+  --t-display: clamp(3rem, 1.6rem + 5.6vw, 6.25rem);
+  --wrap: 1180px;
+  --pad: clamp(20px, 4vw, 48px);
+  --radius-icon: 22.5%;
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+}
+html[lang="zh-TW"] { --font: "Huninn", "M PLUS Rounded 1c", "PingFang TC", "Noto Sans TC", sans-serif; }
+
+*, *::before, *::after { box-sizing: border-box; }
+* { margin: 0; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body {
+  font-family: var(--font); font-size: var(--t-body); line-height: 1.7;
+  background: var(--paper); color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: clip;
+}
+img { display: block; max-width: 100%; height: auto; }
+a { color: inherit; }
+h1, h2, h3 { line-height: 1.2; font-weight: 800; text-wrap: balance; }
+p { text-wrap: pretty; }
+:focus-visible { outline: 3px solid var(--focus, currentColor); outline-offset: 3px; border-radius: 6px; }
+.skip { position: absolute; left: 12px; top: -60px; z-index: 20; padding: 10px 16px; border-radius: 10px; background: var(--ink); color: var(--paper); }
+.skip:focus { top: 12px; }
+.wrap { max-width: var(--wrap); margin: 0 auto; padding-inline: var(--pad); }
+
+/* Top bar: the back button (only when the visitor came from the homepage) and the language switch. */
+.ap-top {
+  position: absolute; inset: 0 0 auto; z-index: 5;
+  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  max-width: var(--wrap); margin: 0 auto; padding: 18px var(--pad);
+  color: var(--hero-fg);
+}
+.ap-back {
+  display: inline-flex; align-items: center; gap: 8px;
+  min-height: 40px; padding: 0 16px 0 12px; border-radius: 99px;
+  background: var(--chip); color: var(--hero-fg); text-decoration: none;
+  font-size: var(--t-small); font-weight: 800;
+}
+.ap-back[hidden] { display: none; }
+.ap-back::before { content: ""; width: 8px; height: 8px; border-left: 2.5px solid currentColor; border-bottom: 2.5px solid currentColor; rotate: 45deg; margin-left: 4px; }
+@media (hover: hover) { .ap-back:hover { background: var(--chip-hover); } }
+.ap-lang { display: flex; gap: 2px; margin-left: auto; padding: 3px; border-radius: 99px; background: var(--chip); }
+.ap-lang button {
+  min-height: 34px; padding: 0 12px; border: 0; border-radius: 99px; cursor: pointer;
+  background: none; color: inherit; font: inherit; font-size: var(--t-small); font-weight: 500;
+}
+.ap-lang button[aria-pressed="true"] { background: var(--hero-fg); color: var(--hero-on-fg); font-weight: 800; }
+
+/* Hero: the app's own colour field, the name large, the store buttons right there. */
+.ap-hero { background: var(--hero-bg); color: var(--hero-fg); }
+.ap-hero-inner {
+  display: grid; grid-template-columns: minmax(0, 6fr) minmax(0, 6fr); align-items: center;
+  gap: clamp(32px, 5vw, 72px);
+  min-height: min(100svh, 940px);
+  padding-top: clamp(96px, 12vw, 132px); padding-bottom: clamp(56px, 7vw, 96px);
+}
+.ap-icon { width: clamp(84px, 7vw, 112px); aspect-ratio: 1; border-radius: var(--radius-icon); box-shadow: 0 14px 30px rgba(0, 0, 0, 0.22); }
+.ap-hero h1 { margin-top: 22px; font-size: var(--t-display); line-height: 1; letter-spacing: -0.02em; }
+.ap-kind { margin-top: 14px; color: var(--hero-soft); }
+.ap-tagline { margin-top: 26px; font-size: var(--t-lead); font-weight: 800; line-height: 1.4; }
+.ap-intro { margin-top: 12px; max-width: 32em; }
+.ap-get { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 14px; margin-top: 30px; }
+.ap-note { width: 100%; color: var(--hero-soft); font-size: var(--t-small); }
+
+.store {
+  display: inline-flex; align-items: center; gap: 12px;
+  min-height: 60px; padding: 8px 22px 8px 12px; border-radius: 16px;
+  background: var(--btn-bg); color: var(--btn-fg); text-decoration: none;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.16);
+  transition: transform 160ms var(--ease-out), box-shadow 160ms var(--ease-out);
+}
+.store img { width: 40px; height: 40px; border-radius: 10px; background: #fff; padding: 5px; }
+.store span { display: flex; flex-direction: column; line-height: 1.15; font-size: 1.25rem; font-weight: 800; }
+.store small { font-size: 0.75rem; font-weight: 500; opacity: 0.85; }
+@media (hover: hover) { .store:hover { transform: translateY(-2px); box-shadow: 0 12px 26px rgba(0, 0, 0, 0.2); } }
+.store:active { transform: scale(0.97); }
+/* The visitor's own store comes first. */
+.is-android .store[data-store="play"], .is-ios .store[data-store="ios"] { order: -1; }
+
+/* Three screenshots fanned like a hand of cards, as on the homepage. */
+.ap-fan { display: grid; place-items: center; padding-block: 4%; }
+.ap-fan img {
+  grid-area: 1 / 1; width: 44%; border-radius: 18px;
+  box-shadow: 0 24px 50px rgba(0, 0, 0, 0.28);
+  transform: var(--fan);
+}
+.ap-fan img:nth-child(1) { --fan: translateY(-3%) scale(1.06); z-index: 2; }
+.ap-fan img:nth-child(2) { --fan: translateX(-62%) translateY(5%) rotate(-8deg); }
+.ap-fan img:nth-child(3) { --fan: translateX(62%) translateY(5%) rotate(8deg); }
+@media (prefers-reduced-motion: no-preference) {
+  .js .ap-fan img { animation: deal 900ms var(--ease-out) both; }
+  .js .ap-fan img:nth-child(2) { animation-delay: 120ms; }
+  .js .ap-fan img:nth-child(3) { animation-delay: 200ms; }
+  @keyframes deal { from { transform: translateY(14%) scale(0.92); opacity: 0; } }
+}
+
+/* Sections on paper. */
+.ap-section { padding-block: clamp(72px, 9vw, 120px); }
+.ap-section h2 { font-size: var(--t-h2); }
+.ap-section-lead { margin-top: 12px; color: var(--muted); max-width: 36em; }
+
+.ap-screens { background: var(--paper-2); }
+.ap-strip {
+  display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(14px, 2vw, 28px);
+  margin-top: clamp(32px, 4vw, 48px);
+}
+.ap-strip img { width: 100%; border-radius: 16px; box-shadow: 0 14px 34px rgba(0, 0, 0, 0.14); }
+
+.ap-features-grid {
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(32px, 4vw, 52px) clamp(32px, 6vw, 88px);
+  margin-top: clamp(36px, 4vw, 56px);
+}
+.ap-feature h3 { font-size: var(--t-h3); color: var(--accent-ink); }
+.ap-feature p { margin-top: 8px; max-width: 30em; }
+
+.ap-facts { background: var(--paper-2); }
+.ap-facts-inner { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); gap: clamp(28px, 5vw, 72px); }
+.ap-facts dl { display: grid; grid-template-columns: minmax(7.5em, auto) minmax(0, 1fr); gap: 0 clamp(20px, 3vw, 40px); }
+.ap-facts dt, .ap-facts dd { padding-block: 18px; border-top: 1px solid var(--rule); }
+.ap-facts dt { font-weight: 800; }
+.ap-facts dd { max-width: 34em; }
+
+/* Download, again, in the app's colour: the buttons and, on a computer, codes to scan with a phone. */
+.ap-download { background: var(--hero-bg); color: var(--hero-fg); }
+.ap-download-inner { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); align-items: center; gap: clamp(32px, 5vw, 72px); }
+.ap-download .ap-icon { width: 80px; }
+.ap-download h2 { margin-top: 22px; font-size: var(--t-h2); }
+.ap-download p { margin-top: 10px; max-width: 30em; }
+.ap-qr { display: flex; flex-wrap: wrap; gap: 20px; justify-content: flex-end; }
+.ap-qr figure { display: grid; justify-items: center; gap: 10px; }
+.ap-qr img { width: 148px; border-radius: 14px; box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18); }
+.ap-qr figcaption { font-size: var(--t-small); font-weight: 800; }
+.ap-qr-hint { width: 100%; text-align: right; color: var(--hero-soft); font-size: var(--t-small); }
+
+.ap-foot { padding-block: 28px; color: var(--muted); font-size: var(--t-small); }
+
+@media (max-width: 900px) {
+  .ap-hero-inner { grid-template-columns: 1fr; min-height: 0; }
+  .ap-fan { max-width: 560px; width: 100%; margin-inline: auto; }
+  .ap-strip { grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: min(62%, 260px);
+    overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 12px; margin-inline: calc(var(--pad) * -1); padding-inline: var(--pad); scroll-padding-inline: var(--pad); }
+  .ap-strip img { scroll-snap-align: start; }
+  .ap-features-grid, .ap-facts-inner, .ap-download-inner { grid-template-columns: 1fr; }
+  .ap-qr { justify-content: flex-start; }
+  .ap-qr-hint { text-align: left; }
+}
+/* On a phone the buttons are the way to download; the codes are for computers. */
+@media (max-width: 900px), (pointer: coarse) { .ap-qr { display: none; } }
+@media (max-width: 520px) {
+  .ap-facts dl { grid-template-columns: 1fr; }
+  .ap-facts dd { border-top: 0; padding-top: 0; }
+  .store { flex: 1 1 100%; }
+  .ap-lang button { padding: 0 10px; }
+}

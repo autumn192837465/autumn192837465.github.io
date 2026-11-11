@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Evenli: split travel expenses</title>
+  <meta name="description" content="Log what everyone paid on a trip in 12 currencies and see who owes whom, with as few transfers as possible. Free on Android; only one person needs the app.">
+  <meta name="theme-color" content="#095a59">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Evenli: split travel expenses">
+  <meta property="og:description" content="Log what everyone paid on a trip in 12 currencies and see who owes whom, with as few transfers as possible. Free on Android; only one person needs the app.">
+  <meta property="og:url" content="https://autumn192837465.github.io/evenli/">
+  <meta property="og:image" content="https://autumn192837465.github.io/assets/icons/evenli.png">
+  <meta name="twitter:card" content="summary">
+  <link rel="canonical" href="https://autumn192837465.github.io/evenli/">
+  <link rel="icon" href="../assets/icons/evenli.png">
+  <link rel="apple-touch-icon" href="../assets/icons/evenli.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;800&family=Huninn&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../app-page.css">
+  <style>
+    :root {
+    --hero-bg: radial-gradient(circle at 80% 30%, #12918c 0, transparent 55%), #095a59; --hero-fg: #f4fbf8; --hero-soft: #c4e4de; --hero-on-fg: #0a4a49;
+    --chip: rgba(255, 255, 255, 0.12); --chip-hover: rgba(255, 255, 255, 0.2); --btn-bg: #f47c66; --btn-fg: #2a0f08;
+    --paper: #f5faf8; --paper-2: #e1efec; --ink: #0d2b2a; --muted: #46605e; --accent-ink: #0b6f6d; --rule: rgba(13, 43, 42, 0.14); --focus: #0b6f6d;
+    }
+  </style>
+  <script>document.documentElement.classList.add("js")</script>
+  <script src="../app-page.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main" data-i18n="skip">Skip to content</a>
+
+  <div class="ap-top">
+    <a class="ap-back" href="../#app-evenli" hidden><span data-i18n="back">Back</span></a>
+    <div class="ap-lang" role="group" aria-label="Language" data-i18n-aria="languageLabel">
+      <button type="button" data-lang="en" aria-pressed="true">EN</button>
+      <button type="button" data-lang="zh-TW" aria-pressed="false">中文</button>
+      <button type="button" data-lang="ja" aria-pressed="false">日本語</button>
+    </div>
+  </div>
+
+  <main id="main">
+    <header class="ap-hero">
+      <div class="wrap ap-hero-inner">
+        <div class="ap-hero-text">
+          <img class="ap-icon" src="../assets/icons/evenli.png" width="256" height="256" alt="">
+          <h1 data-i18n="name">Evenli</h1>
+          <p class="ap-kind" data-i18n="kind">Trip expense splitter for Android</p>
+          <p class="ap-tagline" data-i18n="tagline">Enjoy the trip. Settle up later.</p>
+          <p class="ap-intro" data-i18n="intro">Evenli keeps track of what everyone paid on a trip with friends or family, then tells you who owes whom and how much. Only the person keeping track needs to install it.</p>
+          <div class="ap-get">
+            <a class="store" data-store="play" href="https://play.google.com/store/apps/details?id=com.kinopistudio.evenli" target="_blank" rel="noreferrer"><img src="../assets/google-play-store-icon.webp" width="40" height="40" alt=""><span><small data-i18n="getItOn">Get it on</small>Google Play</span></a>
+            <p class="ap-note" data-i18n="note">Free on Android</p>
+          </div>
+        </div>
+        <div class="ap-fan">
+          <img src="../assets/apps/evenli-2.webp" width="720" height="1280" alt="Settle-up screen showing who pays whom" data-i18n-alt="shot2" fetchpriority="high">
+          <img src="../assets/apps/evenli-1.webp" width="720" height="1280" alt="Trip overview with totals in US dollars and yen" data-i18n-alt="shot1">
+          <img src="../assets/apps/evenli-3.webp" width="720" height="1280" alt="Add-expense screen with the amount and who it is split between" data-i18n-alt="shot3">
+        </div>
+      </div>
+    </header>
+
+    <section class="ap-section ap-screens" aria-labelledby="screens-title">
+      <div class="wrap">
+        <h2 id="screens-title" data-i18n="screensTitle">Screens</h2>
+        <p class="ap-section-lead" data-i18n="screensLead">The trip, the settle-up, a new expense and who&#x27;s paid back.</p>
+        <div class="ap-strip" tabindex="0" role="group" aria-labelledby="screens-title">
+          <img src="../assets/apps/evenli-1.webp" width="720" height="1280" loading="lazy" alt="Trip overview with totals in US dollars and yen" data-i18n-alt="shot1">
+          <img src="../assets/apps/evenli-2.webp" width="720" height="1280" loading="lazy" alt="Settle-up screen showing who pays whom" data-i18n-alt="shot2">
+          <img src="../assets/apps/evenli-3.webp" width="720" height="1280" loading="lazy" alt="Add-expense screen with the amount and who it is split between" data-i18n-alt="shot3">
+          <img src="../assets/apps/evenli-4.webp" width="720" height="1280" loading="lazy" alt="Settle-up with paid transfers ticked off" data-i18n-alt="shot4">
+        </div>
+      </div>
+    </section>
+
+    <section class="ap-section" aria-labelledby="features-title">
+      <div class="wrap">
+        <h2 id="features-title" data-i18n="featuresTitle">What it does</h2>
+        <div class="ap-features-grid">
+          <div class="ap-feature"><h3 data-i18n="f1t">Log each expense</h3><p data-i18n="f1">Amount, currency, who paid and who it&#x27;s split between, with a note so you can tell expenses apart later.</p></div>
+          <div class="ap-feature"><h3 data-i18n="f2t">12 currencies, no rate lookups</h3><p data-i18n="f2">Log in the local currency as you go. Settle each currency on its own, or merge everything into the trip&#x27;s currency with rates you enter yourself.</p></div>
+          <div class="ap-feature"><h3 data-i18n="f3t">Fewest transfers</h3><p data-i18n="f3">See what each person paid, their share and what they get back or owe. Evenli suggests a settle-up with as few transfers as possible.</p></div>
+          <div class="ap-feature"><h3 data-i18n="f4t">Tick off paybacks</h3><p data-i18n="f4">Mark each transfer as it&#x27;s paid back and see who&#x27;s left. When everyone is even, look back at the trip with your photos.</p></div>
+          <div class="ap-feature"><h3 data-i18n="f5t">Receipts with each expense</h3><p data-i18n="f5">Keep a receipt photo with each expense, taken with the camera or picked from your photo library.</p></div>
+          <div class="ap-feature"><h3 data-i18n="f6t">Share with everyone</h3><p data-i18n="f6">Send the result as an image or text to any messaging app. Your friends don&#x27;t need Evenli.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ap-section ap-facts" aria-labelledby="facts-title">
+      <div class="wrap ap-facts-inner">
+        <h2 id="facts-title" data-i18n="factsTitle">Before you download</h2>
+        <dl>
+            <dt data-i18n="factPrice">Price</dt><dd data-i18n="factPriceText">Free, with ads. An optional one-time purchase removes ads and unlocks every animal avatar, plus your own photos as avatars.</dd>
+            <dt data-i18n="factDevices">Works on</dt><dd data-i18n="factDevicesText">Android phones</dd>
+            <dt data-i18n="factData">Your data</dt><dd data-i18n="factDataText">Trips stay on your device. No account needed, and it works offline.</dd>
+            <dt data-i18n="factNote">Good to know</dt><dd data-i18n="factNoteText">You enter exchange rates yourself. Evenli only does the maths for shared costs; it doesn&#x27;t send or receive money.</dd>
+        </dl>
+      </div>
+    </section>
+
+    <section class="ap-section ap-download" aria-labelledby="download-title">
+      <div class="wrap ap-download-inner">
+        <div>
+          <img class="ap-icon" src="../assets/icons/evenli.png" width="256" height="256" alt="">
+          <h2 id="download-title" data-i18n="dlTitle">Splitting costs on your next trip?</h2>
+          <p data-i18n="dlText">Install Evenli on one phone and log expenses as you go.</p>
+          <div class="ap-get">
+            <a class="store" data-store="play" href="https://play.google.com/store/apps/details?id=com.kinopistudio.evenli" target="_blank" rel="noreferrer"><img src="../assets/google-play-store-icon.webp" width="40" height="40" alt=""><span><small data-i18n="getItOn">Get it on</small>Google Play</span></a>
+          </div>
+        </div>
+        <div class="ap-qr">
+            <figure><img src="../assets/qr/evenli-google-play.svg" width="160" height="160" alt="QR code for Google Play" loading="lazy"><figcaption>Google Play</figcaption></figure>
+          <p class="ap-qr-hint" data-i18n="qrHint">On a computer? Scan with your phone's camera.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="ap-foot wrap"><p data-i18n="footer">Made by Liu Chuan Feng in Tokyo.</p></footer>
+
+  <script type="application/json" id="copy">
+{
+ "en": {
+  "name": "Evenli",
+  "pageTitle": "Evenli: split travel expenses",
+  "pageDescription": "Log what everyone paid on a trip in 12 currencies and see who owes whom, with as few transfers as possible. Free on Android; only one person needs the app.",
+  "kind": "Trip expense splitter for Android",
+  "tagline": "Enjoy the trip. Settle up later.",
+  "intro": "Evenli keeps track of what everyone paid on a trip with friends or family, then tells you who owes whom and how much. Only the person keeping track needs to install it.",
+  "note": "Free on Android",
+  "screensLead": "The trip, the settle-up, a new expense and who's paid back.",
+  "f1t": "Log each expense",
+  "f1": "Amount, currency, who paid and who it's split between, with a note so you can tell expenses apart later.",
+  "f2t": "12 currencies, no rate lookups",
+  "f2": "Log in the local currency as you go. Settle each currency on its own, or merge everything into the trip's currency with rates you enter yourself.",
+  "f3t": "Fewest transfers",
+  "f3": "See what each person paid, their share and what they get back or owe. Evenli suggests a settle-up with as few transfers as possible.",
+  "f4t": "Tick off paybacks",
+  "f4": "Mark each transfer as it's paid back and see who's left. When everyone is even, look back at the trip with your photos.",
+  "f5t": "Receipts with each expense",
+  "f5": "Keep a receipt photo with each expense, taken with the camera or picked from your photo library.",
+  "f6t": "Share with everyone",
+  "f6": "Send the result as an image or text to any messaging app. Your friends don't need Evenli.",
+  "factPriceText": "Free, with ads. An optional one-time purchase removes ads and unlocks every animal avatar, plus your own photos as avatars.",
+  "factDevicesText": "Android phones",
+  "factDataText": "Trips stay on your device. No account needed, and it works offline.",
+  "factNoteText": "You enter exchange rates yourself. Evenli only does the maths for shared costs; it doesn't send or receive money.",
+  "dlTitle": "Splitting costs on your next trip?",
+  "dlText": "Install Evenli on one phone and log expenses as you go.",
+  "shot1": "Trip overview with totals in US dollars and yen",
+  "shot2": "Settle-up screen showing who pays whom",
+  "shot3": "Add-expense screen with the amount and who it is split between",
+  "shot4": "Settle-up with paid transfers ticked off"
+ },
+ "zh-TW": {
+  "name": "Evenli 平分吧",
+  "pageTitle": "Evenli 平分吧：旅行代墊分帳",
+  "pageDescription": "用 12 種幣別記下旅途中誰付了多少，用最少的轉帳次數算出誰該還誰。Android 免費下載，只要一個人安裝。",
+  "kind": "旅行分帳 App，支援 Android",
+  "tagline": "旅行盡情玩，回來再算帳。",
+  "intro": "Evenli 幫你記下和朋友、家人出遊時誰先付了錢，回來後算出誰該還誰、還多少。只要負責記帳的人安裝就好。",
+  "note": "Android 免費下載",
+  "screensLead": "旅程總覽、結算、新增支出，以及誰已經還了。",
+  "f1t": "每筆支出記清楚",
+  "f1": "記下金額、幣別、付款人和分攤成員，加上備註，之後一眼就認得是哪一筆。",
+  "f2t": "12 種幣別，不用先查匯率",
+  "f2": "在當地直接用當地幣別記帳。可以各幣別分開結算，也可以自己填匯率，合併成旅程的結算幣別。",
+  "f3t": "轉帳次數最少",
+  "f3": "列出每個人付了多少、該分攤多少、要收或要付多少，並建議轉帳筆數最少的結算方式。",
+  "f4t": "還了就打勾",
+  "f4": "每筆還款逐一打勾，誰還沒還一目了然。全部還清後，還能用旅程照片回顧這趟旅行。",
+  "f5t": "收據跟著支出走",
+  "f5": "每筆支出都能附上收據照片，用相機拍或從相簿選。",
+  "f6t": "分享給所有人",
+  "f6": "結算結果可以用圖片或文字分享到 LINE 等聊天 App，朋友不必安裝。",
+  "factPriceText": "免費，含廣告。選購一次性買斷可移除廣告，並解鎖全部動物頭像與自己的照片頭像。",
+  "factDevicesText": "Android 手機",
+  "factDataText": "旅程資料只存在你的裝置上。不用註冊帳號，沒有網路也能記帳、結算。",
+  "factNoteText": "匯率由你自己輸入。Evenli 只負責計算共同花費，不經手任何金錢。",
+  "dlTitle": "下次旅行要分帳嗎？",
+  "dlText": "只要一支手機裝 Evenli，邊玩邊記。",
+  "shot1": "旅程總覽，顯示美元與日圓的總額",
+  "shot2": "結算畫面，列出誰該付給誰",
+  "shot3": "新增支出畫面，輸入金額與分攤的人",
+  "shot4": "結算畫面，已還的款項打上勾"
+ },
+ "ja": {
+  "name": "Evenli",
+  "pageTitle": "Evenli：旅行の割り勘・精算",
+  "pageDescription": "旅行で誰がいくら払ったかを 12 通貨で記録し、少ない送金回数で精算。Android で無料、アプリを入れるのは 1 人だけです。",
+  "kind": "旅行の割り勘アプリ（Android）",
+  "tagline": "旅は思いきり、精算はあとで。",
+  "intro": "Evenli は、友だちや家族との旅行で誰がいくら立て替えたかを記録して、誰が誰にいくら払えばいいかを計算します。アプリを入れるのは記録する 1 人だけで大丈夫です。",
+  "note": "Android で無料",
+  "screensLead": "旅行の概要、精算、支出の入力、返済の確認。",
+  "f1t": "支出をその場で記録",
+  "f1": "金額、通貨、払った人、割り勘する人を記録。メモを付ければ、あとでどの支出かすぐわかります。",
+  "f2t": "12 通貨、レート確認なし",
+  "f2": "現地の通貨のまま記録。通貨ごとに精算することも、自分で入力したレートで旅行の精算通貨にまとめることもできます。",
+  "f3t": "送金は少ない回数で",
+  "f3": "メンバーごとに払った金額、負担分、受け取る額と払う額を表示し、送金回数ができるだけ少ない精算方法を提案します。",
+  "f4t": "返済はチェックで管理",
+  "f4": "返済が済んだらチェック。全員の精算が終わったら、旅行の写真でこの旅を振り返れます。",
+  "f5t": "レシートも一緒に",
+  "f5": "支出ごとにレシートの写真を、カメラで撮るか写真ライブラリから選んで保存できます。",
+  "f6t": "みんなに共有",
+  "f6": "精算結果は画像やテキストで LINE などに共有。友だちはアプリを入れなくて大丈夫です。",
+  "factPriceText": "無料（広告あり）。任意の買い切り購入で広告が消え、すべての動物アバターと自分の写真のアバターが使えます。",
+  "factDevicesText": "Android スマートフォン",
+  "factDataText": "旅行の記録は端末の中だけに保存されます。アカウント登録は不要で、オフラインでも使えます。",
+  "factNoteText": "レートはご自身で入力します。Evenli は共同の費用を計算するだけで、送金や支払いは行いません。",
+  "dlTitle": "次の旅行で割り勘するなら。",
+  "dlText": "Evenli を 1 台に入れて、その場で記録しましょう。",
+  "shot1": "米ドルと日本円の合計が表示された旅行の概要",
+  "shot2": "誰が誰に払うかを示す精算画面",
+  "shot3": "金額と割り勘する人を入力する支出画面",
+  "shot4": "返済済みの送金にチェックが付いた精算画面"
+ }
+}
+  </script>
+</body>
+</html>

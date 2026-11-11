@@ -381,6 +381,22 @@ if (typeof document !== "undefined") {
     update();
   }
 
+  /* Someone sent a link to this page sees only the game; the way back to the portfolio
+     appears only for visitors who arrived from the homepage. */
+  function initializeHomeLinks(page) {
+    let referrer = null;
+    try { referrer = document.referrer ? new URL(document.referrer) : null; } catch { referrer = null; }
+    const fromHome = !!referrer && referrer.origin === window.location.origin && /^\/(index\.html)?$/.test(referrer.pathname);
+    if (!fromHome) return;
+    page.querySelectorAll("[data-home-link]").forEach((link) => {
+      if (link.dataset.homeHref) link.setAttribute("href", link.dataset.homeHref);
+      link.hidden = false;
+      link.addEventListener("click", (event) => {
+        if (window.history.length > 1) { event.preventDefault(); window.history.back(); }
+      });
+    });
+  }
+
   function initializePlanetDrop() {
     const page = document.querySelector(".planet-drop-page");
     if (!page || page.dataset.initialized === "true") return;
@@ -391,6 +407,7 @@ if (typeof document !== "undefined") {
     });
 
     setLanguage(getInitialLanguage());
+    initializeHomeLinks(page);
     initializeHero(page);
     initializeReveal();
     initializeCarousel(page);

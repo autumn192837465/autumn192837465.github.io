@@ -96,7 +96,14 @@
 }
 
 .pd-language-switcher {
+  grid-column: 3;
   justify-self: end;
+}
+
+/* Links back to the portfolio appear only for visitors who came from the homepage. */
+.pd-back-link[hidden],
+.pd-return-link[hidden] {
+  display: none;
 }
 
 .pd-orbit-nav {
