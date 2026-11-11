@@ -17,19 +17,20 @@
   <link rel="apple-touch-icon" href="../assets/icons/paw-hunter.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;800&family=Huninn&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;800&family=Huninn&family=Mochiy+Pop+One&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../app-page.css">
   <style>
     :root {
     --hero-bg: radial-gradient(circle at 78% 30%, #fbf3e4 0, transparent 55%), #efe1c8; --hero-fg: #2b2118; --hero-soft: #66553f; --hero-on-fg: #f6eddc;
     --chip: rgba(43, 33, 24, 0.08); --chip-hover: rgba(43, 33, 24, 0.14); --btn-bg: #2b2118; --btn-fg: #fbf3e4;
     --paper: #fbf7f0; --paper-2: #f3eadb; --ink: #2b2118; --muted: #66553f; --accent-ink: #9b3a16; --rule: rgba(43, 33, 24, 0.14); --focus: #9b3a16;
+    --display: "Mochiy Pop One", var(--font);
     }
   </style>
   <script>document.documentElement.classList.add("js")</script>
   <script src="../app-page.js" defer></script>
 </head>
-<body>
+<body class="app-paw-hunter">
   <a class="skip" href="#main" data-i18n="skip">Skip to content</a>
 
   <div class="ap-top">
@@ -42,11 +43,12 @@
   </div>
 
   <main id="main">
-    <header class="ap-hero">
+    <header class="ap-hero hero-laser">
+      <canvas class="fx-field" data-fx="laser" aria-hidden="true"></canvas><div class="fx-glow" aria-hidden="true"></div>
       <div class="wrap ap-hero-inner">
         <div class="ap-hero-text">
           <img class="ap-icon" src="../assets/icons/paw-hunter.png" width="256" height="256" alt="">
-          <h1 data-i18n="name">Paw Hunter</h1>
+          <h1 data-i18n="name" data-split>Paw Hunter</h1>
           <p class="ap-kind" data-i18n="kind">Touch game for cats, on iPhone and iPad</p>
           <p class="ap-tagline" data-i18n="tagline">A little hunt for curious paws.</p>
           <p class="ap-intro" data-i18n="intro">Put your iPhone or iPad on a steady surface, stay close, and let your cat chase a mouse, a butterfly, koi or a dot of light across the screen.</p>
@@ -54,58 +56,63 @@
             <a class="store" data-store="ios" href="https://apps.apple.com/jp/app/id6826493325" target="_blank" rel="noreferrer"><img src="../assets/app-store-icon.webp" width="40" height="40" alt=""><span><small data-i18n="downloadOn">Download on the</small>App Store</span></a>
             <p class="ap-note" data-i18n="note">Free on iPhone and iPad</p>
           </div>
+          <p class="laser-hint"><span data-i18n="laserHint">Try it: catch the red dot.</span> <span class="laser-count" data-caught hidden></span></p>
         </div>
-        <div class="ap-fan">
-          <img src="../assets/apps/paw-hunter-1.webp" width="718" height="1560" alt="A mouse running across a wooden floor, with a box and a cushion to hide behind" data-i18n-alt="shot1" fetchpriority="high">
-          <img src="../assets/apps/paw-hunter-2.webp" width="718" height="1560" alt="A butterfly over grass, with a leaf and a stone to hide behind" data-i18n-alt="shot2">
-          <img src="../assets/apps/paw-hunter-3.webp" width="718" height="1560" alt="A koi swimming between lily pads" data-i18n-alt="shot3">
-        </div>
+        <div class="ap-stage stage-single"><div class="stage-tilt"><img src="../assets/apps/paw-hunter-1.webp" width="718" height="1560" alt="A mouse running across a wooden floor, with a box and a cushion to hide behind" data-i18n-alt="shot1" fetchpriority="high"></div></div>
       </div>
     </header>
 
-    <section class="ap-section ap-screens" aria-labelledby="screens-title">
+    <section class="ap-section sig sig-paw-hunter" aria-labelledby="sig-title">
       <div class="wrap">
-        <h2 id="screens-title" data-i18n="screensTitle">Screens</h2>
-        <p class="ap-section-lead" data-i18n="screensLead">Four kinds of prey, each with its own ground.</p>
-        <div class="ap-strip" tabindex="0" role="group" aria-labelledby="screens-title">
-          <img src="../assets/apps/paw-hunter-1.webp" width="718" height="1560" loading="lazy" alt="A mouse running across a wooden floor, with a box and a cushion to hide behind" data-i18n-alt="shot1">
-          <img src="../assets/apps/paw-hunter-2.webp" width="718" height="1560" loading="lazy" alt="A butterfly over grass, with a leaf and a stone to hide behind" data-i18n-alt="shot2">
-          <img src="../assets/apps/paw-hunter-3.webp" width="718" height="1560" loading="lazy" alt="A koi swimming between lily pads" data-i18n-alt="shot3">
-          <img src="../assets/apps/paw-hunter-4.webp" width="718" height="1560" loading="lazy" alt="A red dot of light on a dark screen" data-i18n-alt="shot4">
-        </div>
+        <div class="sig-head" data-reveal><h2 id="sig-title" data-i18n="sigTitle">The prey</h2><p data-i18n="sigLead">Each one has its own ground.</p></div>
+        <ul class="grounds" data-reveal>
+          <li class="ground" style="--g:#e7d3ad;--gfg:#2b2118"><img src="../assets/apps/paw-hunter-1.webp" width="718" height="1560" alt="A mouse running across a wooden floor, with a box and a cushion to hide behind" data-i18n-alt="shot1" loading="lazy"><h3 data-i18n="g1">Mouse</h3><p data-i18n="g1t">Darts across a wooden floor and ducks behind a box.</p></li>
+          <li class="ground" style="--g:#2e4a2b;--gfg:#f1f5e6"><img src="../assets/apps/paw-hunter-2.webp" width="718" height="1560" alt="A butterfly over grass, with a leaf and a stone to hide behind" data-i18n-alt="shot2" loading="lazy"><h3 data-i18n="g2">Butterfly</h3><p data-i18n="g2t">Flutters over the grass, past a leaf and a stone.</p></li>
+          <li class="ground" style="--g:#123f4a;--gfg:#e8f6f6"><img src="../assets/apps/paw-hunter-3.webp" width="718" height="1560" alt="A koi swimming between lily pads" data-i18n-alt="shot3" loading="lazy"><h3 data-i18n="g3">Koi</h3><p data-i18n="g3t">Swims between the lily pads.</p></li>
+          <li class="ground" style="--g:#141a33;--gfg:#eef0ff"><img src="../assets/apps/paw-hunter-4.webp" width="718" height="1560" alt="A red dot of light on a dark screen" data-i18n-alt="shot4" loading="lazy"><h3 data-i18n="g4">Dot of light</h3><p data-i18n="g4t">Glides across a dark screen, like a laser pointer.</p></li>
+        </ul>
       </div>
     </section>
 
-    <section class="ap-section" aria-labelledby="features-title">
+    <div class="marquee" aria-hidden="true"><div class="marquee-track" data-marquee></div></div>
+
+    
+
+    <section class="ap-section ap-features" aria-labelledby="features-title">
       <div class="wrap">
-        <h2 id="features-title" data-i18n="featuresTitle">What it does</h2>
+        <h2 id="features-title" data-i18n="featuresTitle" data-reveal>What it does</h2>
         <div class="ap-features-grid">
-          <div class="ap-feature"><h3 data-i18n="f1t">Four kinds of prey</h3><p data-i18n="f1">A darting mouse, a fluttering butterfly, swimming koi and a gliding dot of light. Earn coins through play to unlock more.</p></div>
-          <div class="ap-feature"><h3 data-i18n="f2t">Set to your cat</h3><p data-i18n="f2">Adjust how fast the prey moves and how many there are, until it suits your cat.</p></div>
-          <div class="ap-feature"><h3 data-i18n="f3t">Places to hide</h3><p data-i18n="f3">Add hiding places for the prey to slip behind, or keep the play area clear.</p></div>
-          <div class="ap-feature"><h3 data-i18n="f4t">After each hunt</h3><p data-i18n="f4">See how many catches, how long the hunt lasted and the best combo.</p></div>
-          <div class="ap-feature"><h3 data-i18n="f5t">Your own prey</h3><p data-i18n="f5">Turn a photo on your device into custom prey with the premium photo option.</p></div>
-          <div class="ap-feature"><h3 data-i18n="f6t">No ads mid-hunt</h3><p data-i18n="f6">No account needed. Play and progress stay on the device, and no ads appear while your cat is hunting.</p></div>
+          <div class="ap-feature" data-reveal style="--d:0ms"><h3 data-i18n="f1t">Four kinds of prey</h3><p data-i18n="f1">A darting mouse, a fluttering butterfly, swimming koi and a gliding dot of light. Earn coins through play to unlock more.</p></div>
+          <div class="ap-feature" data-reveal style="--d:90ms"><h3 data-i18n="f2t">Set to your cat</h3><p data-i18n="f2">Adjust how fast the prey moves and how many there are, until it suits your cat.</p></div>
+          <div class="ap-feature" data-reveal style="--d:0ms"><h3 data-i18n="f3t">Places to hide</h3><p data-i18n="f3">Add hiding places for the prey to slip behind, or keep the play area clear.</p></div>
+          <div class="ap-feature" data-reveal style="--d:90ms"><h3 data-i18n="f4t">After each hunt</h3><p data-i18n="f4">See how many catches, how long the hunt lasted and the best combo.</p></div>
+          <div class="ap-feature" data-reveal style="--d:0ms"><h3 data-i18n="f5t">Your own prey</h3><p data-i18n="f5">Turn a photo on your device into custom prey with the premium photo option.</p></div>
+          <div class="ap-feature" data-reveal style="--d:90ms"><h3 data-i18n="f6t">No ads mid-hunt</h3><p data-i18n="f6">No account needed. Play and progress stay on the device, and no ads appear while your cat is hunting.</p></div>
         </div>
       </div>
     </section>
 
-    <section class="ap-section ap-facts" aria-labelledby="facts-title">
-      <div class="wrap ap-facts-inner">
-        <h2 id="facts-title" data-i18n="factsTitle">Before you download</h2>
-        <dl>
-            <dt data-i18n="factPrice">Price</dt><dd data-i18n="factPriceText">Free. Some prey unlock with coins earned through play. The photo option and removing the daily play limit use Paw Gems, sold in the app. Rewarded ads outside a hunt can give coins or extra plays.</dd>
-            <dt data-i18n="factDevices">Works on</dt><dd data-i18n="factDevicesText">iPhone and iPad with iOS 15.0 or later</dd>
-            <dt data-i18n="factData">Your data</dt><dd data-i18n="factDataText">Photos and progress stay on your device. No account needed.</dd>
-            <dt data-i18n="factNote">Good to know</dt><dd data-i18n="factNoteText">Stay with your cat while it plays, keep sessions short and keep the device steady. Every cat plays differently.</dd>
-        </dl>
+    <section class="ap-section ap-facts facts-tag" aria-labelledby="facts-title">
+      <div class="wrap">
+        <div class="facts-card" data-reveal>
+          <div class="facts-stub">
+            <img class="facts-icon" src="../assets/icons/paw-hunter.png" width="256" height="256" alt="">
+            <h2 id="facts-title" data-i18n="factsTitle">Before you download</h2>
+          </div>
+          <dl>
+            <div class="fact"><dt data-i18n="factPrice">Price</dt><dd data-i18n="factPriceText">Free. Some prey unlock with coins earned through play. The photo option and removing the daily play limit use Paw Gems, sold in the app. Rewarded ads outside a hunt can give coins or extra plays.</dd></div>
+            <div class="fact"><dt data-i18n="factDevices">Works on</dt><dd data-i18n="factDevicesText">iPhone and iPad with iOS 15.0 or later</dd></div>
+            <div class="fact"><dt data-i18n="factData">Your data</dt><dd data-i18n="factDataText">Photos and progress stay on your device. No account needed.</dd></div>
+            <div class="fact"><dt data-i18n="factNote">Good to know</dt><dd data-i18n="factNoteText">Stay with your cat while it plays, keep sessions short and keep the device steady. Every cat plays differently.</dd></div>
+          </dl>
+        </div>
       </div>
     </section>
 
     <section class="ap-section ap-download" aria-labelledby="download-title">
       <div class="wrap ap-download-inner">
         <div>
-          <img class="ap-icon" src="../assets/icons/paw-hunter.png" width="256" height="256" alt="">
+          <p class="dl-name" aria-hidden="true" data-i18n="name">Paw Hunter</p>
           <h2 id="download-title" data-i18n="dlTitle">Ready for the hunt?</h2>
           <p data-i18n="dlText">Put the phone down and see what your cat does.</p>
           <div class="ap-get">
@@ -113,7 +120,7 @@
           </div>
         </div>
         <div class="ap-qr">
-            <figure><img src="../assets/qr/paw-hunter-app-store.svg" width="160" height="160" alt="QR code for App Store" loading="lazy"><figcaption>App Store</figcaption></figure>
+            <figure data-tilt><img src="../assets/qr/paw-hunter-app-store.svg" width="160" height="160" alt="QR code for App Store" loading="lazy"><figcaption>App Store</figcaption></figure>
           <p class="ap-qr-hint" data-i18n="qrHint">On a computer? Scan with your phone's camera.</p>
         </div>
       </div>
@@ -154,7 +161,20 @@
   "shot1": "A mouse running across a wooden floor, with a box and a cushion to hide behind",
   "shot2": "A butterfly over grass, with a leaf and a stone to hide behind",
   "shot3": "A koi swimming between lily pads",
-  "shot4": "A red dot of light on a dark screen"
+  "shot4": "A red dot of light on a dark screen",
+  "laserHint": "Try it: catch the red dot.",
+  "caught": "Caught {n}",
+  "factsTag": "",
+  "sigTitle": "The prey",
+  "sigLead": "Each one has its own ground.",
+  "g1": "Mouse",
+  "g1t": "Darts across a wooden floor and ducks behind a box.",
+  "g2": "Butterfly",
+  "g2t": "Flutters over the grass, past a leaf and a stone.",
+  "g3": "Koi",
+  "g3t": "Swims between the lily pads.",
+  "g4": "Dot of light",
+  "g4t": "Glides across a dark screen, like a laser pointer."
  },
  "zh-TW": {
   "name": "肉球獵人",
@@ -186,7 +206,20 @@
   "shot1": "老鼠在木地板上奔跑，旁邊有紙箱和坐墊可以躲",
   "shot2": "蝴蝶在草地上飛，旁邊有葉子和石頭可以躲",
   "shot3": "錦鯉在睡蓮之間游動",
-  "shot4": "暗色畫面上的紅色光點"
+  "shot4": "暗色畫面上的紅色光點",
+  "laserHint": "試試看：抓住紅色光點。",
+  "caught": "抓到 {n} 次",
+  "factsTag": "",
+  "sigTitle": "獵物",
+  "sigLead": "每一種都有自己的場地。",
+  "g1": "老鼠",
+  "g1t": "在木地板上奔跑，躲進紙箱後面。",
+  "g2": "蝴蝶",
+  "g2t": "在草地上飛舞，掠過葉子和石頭。",
+  "g3": "錦鯉",
+  "g3t": "在睡蓮之間游來游去。",
+  "g4": "光點",
+  "g4t": "在暗色畫面上滑動，就像雷射筆。"
  },
  "ja": {
   "name": "肉球ハンター",
@@ -218,7 +251,20 @@
   "shot1": "木の床を走るネズミと、隠れ場所の箱とクッション",
   "shot2": "草の上を舞うちょうちょと、隠れ場所の葉と石",
   "shot3": "スイレンの間を泳ぐコイ",
-  "shot4": "暗い画面に浮かぶ赤い光の点"
+  "shot4": "暗い画面に浮かぶ赤い光の点",
+  "laserHint": "ためしに、赤い光をつかまえてみて。",
+  "caught": "{n} 回つかまえた",
+  "factsTag": "",
+  "sigTitle": "獲物たち",
+  "sigLead": "それぞれに遊び場があります。",
+  "g1": "ネズミ",
+  "g1t": "木の床を走って、箱の陰に隠れます。",
+  "g2": "ちょうちょ",
+  "g2t": "葉や石をよけながら、草の上を舞います。",
+  "g3": "コイ",
+  "g3t": "スイレンの間を泳ぎます。",
+  "g4": "光の点",
+  "g4t": "暗い画面をすべるように動きます。レーザーポインターのように。"
  }
 }
   </script>

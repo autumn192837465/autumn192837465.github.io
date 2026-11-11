@@ -17,19 +17,20 @@
   <link rel="apple-touch-icon" href="../assets/icons/oshipass.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;800&family=Huninn&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;800&family=Huninn&family=Dela+Gothic+One&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../app-page.css">
   <style>
     :root {
     --hero-bg: linear-gradient(160deg, #fde0ea 0%, #f6a3c3 100%); --hero-fg: #3a1230; --hero-soft: #6a2f55; --hero-on-fg: #fde0ea;
     --chip: rgba(58, 18, 48, 0.08); --chip-hover: rgba(58, 18, 48, 0.14); --btn-bg: #92103f; --btn-fg: #fff5f8;
     --paper: #fff8fa; --paper-2: #fce6ee; --ink: #3a1230; --muted: #6a2f55; --accent-ink: #92103f; --rule: rgba(58, 18, 48, 0.14); --focus: #92103f;
+    --display: "Dela Gothic One", var(--font);
     }
   </style>
   <script>document.documentElement.classList.add("js")</script>
   <script src="../app-page.js" defer></script>
 </head>
-<body>
+<body class="app-oshipass">
   <a class="skip" href="#main" data-i18n="skip">Skip to content</a>
 
   <div class="ap-top">
@@ -42,11 +43,12 @@
   </div>
 
   <main id="main">
-    <header class="ap-hero">
+    <header class="ap-hero hero-fan">
+      <canvas class="fx-field" data-fx="hearts" aria-hidden="true"></canvas><div class="fx-glow" aria-hidden="true"></div>
       <div class="wrap ap-hero-inner">
         <div class="ap-hero-text">
           <img class="ap-icon" src="../assets/icons/oshipass.png" width="256" height="256" alt="">
-          <h1 data-i18n="name">Oshipass</h1>
+          <h1 data-i18n="name" data-split>Oshipass</h1>
           <p class="ap-kind" data-i18n="kind">Organiser for fans, on iPhone and Android</p>
           <p class="ap-tagline" data-i18n="tagline">Everything you do for your oshi, in one place.</p>
           <p class="ap-intro" data-i18n="intro">How many days have you been a fan? When is the ticket payment due? How much more do you need for the trip? Oshipass keeps it all together, with no ads, and opens even at a venue with no signal.</p>
@@ -55,59 +57,78 @@
             <a class="store" data-store="play" href="https://play.google.com/store/apps/details?id=com.kinopistudio.oshipass" target="_blank" rel="noreferrer"><img src="../assets/google-play-store-icon.webp" width="40" height="40" alt=""><span><small data-i18n="getItOn">Get it on</small>Google Play</span></a>
             <p class="ap-note" data-i18n="note">Free on iPhone and Android</p>
           </div>
+          
         </div>
-        <div class="ap-fan">
+        <div class="ap-stage stage-fan"><div class="stage-tilt">
           <img src="../assets/apps/oshipass-1.webp" width="718" height="1560" alt="Home screen counting 837 days as a fan, with a ticket payment and a savings goal" data-i18n-alt="shot1" fetchpriority="high">
           <img src="../assets/apps/oshipass-2.webp" width="718" height="1560" alt="Ticket screen with the ballot result and payment deadline" data-i18n-alt="shot2">
           <img src="../assets/apps/oshipass-4.webp" width="718" height="1560" alt="Savings book for a trip to a concert" data-i18n-alt="shot4">
-        </div>
+        </div></div>
       </div>
     </header>
 
-    <section class="ap-section ap-screens" aria-labelledby="screens-title">
+    <section class="ap-section sig sig-oshipass" aria-labelledby="sig-title">
       <div class="wrap">
-        <h2 id="screens-title" data-i18n="screensTitle">Screens</h2>
-        <p class="ap-section-lead" data-i18n="screensLead">Days together, tickets, the calendar and the savings book.</p>
-        <div class="ap-strip" tabindex="0" role="group" aria-labelledby="screens-title">
-          <img src="../assets/apps/oshipass-1.webp" width="718" height="1560" loading="lazy" alt="Home screen counting 837 days as a fan, with a ticket payment and a savings goal" data-i18n-alt="shot1">
-          <img src="../assets/apps/oshipass-2.webp" width="718" height="1560" loading="lazy" alt="Ticket screen with the ballot result and payment deadline" data-i18n-alt="shot2">
-          <img src="../assets/apps/oshipass-3.webp" width="718" height="1560" loading="lazy" alt="Calendar of shows, deadlines and anniversaries" data-i18n-alt="shot3">
-          <img src="../assets/apps/oshipass-4.webp" width="718" height="1560" loading="lazy" alt="Savings book for a trip to a concert" data-i18n-alt="shot4">
+        <div class="sig-head" data-reveal><h2 id="sig-title" data-i18n="sigTitle">Count your days</h2><p data-i18n="sigLead">Pick the day you became a fan.</p></div>
+        <div class="days" data-days>
+          <label class="days-date"><span data-i18n="sigDateLabel">The day you became a fan</span><input type="date" value="2024-05-18" data-fan-date></label>
+          <p class="days-count" aria-live="polite"><span data-i18n="dayPrefix"></span><strong data-days-n>0</strong><span data-i18n="daySuffix">days as a fan</span></p>
+          <ul class="days-next" aria-live="polite"><li data-next-100></li><li data-next-year></li></ul>
+          <p class="sig-note" data-i18n="sigNote">Oshipass counts this for every oshi, with a countdown on your home screen.</p>
         </div>
       </div>
     </section>
 
-    <section class="ap-section" aria-labelledby="features-title">
+    <div class="marquee" aria-hidden="true"><div class="marquee-track" data-marquee></div></div>
+
+    <section class="ap-screens" aria-labelledby="screens-title" data-flow>
+      <div class="flow-pin">
+        <div class="wrap sig-head" data-reveal><h2 id="screens-title" data-i18n="screensTitle">Screens</h2><p data-i18n="screensLead">Days together, tickets, the calendar and the savings book.</p></div>
+        <div class="flow" tabindex="0" role="group" aria-labelledby="screens-title" data-flow-track>
+          <img src="../assets/apps/oshipass-1.webp" width="718" height="1560" alt="Home screen counting 837 days as a fan, with a ticket payment and a savings goal" data-i18n-alt="shot1" loading="lazy">
+          <img src="../assets/apps/oshipass-2.webp" width="718" height="1560" alt="Ticket screen with the ballot result and payment deadline" data-i18n-alt="shot2" loading="lazy">
+          <img src="../assets/apps/oshipass-3.webp" width="718" height="1560" alt="Calendar of shows, deadlines and anniversaries" data-i18n-alt="shot3" loading="lazy">
+          <img src="../assets/apps/oshipass-4.webp" width="718" height="1560" alt="Savings book for a trip to a concert" data-i18n-alt="shot4" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <section class="ap-section ap-features" aria-labelledby="features-title">
       <div class="wrap">
-        <h2 id="features-title" data-i18n="featuresTitle">What it does</h2>
+        <h2 id="features-title" data-i18n="featuresTitle" data-reveal>What it does</h2>
         <div class="ap-features-grid">
-          <div class="ap-feature"><h3 data-i18n="f1t">Days together</h3><p data-i18n="f1">Counts the days since you became a fan, with countdowns to every 100 days and every year, birthdays, debut days and your first show.</p></div>
-          <div class="ap-feature"><h3 data-i18n="f2t">Ticket ballots and payments</h3><p data-i18n="f2">Follow every route to a show from applied to won, paid, issued and attended, with a reminder before each deadline that works even in airplane mode.</p></div>
-          <div class="ap-feature"><h3 data-i18n="f3t">Paste to add</h3><p data-i18n="f3">Paste a Japanese ticket-site email or announcement and the show, date, venue and deadlines are filled in. No AI: the rules run on your phone.</p></div>
-          <div class="ap-feature"><h3 data-i18n="f4t">One calendar</h3><p data-i18n="f4">Shows, ballots, pre-orders, deadlines, anniversaries and weekly programmes for all your oshis, plus memories saved with a mood.</p></div>
-          <div class="ap-feature"><h3 data-i18n="f5t">Oshi savings book</h3><p data-i18n="f5">Set a goal for a trip or merch and save like a bank book, with one-tap rules such as birthday saving: ¥318 for 18 March.</p></div>
-          <div class="ap-feature"><h3 data-i18n="f6t">Goal cards and a passport</h3><p data-i18n="f6">Every goal you reach becomes a collectible card, and badges and stamps collect in your passport as you keep records.</p></div>
+          <div class="ap-feature" data-reveal style="--d:0ms"><h3 data-i18n="f1t">Days together</h3><p data-i18n="f1">Counts the days since you became a fan, with countdowns to every 100 days and every year, birthdays, debut days and your first show.</p></div>
+          <div class="ap-feature" data-reveal style="--d:90ms"><h3 data-i18n="f2t">Ticket ballots and payments</h3><p data-i18n="f2">Follow every route to a show from applied to won, paid, issued and attended, with a reminder before each deadline that works even in airplane mode.</p></div>
+          <div class="ap-feature" data-reveal style="--d:0ms"><h3 data-i18n="f3t">Paste to add</h3><p data-i18n="f3">Paste a Japanese ticket-site email or announcement and the show, date, venue and deadlines are filled in. No AI: the rules run on your phone.</p></div>
+          <div class="ap-feature" data-reveal style="--d:90ms"><h3 data-i18n="f4t">One calendar</h3><p data-i18n="f4">Shows, ballots, pre-orders, deadlines, anniversaries and weekly programmes for all your oshis, plus memories saved with a mood.</p></div>
+          <div class="ap-feature" data-reveal style="--d:0ms"><h3 data-i18n="f5t">Oshi savings book</h3><p data-i18n="f5">Set a goal for a trip or merch and save like a bank book, with one-tap rules such as birthday saving: ¥318 for 18 March.</p></div>
+          <div class="ap-feature" data-reveal style="--d:90ms"><h3 data-i18n="f6t">Goal cards and a passport</h3><p data-i18n="f6">Every goal you reach becomes a collectible card, and badges and stamps collect in your passport as you keep records.</p></div>
         </div>
       </div>
     </section>
 
-    <section class="ap-section ap-facts" aria-labelledby="facts-title">
-      <div class="wrap ap-facts-inner">
-        <h2 id="facts-title" data-i18n="factsTitle">Before you download</h2>
-        <dl>
-            <dt data-i18n="factPrice">Price</dt><dd data-i18n="factPriceText">Free, with no ads. An optional membership, monthly or yearly with a 7-day free trial for eligible users, adds more than two oshis, photos in memories and premium looks.</dd>
-            <dt data-i18n="factDevices">Works on</dt><dd data-i18n="factDevicesText">iPhone and Android</dd>
-            <dt data-i18n="factLanguages">Languages</dt><dd data-i18n="factLanguagesText">Japanese, Traditional Chinese, English and Korean</dd>
-            <dt data-i18n="factData">Your data</dt><dd data-i18n="factDataText">Records and photos stay on your phone: no account, no server and no tracking. You can export everything, photos included.</dd>
-            <dt data-i18n="factNote">Good to know</dt><dd data-i18n="factNoteText">Oshipass never buys, resells or transfers tickets, and never signs in to ticket sites. It is not affiliated with any ticket service, artist or agency.</dd>
-        </dl>
+    <section class="ap-section ap-facts facts-ticket" aria-labelledby="facts-title">
+      <div class="wrap">
+        <div class="facts-card" data-reveal>
+          <div class="facts-stub">
+            <img class="facts-icon" src="../assets/icons/oshipass.png" width="256" height="256" alt="">
+            <h2 id="facts-title" data-i18n="factsTitle">Before you download</h2>
+          </div>
+          <dl>
+            <div class="fact"><dt data-i18n="factPrice">Price</dt><dd data-i18n="factPriceText">Free, with no ads. An optional membership, monthly or yearly with a 7-day free trial for eligible users, adds more than two oshis, photos in memories and premium looks.</dd></div>
+            <div class="fact"><dt data-i18n="factDevices">Works on</dt><dd data-i18n="factDevicesText">iPhone and Android</dd></div>
+            <div class="fact"><dt data-i18n="factLanguages">Languages</dt><dd data-i18n="factLanguagesText">Japanese, Traditional Chinese, English and Korean</dd></div>
+            <div class="fact"><dt data-i18n="factData">Your data</dt><dd data-i18n="factDataText">Records and photos stay on your phone: no account, no server and no tracking. You can export everything, photos included.</dd></div>
+            <div class="fact"><dt data-i18n="factNote">Good to know</dt><dd data-i18n="factNoteText">Oshipass never buys, resells or transfers tickets, and never signs in to ticket sites. It is not affiliated with any ticket service, artist or agency.</dd></div>
+          </dl>
+        </div>
       </div>
     </section>
 
     <section class="ap-section ap-download" aria-labelledby="download-title">
       <div class="wrap ap-download-inner">
         <div>
-          <img class="ap-icon" src="../assets/icons/oshipass.png" width="256" height="256" alt="">
+          <p class="dl-name" aria-hidden="true" data-i18n="name">Oshipass</p>
           <h2 id="download-title" data-i18n="dlTitle">Next ballot coming up?</h2>
           <p data-i18n="dlText">Add it to Oshipass and let the reminders keep track of the deadlines.</p>
           <div class="ap-get">
@@ -116,8 +137,8 @@
           </div>
         </div>
         <div class="ap-qr">
-            <figure><img src="../assets/qr/oshipass-app-store.svg" width="160" height="160" alt="QR code for App Store" loading="lazy"><figcaption>App Store</figcaption></figure>
-            <figure><img src="../assets/qr/oshipass-google-play.svg" width="160" height="160" alt="QR code for Google Play" loading="lazy"><figcaption>Google Play</figcaption></figure>
+            <figure data-tilt><img src="../assets/qr/oshipass-app-store.svg" width="160" height="160" alt="QR code for App Store" loading="lazy"><figcaption>App Store</figcaption></figure>
+            <figure data-tilt><img src="../assets/qr/oshipass-google-play.svg" width="160" height="160" alt="QR code for Google Play" loading="lazy"><figcaption>Google Play</figcaption></figure>
           <p class="ap-qr-hint" data-i18n="qrHint">On a computer? Scan with your phone's camera.</p>
         </div>
       </div>
@@ -159,7 +180,17 @@
   "shot1": "Home screen counting 837 days as a fan, with a ticket payment and a savings goal",
   "shot2": "Ticket screen with the ballot result and payment deadline",
   "shot3": "Calendar of shows, deadlines and anniversaries",
-  "shot4": "Savings book for a trip to a concert"
+  "shot4": "Savings book for a trip to a concert",
+  "sigTitle": "Count your days",
+  "sigLead": "Pick the day you became a fan.",
+  "sigDateLabel": "The day you became a fan",
+  "dayPrefix": "",
+  "daySuffix": "days as a fan",
+  "next100": "Day {m} is in {d} days, on {date}.",
+  "nextYear": "Your {y}-year anniversary is in {d} days, on {date}.",
+  "today100": "Today is day {m}.",
+  "todayYear": "Today is your {y}-year anniversary.",
+  "sigNote": "Oshipass counts this for every oshi, with a countdown on your home screen."
  },
  "zh-TW": {
   "name": "追星護照",
@@ -192,7 +223,17 @@
   "shot1": "首頁顯示推了 837 天，還有票券付款和存錢目標",
   "shot2": "票券畫面，顯示抽選結果與付款期限",
   "shot3": "公演、期限與紀念日的行事曆",
-  "shot4": "為了演唱會遠征的存錢簿"
+  "shot4": "為了演唱會遠征的存錢簿",
+  "sigTitle": "算算你推了幾天",
+  "sigLead": "選一下開始推的那天。",
+  "sigDateLabel": "開始推的那天",
+  "dayPrefix": "推了",
+  "daySuffix": "天",
+  "next100": "第 {m} 天：還有 {d} 天（{date}）",
+  "nextYear": "{y} 週年：還有 {d} 天（{date}）",
+  "today100": "今天是第 {m} 天。",
+  "todayYear": "今天是 {y} 週年。",
+  "sigNote": "追星護照會替每個推數好天數，在主畫面就能看到倒數。"
  },
  "ja": {
   "name": "推しパス",
@@ -225,7 +266,17 @@
   "shot1": "推して 837 日のホーム画面と、入金予定と貯金目標",
   "shot2": "当落結果と入金期限が表示されたチケット画面",
   "shot3": "公演・締切・記念日のカレンダー",
-  "shot4": "ライブ遠征のための推し貯金通帳"
+  "shot4": "ライブ遠征のための推し貯金通帳",
+  "sigTitle": "推して何日？",
+  "sigLead": "推し始めた日を選んでください。",
+  "sigDateLabel": "推し始めた日",
+  "dayPrefix": "推して",
+  "daySuffix": "日",
+  "next100": "{m}日目まで あと{d}日（{date}）",
+  "nextYear": "{y}周年まで あと{d}日（{date}）",
+  "today100": "今日で{m}日目。",
+  "todayYear": "今日で{y}周年。",
+  "sigNote": "推しパスなら推しごとに日数を数えて、ホーム画面でカウントダウンできます。"
  }
 }
   </script>

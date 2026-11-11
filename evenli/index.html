@@ -17,19 +17,20 @@
   <link rel="apple-touch-icon" href="../assets/icons/evenli.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;800&family=Huninn&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;800&family=Huninn&family=Zen+Kaku+Gothic+New:wght@700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../app-page.css">
   <style>
     :root {
     --hero-bg: radial-gradient(circle at 80% 30%, #12918c 0, transparent 55%), #095a59; --hero-fg: #f4fbf8; --hero-soft: #c4e4de; --hero-on-fg: #0a4a49;
     --chip: rgba(255, 255, 255, 0.12); --chip-hover: rgba(255, 255, 255, 0.2); --btn-bg: #f47c66; --btn-fg: #2a0f08;
     --paper: #f5faf8; --paper-2: #e1efec; --ink: #0d2b2a; --muted: #46605e; --accent-ink: #0b6f6d; --rule: rgba(13, 43, 42, 0.14); --focus: #0b6f6d;
+    --display: "Zen Kaku Gothic New", var(--font);
     }
   </style>
   <script>document.documentElement.classList.add("js")</script>
   <script src="../app-page.js" defer></script>
 </head>
-<body>
+<body class="app-evenli">
   <a class="skip" href="#main" data-i18n="skip">Skip to content</a>
 
   <div class="ap-top">
@@ -42,11 +43,12 @@
   </div>
 
   <main id="main">
-    <header class="ap-hero">
+    <header class="ap-hero hero-split">
+      <canvas class="fx-field" data-fx="discs" aria-hidden="true"></canvas><div class="fx-glow" aria-hidden="true"></div>
       <div class="wrap ap-hero-inner">
         <div class="ap-hero-text">
           <img class="ap-icon" src="../assets/icons/evenli.png" width="256" height="256" alt="">
-          <h1 data-i18n="name">Evenli</h1>
+          <h1 data-i18n="name" data-split>Evenli</h1>
           <p class="ap-kind" data-i18n="kind">Trip expense splitter for Android</p>
           <p class="ap-tagline" data-i18n="tagline">Enjoy the trip. Settle up later.</p>
           <p class="ap-intro" data-i18n="intro">Evenli keeps track of what everyone paid on a trip with friends or family, then tells you who owes whom and how much. Only the person keeping track needs to install it.</p>
@@ -54,58 +56,80 @@
             <a class="store" data-store="play" href="https://play.google.com/store/apps/details?id=com.kinopistudio.evenli" target="_blank" rel="noreferrer"><img src="../assets/google-play-store-icon.webp" width="40" height="40" alt=""><span><small data-i18n="getItOn">Get it on</small>Google Play</span></a>
             <p class="ap-note" data-i18n="note">Free on Android</p>
           </div>
+          
         </div>
-        <div class="ap-fan">
-          <img src="../assets/apps/evenli-2.webp" width="720" height="1280" alt="Settle-up screen showing who pays whom" data-i18n-alt="shot2" fetchpriority="high">
-          <img src="../assets/apps/evenli-1.webp" width="720" height="1280" alt="Trip overview with totals in US dollars and yen" data-i18n-alt="shot1">
-          <img src="../assets/apps/evenli-3.webp" width="720" height="1280" alt="Add-expense screen with the amount and who it is split between" data-i18n-alt="shot3">
-        </div>
+        <div class="ap-stage stage-single"><div class="stage-tilt"><span class="disc" aria-hidden="true"></span><img src="../assets/apps/evenli-2.webp" width="720" height="1280" alt="Settle-up screen showing who pays whom" data-i18n-alt="shot2" fetchpriority="high"></div></div>
       </div>
     </header>
 
-    <section class="ap-section ap-screens" aria-labelledby="screens-title">
+    <section class="ap-section sig sig-evenli" aria-labelledby="sig-title">
       <div class="wrap">
-        <h2 id="screens-title" data-i18n="screensTitle">Screens</h2>
-        <p class="ap-section-lead" data-i18n="screensLead">The trip, the settle-up, a new expense and who&#x27;s paid back.</p>
-        <div class="ap-strip" tabindex="0" role="group" aria-labelledby="screens-title">
-          <img src="../assets/apps/evenli-1.webp" width="720" height="1280" loading="lazy" alt="Trip overview with totals in US dollars and yen" data-i18n-alt="shot1">
-          <img src="../assets/apps/evenli-2.webp" width="720" height="1280" loading="lazy" alt="Settle-up screen showing who pays whom" data-i18n-alt="shot2">
-          <img src="../assets/apps/evenli-3.webp" width="720" height="1280" loading="lazy" alt="Add-expense screen with the amount and who it is split between" data-i18n-alt="shot3">
-          <img src="../assets/apps/evenli-4.webp" width="720" height="1280" loading="lazy" alt="Settle-up with paid transfers ticked off" data-i18n-alt="shot4">
+        <div class="sig-head" data-reveal><h2 id="sig-title" data-i18n="sigTitle">Try a settle-up</h2><p data-i18n="sigLead">Three friends shared a trip. Change what each one paid and see who pays whom.</p></div>
+        <div class="settle" data-settle>
+          <div class="settle-in">
+            <p class="settle-col" data-i18n="paidLabel">Paid</p>
+            <label class="person"><span class="avatar" style="--av:#f6c8a8" aria-hidden="true">A</span><span class="person-name">Amy</span><span class="money"><span class="money-sign" aria-hidden="true">¥</span><input type="number" inputmode="numeric" min="0" max="9999999" step="100" value="18000" data-paid data-name="Amy" aria-label="Amy: Paid"></span></label>
+            <label class="person"><span class="avatar" style="--av:#d9b38c" aria-hidden="true">B</span><span class="person-name">Ben</span><span class="money"><span class="money-sign" aria-hidden="true">¥</span><input type="number" inputmode="numeric" min="0" max="9999999" step="100" value="6000" data-paid data-name="Ben" aria-label="Ben: Paid"></span></label>
+            <label class="person"><span class="avatar" style="--av:#f3a7a0" aria-hidden="true">M</span><span class="person-name">Mia</span><span class="money"><span class="money-sign" aria-hidden="true">¥</span><input type="number" inputmode="numeric" min="0" max="9999999" step="100" value="0" data-paid data-name="Mia" aria-label="Mia: Paid"></span></label>
+          </div>
+          <div class="settle-out" aria-live="polite">
+            <p class="settle-share"><span data-i18n="shareLabel">Each person&#x27;s share</span> <strong data-share>¥8,000</strong></p>
+            <ul class="transfers" data-transfers></ul>
+            <p class="sig-note" data-i18n="sigNote">Evenli does this for every currency on the trip, with as few transfers as possible.</p>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="ap-section" aria-labelledby="features-title">
+    <div class="marquee" aria-hidden="true"><div class="marquee-track" data-marquee></div></div>
+
+    <section class="ap-screens" aria-labelledby="screens-title" data-flow>
+      <div class="flow-pin">
+        <div class="wrap sig-head" data-reveal><h2 id="screens-title" data-i18n="screensTitle">Screens</h2><p data-i18n="screensLead">The trip, the settle-up, a new expense and who&#x27;s paid back.</p></div>
+        <div class="flow" tabindex="0" role="group" aria-labelledby="screens-title" data-flow-track>
+          <img src="../assets/apps/evenli-1.webp" width="720" height="1280" alt="Trip overview with totals in US dollars and yen" data-i18n-alt="shot1" loading="lazy">
+          <img src="../assets/apps/evenli-2.webp" width="720" height="1280" alt="Settle-up screen showing who pays whom" data-i18n-alt="shot2" loading="lazy">
+          <img src="../assets/apps/evenli-3.webp" width="720" height="1280" alt="Add-expense screen with the amount and who it is split between" data-i18n-alt="shot3" loading="lazy">
+          <img src="../assets/apps/evenli-4.webp" width="720" height="1280" alt="Settle-up with paid transfers ticked off" data-i18n-alt="shot4" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <section class="ap-section ap-features" aria-labelledby="features-title">
       <div class="wrap">
-        <h2 id="features-title" data-i18n="featuresTitle">What it does</h2>
+        <h2 id="features-title" data-i18n="featuresTitle" data-reveal>What it does</h2>
         <div class="ap-features-grid">
-          <div class="ap-feature"><h3 data-i18n="f1t">Log each expense</h3><p data-i18n="f1">Amount, currency, who paid and who it&#x27;s split between, with a note so you can tell expenses apart later.</p></div>
-          <div class="ap-feature"><h3 data-i18n="f2t">12 currencies, no rate lookups</h3><p data-i18n="f2">Log in the local currency as you go. Settle each currency on its own, or merge everything into the trip&#x27;s currency with rates you enter yourself.</p></div>
-          <div class="ap-feature"><h3 data-i18n="f3t">Fewest transfers</h3><p data-i18n="f3">See what each person paid, their share and what they get back or owe. Evenli suggests a settle-up with as few transfers as possible.</p></div>
-          <div class="ap-feature"><h3 data-i18n="f4t">Tick off paybacks</h3><p data-i18n="f4">Mark each transfer as it&#x27;s paid back and see who&#x27;s left. When everyone is even, look back at the trip with your photos.</p></div>
-          <div class="ap-feature"><h3 data-i18n="f5t">Receipts with each expense</h3><p data-i18n="f5">Keep a receipt photo with each expense, taken with the camera or picked from your photo library.</p></div>
-          <div class="ap-feature"><h3 data-i18n="f6t">Share with everyone</h3><p data-i18n="f6">Send the result as an image or text to any messaging app. Your friends don&#x27;t need Evenli.</p></div>
+          <div class="ap-feature" data-reveal style="--d:0ms"><h3 data-i18n="f1t">Log each expense</h3><p data-i18n="f1">Amount, currency, who paid and who it&#x27;s split between, with a note so you can tell expenses apart later.</p></div>
+          <div class="ap-feature" data-reveal style="--d:90ms"><h3 data-i18n="f2t">12 currencies, no rate lookups</h3><p data-i18n="f2">Log in the local currency as you go. Settle each currency on its own, or merge everything into the trip&#x27;s currency with rates you enter yourself.</p></div>
+          <div class="ap-feature" data-reveal style="--d:0ms"><h3 data-i18n="f3t">Fewest transfers</h3><p data-i18n="f3">See what each person paid, their share and what they get back or owe. Evenli suggests a settle-up with as few transfers as possible.</p></div>
+          <div class="ap-feature" data-reveal style="--d:90ms"><h3 data-i18n="f4t">Tick off paybacks</h3><p data-i18n="f4">Mark each transfer as it&#x27;s paid back and see who&#x27;s left. When everyone is even, look back at the trip with your photos.</p></div>
+          <div class="ap-feature" data-reveal style="--d:0ms"><h3 data-i18n="f5t">Receipts with each expense</h3><p data-i18n="f5">Keep a receipt photo with each expense, taken with the camera or picked from your photo library.</p></div>
+          <div class="ap-feature" data-reveal style="--d:90ms"><h3 data-i18n="f6t">Share with everyone</h3><p data-i18n="f6">Send the result as an image or text to any messaging app. Your friends don&#x27;t need Evenli.</p></div>
         </div>
       </div>
     </section>
 
-    <section class="ap-section ap-facts" aria-labelledby="facts-title">
-      <div class="wrap ap-facts-inner">
-        <h2 id="facts-title" data-i18n="factsTitle">Before you download</h2>
-        <dl>
-            <dt data-i18n="factPrice">Price</dt><dd data-i18n="factPriceText">Free, with ads. An optional one-time purchase removes ads and unlocks every animal avatar, plus your own photos as avatars.</dd>
-            <dt data-i18n="factDevices">Works on</dt><dd data-i18n="factDevicesText">Android phones</dd>
-            <dt data-i18n="factData">Your data</dt><dd data-i18n="factDataText">Trips stay on your device. No account needed, and it works offline.</dd>
-            <dt data-i18n="factNote">Good to know</dt><dd data-i18n="factNoteText">You enter exchange rates yourself. Evenli only does the maths for shared costs; it doesn&#x27;t send or receive money.</dd>
-        </dl>
+    <section class="ap-section ap-facts facts-receipt" aria-labelledby="facts-title">
+      <div class="wrap">
+        <div class="facts-card" data-reveal>
+          <div class="facts-stub">
+            <img class="facts-icon" src="../assets/icons/evenli.png" width="256" height="256" alt="">
+            <h2 id="facts-title" data-i18n="factsTitle">Before you download</h2>
+          </div>
+          <dl>
+            <div class="fact"><dt data-i18n="factPrice">Price</dt><dd data-i18n="factPriceText">Free, with ads. An optional one-time purchase removes ads and unlocks every animal avatar, plus your own photos as avatars.</dd></div>
+            <div class="fact"><dt data-i18n="factDevices">Works on</dt><dd data-i18n="factDevicesText">Android phones</dd></div>
+            <div class="fact"><dt data-i18n="factData">Your data</dt><dd data-i18n="factDataText">Trips stay on your device. No account needed, and it works offline.</dd></div>
+            <div class="fact"><dt data-i18n="factNote">Good to know</dt><dd data-i18n="factNoteText">You enter exchange rates yourself. Evenli only does the maths for shared costs; it doesn&#x27;t send or receive money.</dd></div>
+          </dl>
+        </div>
       </div>
     </section>
 
     <section class="ap-section ap-download" aria-labelledby="download-title">
       <div class="wrap ap-download-inner">
         <div>
-          <img class="ap-icon" src="../assets/icons/evenli.png" width="256" height="256" alt="">
+          <p class="dl-name" aria-hidden="true" data-i18n="name">Evenli</p>
           <h2 id="download-title" data-i18n="dlTitle">Splitting costs on your next trip?</h2>
           <p data-i18n="dlText">Install Evenli on one phone and log expenses as you go.</p>
           <div class="ap-get">
@@ -113,7 +137,7 @@
           </div>
         </div>
         <div class="ap-qr">
-            <figure><img src="../assets/qr/evenli-google-play.svg" width="160" height="160" alt="QR code for Google Play" loading="lazy"><figcaption>Google Play</figcaption></figure>
+            <figure data-tilt><img src="../assets/qr/evenli-google-play.svg" width="160" height="160" alt="QR code for Google Play" loading="lazy"><figcaption>Google Play</figcaption></figure>
           <p class="ap-qr-hint" data-i18n="qrHint">On a computer? Scan with your phone's camera.</p>
         </div>
       </div>
@@ -154,7 +178,14 @@
   "shot1": "Trip overview with totals in US dollars and yen",
   "shot2": "Settle-up screen showing who pays whom",
   "shot3": "Add-expense screen with the amount and who it is split between",
-  "shot4": "Settle-up with paid transfers ticked off"
+  "shot4": "Settle-up with paid transfers ticked off",
+  "sigTitle": "Try a settle-up",
+  "sigLead": "Three friends shared a trip. Change what each one paid and see who pays whom.",
+  "paidLabel": "Paid",
+  "shareLabel": "Each person's share",
+  "tPays": "{from} pays {to}",
+  "even": "Everyone is even.",
+  "sigNote": "Evenli does this for every currency on the trip, with as few transfers as possible."
  },
  "zh-TW": {
   "name": "Evenli 平分吧",
@@ -186,7 +217,14 @@
   "shot1": "旅程總覽，顯示美元與日圓的總額",
   "shot2": "結算畫面，列出誰該付給誰",
   "shot3": "新增支出畫面，輸入金額與分攤的人",
-  "shot4": "結算畫面，已還的款項打上勾"
+  "shot4": "結算畫面，已還的款項打上勾",
+  "sigTitle": "試算一次結算",
+  "sigLead": "三個朋友一起旅行。改改看每個人付了多少，看誰該付給誰。",
+  "paidLabel": "付了",
+  "shareLabel": "每人應分攤",
+  "tPays": "{from} 付給 {to}",
+  "even": "大家已經平分了。",
+  "sigNote": "Evenli 會為旅程中的每種幣別做這個計算，轉帳次數盡量少。"
  },
  "ja": {
   "name": "Evenli",
@@ -218,7 +256,14 @@
   "shot1": "米ドルと日本円の合計が表示された旅行の概要",
   "shot2": "誰が誰に払うかを示す精算画面",
   "shot3": "金額と割り勘する人を入力する支出画面",
-  "shot4": "返済済みの送金にチェックが付いた精算画面"
+  "shot4": "返済済みの送金にチェックが付いた精算画面",
+  "sigTitle": "精算をためしてみる",
+  "sigLead": "3 人で行った旅行です。それぞれが払った額を変えると、誰が誰に払うかがわかります。",
+  "paidLabel": "払った額",
+  "shareLabel": "1 人あたりの負担",
+  "tPays": "{from} が {to} に払う",
+  "even": "全員の精算が済んでいます。",
+  "sigNote": "Evenli は旅行の通貨ごとに、送金回数ができるだけ少なくなるように計算します。"
  }
 }
   </script>

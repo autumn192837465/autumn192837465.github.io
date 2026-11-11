@@ -17,19 +17,20 @@
   <link rel="apple-touch-icon" href="../assets/icons/kotsukotsu.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;800&family=Huninn&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;800&family=Huninn&family=Zen+Maru+Gothic:wght@700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../app-page.css">
   <style>
     :root {
     --hero-bg: radial-gradient(circle at 80% 30%, #f08c72 0, transparent 55%), #e46b55; --hero-fg: #2a0f08; --hero-soft: #4a1c12; --hero-on-fg: #fde3da;
     --chip: rgba(42, 15, 8, 0.1); --chip-hover: rgba(42, 15, 8, 0.16); --btn-bg: #2a0f08; --btn-fg: #fff3ee;
     --paper: #fff8f5; --paper-2: #fbe5dd; --ink: #2a0f08; --muted: #6b3427; --accent-ink: #a8341f; --rule: rgba(42, 15, 8, 0.14); --focus: #2a0f08;
+    --display: "Zen Maru Gothic", var(--font);
     }
   </style>
   <script>document.documentElement.classList.add("js")</script>
   <script src="../app-page.js" defer></script>
 </head>
-<body>
+<body class="app-bit-by-bit">
   <a class="skip" href="#main" data-i18n="skip">Skip to content</a>
 
   <div class="ap-top">
@@ -42,11 +43,12 @@
   </div>
 
   <main id="main">
-    <header class="ap-hero">
+    <header class="ap-hero hero-fan">
+      <canvas class="fx-field" data-fx="coins" aria-hidden="true"></canvas><div class="fx-glow" aria-hidden="true"></div>
       <div class="wrap ap-hero-inner">
         <div class="ap-hero-text">
           <img class="ap-icon" src="../assets/icons/kotsukotsu.png" width="256" height="256" alt="">
-          <h1 data-i18n="name">Bit by Bit</h1>
+          <h1 data-i18n="name" data-split>Bit by Bit</h1>
           <p class="ap-kind" data-i18n="kind">Budget book for Android</p>
           <p class="ap-tagline" data-i18n="tagline">Your money, one entry at a time.</p>
           <p class="ap-intro" data-i18n="intro">Bit by Bit is a simple, private budget book that runs entirely on your phone. No account, no cloud sync and no bank login.</p>
@@ -54,59 +56,82 @@
             <a class="store" data-store="play" href="https://play.google.com/store/apps/details?id=com.kinopistudio.bitbybit" target="_blank" rel="noreferrer"><img src="../assets/google-play-store-icon.webp" width="40" height="40" alt=""><span><small data-i18n="getItOn">Get it on</small>Google Play</span></a>
             <p class="ap-note" data-i18n="note">Free on Android</p>
           </div>
+          
         </div>
-        <div class="ap-fan">
+        <div class="ap-stage stage-fan"><div class="stage-tilt">
           <img src="../assets/apps/kotsukotsu-1.webp" width="720" height="1280" alt="Overview with this month&#x27;s remaining budget and recent entries" data-i18n-alt="shot1" fetchpriority="high">
           <img src="../assets/apps/kotsukotsu-2.webp" width="720" height="1280" alt="Entry screen with the calculator and categories" data-i18n-alt="shot2">
           <img src="../assets/apps/kotsukotsu-4.webp" width="720" height="1280" alt="Calendar of daily spending" data-i18n-alt="shot4">
-        </div>
+        </div></div>
       </div>
     </header>
 
-    <section class="ap-section ap-screens" aria-labelledby="screens-title">
+    <section class="ap-section sig sig-bit-by-bit" aria-labelledby="sig-title">
       <div class="wrap">
-        <h2 id="screens-title" data-i18n="screensTitle">Screens</h2>
-        <p class="ap-section-lead" data-i18n="screensLead">The month at a glance, quick entry, every entry and the calendar.</p>
-        <div class="ap-strip" tabindex="0" role="group" aria-labelledby="screens-title">
-          <img src="../assets/apps/kotsukotsu-1.webp" width="720" height="1280" loading="lazy" alt="Overview with this month&#x27;s remaining budget and recent entries" data-i18n-alt="shot1">
-          <img src="../assets/apps/kotsukotsu-2.webp" width="720" height="1280" loading="lazy" alt="Entry screen with the calculator and categories" data-i18n-alt="shot2">
-          <img src="../assets/apps/kotsukotsu-3.webp" width="720" height="1280" loading="lazy" alt="List of income and spending by day" data-i18n-alt="shot3">
-          <img src="../assets/apps/kotsukotsu-4.webp" width="720" height="1280" loading="lazy" alt="Calendar of daily spending" data-i18n-alt="shot4">
+        <div class="sig-head" data-reveal><h2 id="sig-title" data-i18n="sigTitle">What can you spend today?</h2><p data-i18n="sigLead">Bit by Bit shows this on its overview. Try it with your own numbers.</p></div>
+        <div class="allow" data-allow>
+          <div class="allow-in">
+            <label><span data-i18n="budgetLabel">Monthly budget</span><span class="money"><span class="money-sign" aria-hidden="true">¥</span><input type="number" inputmode="numeric" min="0" max="99999999" step="1000" value="120000" data-budget></span></label>
+            <label><span data-i18n="spentLabel">Spent so far this month</span><span class="money"><span class="money-sign" aria-hidden="true">¥</span><input type="number" inputmode="numeric" min="0" max="99999999" step="100" value="64300" data-spent></span></label>
+          </div>
+          <div class="allow-out" aria-live="polite">
+            <p class="allow-line"><span data-i18n="allowLabel">You can still spend</span> <strong data-allow-n>¥0</strong> <span data-i18n="allowPer">a day</span></p>
+            <p class="allow-note" data-allow-note></p>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="ap-section" aria-labelledby="features-title">
+    <div class="marquee" aria-hidden="true"><div class="marquee-track" data-marquee></div></div>
+
+    <section class="ap-screens" aria-labelledby="screens-title" data-flow>
+      <div class="flow-pin">
+        <div class="wrap sig-head" data-reveal><h2 id="screens-title" data-i18n="screensTitle">Screens</h2><p data-i18n="screensLead">The month at a glance, quick entry, every entry and the calendar.</p></div>
+        <div class="flow" tabindex="0" role="group" aria-labelledby="screens-title" data-flow-track>
+          <img src="../assets/apps/kotsukotsu-1.webp" width="720" height="1280" alt="Overview with this month&#x27;s remaining budget and recent entries" data-i18n-alt="shot1" loading="lazy">
+          <img src="../assets/apps/kotsukotsu-2.webp" width="720" height="1280" alt="Entry screen with the calculator and categories" data-i18n-alt="shot2" loading="lazy">
+          <img src="../assets/apps/kotsukotsu-3.webp" width="720" height="1280" alt="List of income and spending by day" data-i18n-alt="shot3" loading="lazy">
+          <img src="../assets/apps/kotsukotsu-4.webp" width="720" height="1280" alt="Calendar of daily spending" data-i18n-alt="shot4" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <section class="ap-section ap-features" aria-labelledby="features-title">
       <div class="wrap">
-        <h2 id="features-title" data-i18n="featuresTitle">What it does</h2>
+        <h2 id="features-title" data-i18n="featuresTitle" data-reveal>What it does</h2>
         <div class="ap-features-grid">
-          <div class="ap-feature"><h3 data-i18n="f1t">Quick entry</h3><p data-i18n="f1">Income, expenses, refunds and transfers, with a built-in calculator. Turn frequent entries into one-tap templates, and undo a deletion straight away.</p></div>
-          <div class="ap-feature"><h3 data-i18n="f2t">Budgets</h3><p data-i18n="f2">A monthly budget and budgets per category, starting on the day you choose (1–28), and what you can still spend per day this month.</p></div>
-          <div class="ap-feature"><h3 data-i18n="f3t">Analysis</h3><p data-i18n="f3">Category charts, a six-month spending trend, a comparison with last month and all account balances at a glance.</p></div>
-          <div class="ap-feature"><h3 data-i18n="f4t">Recurring bills</h3><p data-i18n="f4">Add rent, subscriptions and other fixed costs, then confirm them when they&#x27;re due.</p></div>
-          <div class="ap-feature"><h3 data-i18n="f5t">Make it yours</h3><p data-i18n="f5">Rename, recolour, reorder and change the icons of your categories. Light, dark or system theme.</p></div>
-          <div class="ap-feature"><h3 data-i18n="f6t">Backup and lock</h3><p data-i18n="f6">Full JSON backup and restore, CSV export and import, and an app lock with fingerprint, face unlock or your screen lock.</p></div>
+          <div class="ap-feature" data-reveal style="--d:0ms"><h3 data-i18n="f1t">Quick entry</h3><p data-i18n="f1">Income, expenses, refunds and transfers, with a built-in calculator. Turn frequent entries into one-tap templates, and undo a deletion straight away.</p></div>
+          <div class="ap-feature" data-reveal style="--d:90ms"><h3 data-i18n="f2t">Budgets</h3><p data-i18n="f2">A monthly budget and budgets per category, starting on the day you choose (1–28), and what you can still spend per day this month.</p></div>
+          <div class="ap-feature" data-reveal style="--d:0ms"><h3 data-i18n="f3t">Analysis</h3><p data-i18n="f3">Category charts, a six-month spending trend, a comparison with last month and all account balances at a glance.</p></div>
+          <div class="ap-feature" data-reveal style="--d:90ms"><h3 data-i18n="f4t">Recurring bills</h3><p data-i18n="f4">Add rent, subscriptions and other fixed costs, then confirm them when they&#x27;re due.</p></div>
+          <div class="ap-feature" data-reveal style="--d:0ms"><h3 data-i18n="f5t">Make it yours</h3><p data-i18n="f5">Rename, recolour, reorder and change the icons of your categories. Light, dark or system theme.</p></div>
+          <div class="ap-feature" data-reveal style="--d:90ms"><h3 data-i18n="f6t">Backup and lock</h3><p data-i18n="f6">Full JSON backup and restore, CSV export and import, and an app lock with fingerprint, face unlock or your screen lock.</p></div>
         </div>
       </div>
     </section>
 
-    <section class="ap-section ap-facts" aria-labelledby="facts-title">
-      <div class="wrap ap-facts-inner">
-        <h2 id="facts-title" data-i18n="factsTitle">Before you download</h2>
-        <dl>
-            <dt data-i18n="factPrice">Price</dt><dd data-i18n="factPriceText">Free. Entries, budgets, analysis and backups are all in the free version. A one-time Premium purchase removes ads and adds four colour themes with matching app icons, and an annual report.</dd>
-            <dt data-i18n="factDevices">Works on</dt><dd data-i18n="factDevicesText">Android phones</dd>
-            <dt data-i18n="factLanguages">Languages</dt><dd data-i18n="factLanguagesText">18 languages, including English, Japanese and Traditional Chinese</dd>
-            <dt data-i18n="factData">Your data</dt><dd data-i18n="factDataText">Everything stays on your device. No account needed.</dd>
-            <dt data-i18n="factNote">Good to know</dt><dd data-i18n="factNoteText">Amounts are kept in Japanese yen, as whole numbers. Bank sync, receipt scanning and family sharing are not supported.</dd>
-        </dl>
+    <section class="ap-section ap-facts facts-ledger" aria-labelledby="facts-title">
+      <div class="wrap">
+        <div class="facts-card" data-reveal>
+          <div class="facts-stub">
+            <img class="facts-icon" src="../assets/icons/kotsukotsu.png" width="256" height="256" alt="">
+            <h2 id="facts-title" data-i18n="factsTitle">Before you download</h2>
+          </div>
+          <dl>
+            <div class="fact"><dt data-i18n="factPrice">Price</dt><dd data-i18n="factPriceText">Free. Entries, budgets, analysis and backups are all in the free version. A one-time Premium purchase removes ads and adds four colour themes with matching app icons, and an annual report.</dd></div>
+            <div class="fact"><dt data-i18n="factDevices">Works on</dt><dd data-i18n="factDevicesText">Android phones</dd></div>
+            <div class="fact"><dt data-i18n="factLanguages">Languages</dt><dd data-i18n="factLanguagesText">18 languages, including English, Japanese and Traditional Chinese</dd></div>
+            <div class="fact"><dt data-i18n="factData">Your data</dt><dd data-i18n="factDataText">Everything stays on your device. No account needed.</dd></div>
+            <div class="fact"><dt data-i18n="factNote">Good to know</dt><dd data-i18n="factNoteText">Amounts are kept in Japanese yen, as whole numbers. Bank sync, receipt scanning and family sharing are not supported.</dd></div>
+          </dl>
+        </div>
       </div>
     </section>
 
     <section class="ap-section ap-download" aria-labelledby="download-title">
       <div class="wrap ap-download-inner">
         <div>
-          <img class="ap-icon" src="../assets/icons/kotsukotsu.png" width="256" height="256" alt="">
+          <p class="dl-name" aria-hidden="true" data-i18n="name">Bit by Bit</p>
           <h2 id="download-title" data-i18n="dlTitle">Start with today&#x27;s spending.</h2>
           <p data-i18n="dlText">One entry at a time adds up to a clear month.</p>
           <div class="ap-get">
@@ -114,7 +139,7 @@
           </div>
         </div>
         <div class="ap-qr">
-            <figure><img src="../assets/qr/bit-by-bit-google-play.svg" width="160" height="160" alt="QR code for Google Play" loading="lazy"><figcaption>Google Play</figcaption></figure>
+            <figure data-tilt><img src="../assets/qr/bit-by-bit-google-play.svg" width="160" height="160" alt="QR code for Google Play" loading="lazy"><figcaption>Google Play</figcaption></figure>
           <p class="ap-qr-hint" data-i18n="qrHint">On a computer? Scan with your phone's camera.</p>
         </div>
       </div>
@@ -156,7 +181,15 @@
   "shot1": "Overview with this month's remaining budget and recent entries",
   "shot2": "Entry screen with the calculator and categories",
   "shot3": "List of income and spending by day",
-  "shot4": "Calendar of daily spending"
+  "shot4": "Calendar of daily spending",
+  "sigTitle": "What can you spend today?",
+  "sigLead": "Bit by Bit shows this on its overview. Try it with your own numbers.",
+  "budgetLabel": "Monthly budget",
+  "spentLabel": "Spent so far this month",
+  "allowLabel": "You can still spend",
+  "allowPer": "a day",
+  "daysLeft": "{d} days left this month, counting today.",
+  "over": "You're over budget by ¥{x}."
  },
  "zh-TW": {
   "name": "一點一滴記帳本",
@@ -189,7 +222,15 @@
   "shot1": "本月剩餘預算與最近明細的總覽",
   "shot2": "有計算機和分類的記帳畫面",
   "shot3": "依日期列出的收入與支出",
-  "shot4": "每日支出的行事曆"
+  "shot4": "每日支出的行事曆",
+  "sigTitle": "今天還能花多少？",
+  "sigLead": "一點一滴記帳本的總覽會顯示這個數字。用你自己的數字試試看。",
+  "budgetLabel": "每月預算",
+  "spentLabel": "本月已花",
+  "allowLabel": "每天還能花",
+  "allowPer": "",
+  "daysLeft": "本月還剩 {d} 天（含今天）。",
+  "over": "已超出預算 ¥{x}。"
  },
  "ja": {
   "name": "コツコツ家計簿",
@@ -222,7 +263,15 @@
   "shot1": "今月の残り予算と最近の記録が並ぶ概要画面",
   "shot2": "電卓とカテゴリのある入力画面",
   "shot3": "日ごとの収入と支出の一覧",
-  "shot4": "日別支出のカレンダー"
+  "shot4": "日別支出のカレンダー",
+  "sigTitle": "今日あといくら使える？",
+  "sigLead": "コツコツ家計簿の概要画面に出る金額です。自分の数字で試してみてください。",
+  "budgetLabel": "月の予算",
+  "spentLabel": "今月使った額",
+  "allowLabel": "1日あと",
+  "allowPer": "使えます",
+  "daysLeft": "今月の残りは、今日を入れて {d} 日。",
+  "over": "予算を ¥{x} オーバーしています。"
  }
 }
   </script>

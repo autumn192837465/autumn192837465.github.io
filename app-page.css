@@ -1,27 +1,30 @@
 /* App pages (/paw-hunter/, /oshipass/, /bit-by-bit/, /evenli/).
-   A page someone can be sent to download one app: each app keeps its own colour field from the homepage band,
-   the store buttons are on the first screen, and the rest answers what it does and what it costs.
-   Each page sets its colours on :root in its own <style>. */
+   Each app keeps its homepage colours and gets its own effects: a live particle field in the hero
+   (a red dot for cats, hearts for fans, coins for the budget book, split discs for the bill),
+   a 3D pinned screenshot flow, a scroll-driven marquee, a live demo of what the app calculates,
+   and its "before you download" facts set as the app's own artefact.
+   Every page sets its colours on :root in its own <style>. */
 
 :root {
   --font: "M PLUS Rounded 1c", "Hiragino Maru Gothic ProN", "Hiragino Sans", "PingFang TC", "Noto Sans JP", sans-serif;
+  --display: var(--font);
   --t-small: 0.875rem;
   --t-body: 1.0625rem;
-  --t-h3: 1.25rem;
-  --t-lead: clamp(1.25rem, 1.05rem + 0.8vw, 1.625rem);
-  --t-h2: clamp(1.875rem, 1.4rem + 2vw, 2.75rem);
-  --t-display: clamp(3rem, 1.6rem + 5.6vw, 6.25rem);
-  --wrap: 1180px;
+  --t-h3: 1.3125rem;
+  --t-lead: clamp(1.25rem, 1.05rem + 0.8vw, 1.75rem);
+  --t-h2: clamp(2.125rem, 1.4rem + 2.8vw, 3.75rem);
+  --t-display: clamp(3.5rem, 1.6rem + 6.6vw, 8.5rem);
+  --wrap: 1200px;
   --pad: clamp(20px, 4vw, 48px);
   --radius-icon: 22.5%;
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
 }
-html[lang="zh-TW"] { --font: "Huninn", "M PLUS Rounded 1c", "PingFang TC", "Noto Sans TC", sans-serif; }
+html[lang="zh-TW"] { --font: "Huninn", "M PLUS Rounded 1c", "PingFang TC", "Noto Sans TC", sans-serif; --display: var(--font); }
 
 *, *::before, *::after { box-sizing: border-box; }
 * { margin: 0; }
-html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
-@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+html { -webkit-text-size-adjust: 100%; }
 body {
   font-family: var(--font); font-size: var(--t-body); line-height: 1.7;
   background: var(--paper); color: var(--ink);
@@ -30,140 +33,359 @@ body {
 }
 img { display: block; max-width: 100%; height: auto; }
 a { color: inherit; }
-h1, h2, h3 { line-height: 1.2; font-weight: 800; text-wrap: balance; }
+h1, h2, h3 { line-height: 1.15; font-weight: 800; text-wrap: balance; }
+html[lang="ja"] :is(h1, h2, h3, .ap-tagline) { word-break: auto-phrase; }
+h1, h2, .ap-feature h3, .dl-name, .marquee { font-family: var(--display); }
 p { text-wrap: pretty; }
-:focus-visible { outline: 3px solid var(--focus, currentColor); outline-offset: 3px; border-radius: 6px; }
-.skip { position: absolute; left: 12px; top: -60px; z-index: 20; padding: 10px 16px; border-radius: 10px; background: var(--ink); color: var(--paper); }
+input, button { font: inherit; color: inherit; }
+:focus-visible { outline: 3px solid var(--focus, currentColor); outline-offset: 3px; border-radius: 8px; }
+.skip { position: absolute; left: 12px; top: -60px; z-index: 30; padding: 10px 16px; border-radius: 10px; background: var(--ink); color: var(--paper); }
 .skip:focus { top: 12px; }
 .wrap { max-width: var(--wrap); margin: 0 auto; padding-inline: var(--pad); }
 
-/* Top bar: the back button (only when the visitor came from the homepage) and the language switch. */
+/* ── Top bar ───────────────────────────────────────────── */
 .ap-top {
-  position: absolute; inset: 0 0 auto; z-index: 5;
+  position: absolute; inset: 0 0 auto; z-index: 10;
   display: flex; align-items: center; justify-content: space-between; gap: 16px;
   max-width: var(--wrap); margin: 0 auto; padding: 18px var(--pad);
   color: var(--hero-fg);
 }
+.ap-back, .ap-lang {
+  background: var(--chip);
+  -webkit-backdrop-filter: blur(14px) saturate(1.4); backdrop-filter: blur(14px) saturate(1.4);
+}
 .ap-back {
   display: inline-flex; align-items: center; gap: 8px;
   min-height: 40px; padding: 0 16px 0 12px; border-radius: 99px;
-  background: var(--chip); color: var(--hero-fg); text-decoration: none;
-  font-size: var(--t-small); font-weight: 800;
+  color: var(--hero-fg); text-decoration: none; font-size: var(--t-small); font-weight: 800;
 }
 .ap-back[hidden] { display: none; }
-.ap-back::before { content: ""; width: 8px; height: 8px; border-left: 2.5px solid currentColor; border-bottom: 2.5px solid currentColor; rotate: 45deg; margin-left: 4px; }
-@media (hover: hover) { .ap-back:hover { background: var(--chip-hover); } }
-.ap-lang { display: flex; gap: 2px; margin-left: auto; padding: 3px; border-radius: 99px; background: var(--chip); }
-.ap-lang button {
-  min-height: 34px; padding: 0 12px; border: 0; border-radius: 99px; cursor: pointer;
-  background: none; color: inherit; font: inherit; font-size: var(--t-small); font-weight: 500;
-}
+.ap-back::before { content: ""; width: 8px; height: 8px; border-left: 2.5px solid currentColor; border-bottom: 2.5px solid currentColor; rotate: 45deg; margin-left: 4px; transition: translate 200ms var(--ease-out); }
+@media (hover: hover) { .ap-back:hover { background: var(--chip-hover); } .ap-back:hover::before { translate: -3px 0; } }
+.ap-lang { display: flex; gap: 2px; margin-left: auto; padding: 3px; border-radius: 99px; }
+.ap-lang button { min-height: 34px; padding: 0 12px; border: 0; border-radius: 99px; cursor: pointer; background: none; font-size: var(--t-small); font-weight: 500; }
 .ap-lang button[aria-pressed="true"] { background: var(--hero-fg); color: var(--hero-on-fg); font-weight: 800; }
 
-/* Hero: the app's own colour field, the name large, the store buttons right there. */
-.ap-hero { background: var(--hero-bg); color: var(--hero-fg); }
+/* ── Hero ──────────────────────────────────────────────── */
+.ap-hero { position: relative; overflow: clip; isolation: isolate; background: var(--hero-bg); color: var(--hero-fg); }
+.fx-field { position: absolute; inset: 0; z-index: 0; width: 100%; height: 100%; }
+.fx-glow {
+  position: absolute; inset: 0; z-index: 0; pointer-events: none;
+  background: radial-gradient(520px circle at var(--mx, 70%) var(--my, 40%), var(--glow, rgba(255, 255, 255, 0.35)), transparent 60%);
+  mix-blend-mode: soft-light; transition: opacity 400ms ease;
+}
 .ap-hero-inner {
+  position: relative; z-index: 1;
   display: grid; grid-template-columns: minmax(0, 6fr) minmax(0, 6fr); align-items: center;
   gap: clamp(32px, 5vw, 72px);
-  min-height: min(100svh, 940px);
+  min-height: min(100svh, 980px);
   padding-top: clamp(96px, 12vw, 132px); padding-bottom: clamp(56px, 7vw, 96px);
+  pointer-events: none;
 }
-.ap-icon { width: clamp(84px, 7vw, 112px); aspect-ratio: 1; border-radius: var(--radius-icon); box-shadow: 0 14px 30px rgba(0, 0, 0, 0.22); }
-.ap-hero h1 { margin-top: 22px; font-size: var(--t-display); line-height: 1; letter-spacing: -0.02em; }
-.ap-kind { margin-top: 14px; color: var(--hero-soft); }
-.ap-tagline { margin-top: 26px; font-size: var(--t-lead); font-weight: 800; line-height: 1.4; }
+.ap-hero-text > *, .ap-stage { pointer-events: auto; }
+.ap-hero-text { pointer-events: none; }
+.ap-icon { width: clamp(84px, 7vw, 112px); aspect-ratio: 1; border-radius: var(--radius-icon); box-shadow: 0 18px 40px rgba(0, 0, 0, 0.25); }
+.ap-hero h1 { margin-top: 22px; font-size: var(--t-display); line-height: 0.98; letter-spacing: -0.02em; font-weight: 900; }
+.ap-hero h1 .ch { display: inline-block; white-space: pre; }
+.ap-kind { margin-top: 16px; color: var(--hero-soft); }
+.ap-tagline { margin-top: 24px; font-family: var(--display); font-size: var(--t-lead); font-weight: 800; line-height: 1.35; }
 .ap-intro { margin-top: 12px; max-width: 32em; }
 .ap-get { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 14px; margin-top: 30px; }
 .ap-note { width: 100%; color: var(--hero-soft); font-size: var(--t-small); }
 
 .store {
+  position: relative; overflow: hidden;
   display: inline-flex; align-items: center; gap: 12px;
-  min-height: 60px; padding: 8px 22px 8px 12px; border-radius: 16px;
+  min-height: 62px; padding: 8px 24px 8px 12px; border-radius: 18px;
   background: var(--btn-bg); color: var(--btn-fg); text-decoration: none;
-  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.16);
-  transition: transform 160ms var(--ease-out), box-shadow 160ms var(--ease-out);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.2);
+  transition: transform 220ms var(--ease-spring), box-shadow 220ms var(--ease-out);
+}
+/* A light sweep crosses the button every few seconds, and on hover. */
+.store::after {
+  content: ""; position: absolute; inset: -40% auto -40% -60%; width: 40%;
+  background: linear-gradient(100deg, transparent, rgba(255, 255, 255, 0.55), transparent);
+  transform: skewX(-18deg); pointer-events: none; opacity: 0;
 }
 .store img { width: 40px; height: 40px; border-radius: 10px; background: #fff; padding: 5px; }
 .store span { display: flex; flex-direction: column; line-height: 1.15; font-size: 1.25rem; font-weight: 800; }
 .store small { font-size: 0.75rem; font-weight: 500; opacity: 0.85; }
-@media (hover: hover) { .store:hover { transform: translateY(-2px); box-shadow: 0 12px 26px rgba(0, 0, 0, 0.2); } }
-.store:active { transform: scale(0.97); }
-/* The visitor's own store comes first. */
+@media (hover: hover) { .store:hover { transform: translateY(-3px) scale(1.03); box-shadow: 0 16px 34px rgba(0, 0, 0, 0.26); } }
+.store:active { transform: scale(0.96); }
 .is-android .store[data-store="play"], .is-ios .store[data-store="ios"] { order: -1; }
 
-/* Three screenshots fanned like a hand of cards, as on the homepage. */
-.ap-fan { display: grid; place-items: center; padding-block: 4%; }
-.ap-fan img {
-  grid-area: 1 / 1; width: 44%; border-radius: 18px;
-  box-shadow: 0 24px 50px rgba(0, 0, 0, 0.28);
-  transform: var(--fan);
-}
-.ap-fan img:nth-child(1) { --fan: translateY(-3%) scale(1.06); z-index: 2; }
-.ap-fan img:nth-child(2) { --fan: translateX(-62%) translateY(5%) rotate(-8deg); }
-.ap-fan img:nth-child(3) { --fan: translateX(62%) translateY(5%) rotate(8deg); }
-@media (prefers-reduced-motion: no-preference) {
-  .js .ap-fan img { animation: deal 900ms var(--ease-out) both; }
-  .js .ap-fan img:nth-child(2) { animation-delay: 120ms; }
-  .js .ap-fan img:nth-child(3) { animation-delay: 200ms; }
-  @keyframes deal { from { transform: translateY(14%) scale(0.92); opacity: 0; } }
-}
+/* The stage tilts toward the pointer; screenshots sit at different depths. */
+.ap-stage { position: relative; display: grid; place-items: center; perspective: 1400px; }
+.stage-tilt { display: grid; place-items: center; width: 100%; transform-style: preserve-3d;
+  transform: rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)); transition: transform 500ms var(--ease-out); }
+.ap-stage img { grid-area: 1 / 1; border-radius: 20px; box-shadow: 0 30px 70px rgba(0, 0, 0, 0.32); }
+.stage-fan img { width: 44%; transform: var(--fan); }
+.stage-fan img:nth-of-type(1) { --fan: translateZ(90px) translateY(-3%) scale(1.04); z-index: 2; }
+.stage-fan img:nth-of-type(2) { --fan: translateX(-62%) translateY(5%) rotate(-9deg); }
+.stage-fan img:nth-of-type(3) { --fan: translateX(62%) translateY(5%) rotate(9deg); }
+.stage-single img { width: min(64%, 380px); transform: translateZ(60px); z-index: 2; }
 
-/* Sections on paper. */
-.ap-section { padding-block: clamp(72px, 9vw, 120px); }
-.ap-section h2 { font-size: var(--t-h2); }
-.ap-section-lead { margin-top: 12px; color: var(--muted); max-width: 36em; }
+/* Evenli: the icon's split disc, two halves that meet. */
+.disc { position: absolute; z-index: 0; width: min(92%, 600px); aspect-ratio: 1; transform: translateZ(-80px); }
+.disc::before, .disc::after { content: ""; position: absolute; top: 0; bottom: 0; width: 50%; }
+.disc::before { left: 0; border-radius: 100% 0 0 100% / 50% 0 0 50%; background: #fbf3e6; }
+.disc::after { right: 0; border-radius: 0 100% 100% 0 / 0 50% 50% 0; background: #f47c66; }
 
-.ap-screens { background: var(--paper-2); }
-.ap-strip {
-  display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(14px, 2vw, 28px);
-  margin-top: clamp(32px, 4vw, 48px);
-}
-.ap-strip img { width: 100%; border-radius: 16px; box-shadow: 0 14px 34px rgba(0, 0, 0, 0.14); }
+.laser-hint { margin-top: 22px; display: flex; flex-wrap: wrap; align-items: center; gap: 10px; font-weight: 800; font-size: var(--t-small); }
+.laser-hint::before { content: ""; width: 12px; height: 12px; border-radius: 50%; background: #ff2a2a; box-shadow: 0 0 14px 4px rgba(255, 40, 40, 0.6); }
+.laser-count { padding: 2px 12px; border-radius: 99px; background: var(--btn-bg); color: var(--btn-fg); }
+.laser-count[hidden] { display: none; }
+.hero-laser .fx-field { cursor: crosshair; }
 
-.ap-features-grid {
-  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: clamp(32px, 4vw, 52px) clamp(32px, 6vw, 88px);
-  margin-top: clamp(36px, 4vw, 56px);
+/* ── Sections ──────────────────────────────────────────── */
+.ap-section { padding-block: clamp(80px, 10vw, 140px); }
+.ap-section h2 { font-size: var(--t-h2); font-weight: 900; }
+.sig-head p { margin-top: 12px; color: var(--muted); max-width: 36em; font-size: var(--t-lead); line-height: 1.5; }
+.sig-note { margin-top: 18px; color: var(--muted); font-size: var(--t-small); }
+
+.money { display: inline-flex; align-items: baseline; gap: 4px; padding: 6px 14px; border-radius: 14px; background: var(--paper); box-shadow: inset 0 0 0 2px var(--rule); transition: box-shadow 200ms ease; }
+.money:focus-within { box-shadow: inset 0 0 0 2px var(--accent-ink), 0 0 0 6px color-mix(in srgb, var(--accent-ink) 18%, transparent); }
+.money-sign { font-weight: 800; color: var(--muted); }
+.money input { width: 7.5ch; border: 0; background: none; font-family: var(--display); font-size: 1.5rem; font-weight: 800; font-variant-numeric: tabular-nums; text-align: right; outline: none; }
+.money input::-webkit-inner-spin-button { opacity: 0.4; }
+
+/* Evenli: settle-up */
+.sig-evenli { background: var(--paper-2); }
+.settle { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(24px, 4vw, 56px); margin-top: clamp(36px, 4vw, 56px); align-items: start; }
+.settle-col { font-weight: 800; color: var(--muted); font-size: var(--t-small); }
+.person { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 14px; margin-top: 14px; padding: 12px 14px; border-radius: 22px; background: var(--paper); box-shadow: 0 10px 24px rgba(13, 43, 42, 0.08); }
+.avatar { display: grid; place-items: center; width: 48px; height: 48px; border-radius: 50%; background: var(--av); font-weight: 900; font-size: 1.25rem; color: #2a1a10; }
+.person-name { font-weight: 800; font-size: 1.125rem; }
+.settle-out { position: relative; padding: clamp(24px, 3vw, 40px); border-radius: 32px; background: var(--hero-bg); color: var(--hero-fg); overflow: hidden; box-shadow: 0 30px 60px rgba(9, 90, 89, 0.3); }
+.settle-share { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px; color: var(--hero-soft); }
+.settle-share strong { font-family: var(--display); font-size: 2rem; color: var(--hero-fg); font-variant-numeric: tabular-nums; }
+.transfers { list-style: none; padding: 0; margin-top: 18px; display: grid; gap: 12px; min-height: 140px; }
+.transfers li {
+  display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 16px;
+  padding: 16px 18px; border-radius: 20px; background: rgba(255, 255, 255, 0.12);
+  font-weight: 800; animation: pop-in 520ms var(--ease-spring) both; animation-delay: calc(var(--i, 0) * 90ms);
 }
-.ap-feature h3 { font-size: var(--t-h3); color: var(--accent-ink); }
+.transfers .who { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.transfers .tag { padding: 2px 12px; border-radius: 99px; background: #fbf3e6; color: #0d2b2a; }
+.transfers .flow-arrow { width: 54px; height: 14px; color: #f47c66; }
+.transfers .flow-arrow path { stroke-dasharray: 5 6; animation: dash 900ms linear infinite; }
+.transfers .amt { font-family: var(--display); font-size: 1.5rem; color: #ffbfae; font-variant-numeric: tabular-nums; }
+.transfers .even { grid-template-columns: 1fr; color: var(--hero-soft); }
+.settle-out .sig-note { color: var(--hero-soft); }
+@keyframes pop-in { from { opacity: 0; transform: translateY(14px) scale(0.92); } }
+@keyframes dash { to { stroke-dashoffset: -22; } }
+
+/* Oshipass: days as a fan */
+.sig-oshipass { background: var(--paper-2); overflow: clip; }
+.days { position: relative; margin-top: clamp(32px, 4vw, 48px); display: grid; justify-items: start; }
+.days-date { display: grid; gap: 8px; font-weight: 800; color: var(--muted); }
+.days-date input { min-height: 52px; padding: 0 18px; border: 0; border-radius: 16px; background: var(--paper); box-shadow: inset 0 0 0 2px var(--rule); font-weight: 800; font-size: 1.125rem; color: var(--ink); }
+.days-date input:focus { outline: none; box-shadow: inset 0 0 0 2px var(--accent-ink), 0 0 0 6px rgba(146, 16, 63, 0.16); }
+.days-count { margin-top: 18px; display: flex; flex-wrap: wrap; align-items: baseline; gap: 0 14px; font-family: var(--display); font-size: var(--t-lead); font-weight: 900; }
+.days-count strong {
+  font-size: clamp(5.5rem, 3rem + 12vw, 13rem); line-height: 1; letter-spacing: -0.03em; font-variant-numeric: tabular-nums;
+  background: linear-gradient(100deg, #92103f 0%, #ff5fa2 35%, #ffb3d1 50%, #ff5fa2 65%, #92103f 100%) 0 0 / 250% 100%;
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+  animation: shine 5s linear infinite;
+}
+.days-next { list-style: none; padding: 0; margin-top: 12px; display: grid; gap: 10px; }
+.days-next li { padding: 10px 18px; border-radius: 99px; background: var(--paper); font-weight: 800; box-shadow: 0 8px 20px rgba(58, 18, 48, 0.08); }
+.days-next li:empty { display: none; }
+@keyframes shine { to { background-position: -250% 0; } }
+
+/* Bit by Bit: today's allowance */
+.sig-bit-by-bit { background: var(--paper-2); }
+.allow { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(24px, 4vw, 56px); margin-top: clamp(36px, 4vw, 56px); align-items: center; }
+.allow-in { display: grid; gap: 16px; }
+.allow-in label { display: grid; gap: 8px; font-weight: 800; color: var(--muted); }
+.allow-in .money { justify-self: start; }
+.allow-out { position: relative; padding: clamp(28px, 4vw, 48px); border-radius: 32px; background: var(--hero-bg); color: var(--hero-fg); overflow: hidden; box-shadow: 0 30px 60px rgba(160, 50, 30, 0.3); }
+.allow-line { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 14px; font-weight: 800; font-size: var(--t-lead); }
+.allow-line strong { font-family: var(--display); font-size: clamp(3.5rem, 2rem + 6vw, 7rem); line-height: 1; font-weight: 900; font-variant-numeric: tabular-nums; letter-spacing: -0.02em; }
+.allow-note { margin-top: 10px; color: var(--hero-soft); font-weight: 500; }
+.allow-out.is-over strong { color: #fff; }
+
+/* Paw Hunter: four grounds that flip in */
+.sig-paw-hunter { background: var(--paper); }
+.grounds { list-style: none; padding: 0; margin-top: clamp(36px, 4vw, 56px); display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(12px, 1.6vw, 22px); perspective: 1200px; }
+.ground { padding: 14px 14px 22px; border-radius: 28px; background: var(--g); color: var(--gfg); transform-style: preserve-3d; transition: transform 400ms var(--ease-out); }
+.ground img { border-radius: 18px; box-shadow: 0 16px 30px rgba(0, 0, 0, 0.25); transform: translateZ(30px); }
+.ground h3 { margin-top: 16px; font-family: var(--display); font-size: 1.5rem; }
+.ground p { margin-top: 4px; font-size: var(--t-small); opacity: 0.9; }
+
+/* ── Marquee: the name, pushed along by the scroll ─────── */
+.marquee { overflow: clip; padding-block: clamp(18px, 3vw, 36px); background: var(--ink); color: var(--paper); }
+.marquee-track { display: flex; width: max-content; white-space: nowrap; font-size: clamp(3rem, 2rem + 6vw, 8rem); font-weight: 900; line-height: 1.1;
+  transform: translateX(var(--mq, 0px)) skewX(var(--skew, 0deg)); will-change: transform; }
+.marquee-track span { padding-inline: 0.35em; }
+.marquee-track span:nth-child(even) { color: transparent; -webkit-text-stroke: 2px var(--paper); }
+.marquee-track i { align-self: center; width: 0.5em; height: 0.5em; border-radius: 50%; background: var(--mq-dot, var(--paper)); }
+
+/* ── Screens: a 3D coverflow, pinned while you scroll ──── */
+.ap-screens { position: relative; background: var(--flow-bg, var(--ink)); color: var(--flow-fg, var(--paper)); }
+.flow-pin { padding-block: clamp(80px, 9vw, 120px); overflow: clip; }
+.ap-screens .sig-head p { color: inherit; opacity: 0.75; }
+.flow {
+  display: flex; gap: clamp(16px, 3vw, 40px); margin-top: clamp(36px, 4vw, 56px);
+  padding-inline: var(--pad); perspective: 1200px;
+  overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none;
+}
+.flow::-webkit-scrollbar { display: none; }
+.flow img {
+  flex: none; width: min(64vw, 300px); scroll-snap-align: center;
+  border-radius: 22px; box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+  transform: rotateY(var(--cy, 0deg)) scale(var(--cs, 1)) translateZ(var(--cz, 0px));
+  filter: brightness(var(--cb, 1));
+}
+/* Pinned version (set by script on wide screens): the track slides sideways as you scroll down. */
+.ap-screens.is-pinned { height: var(--flow-h); }
+.ap-screens.is-pinned .flow-pin { position: sticky; top: 0; min-height: 100svh; display: flex; flex-direction: column; justify-content: center; padding-block: 64px; }
+.ap-screens.is-pinned .flow { overflow: visible; scroll-snap-type: none; padding-inline: calc(50vw - 160px); transform: translateX(var(--fx, 0px)); will-change: transform; }
+.ap-screens.is-pinned .flow img { width: 320px; }
+
+/* ── Features ──────────────────────────────────────────── */
+.ap-features { background: var(--paper); }
+.ap-features-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(14px, 2vw, 24px); margin-top: clamp(36px, 4vw, 56px); }
+.ap-feature {
+  position: relative; overflow: hidden; isolation: isolate;
+  padding: clamp(24px, 3vw, 36px); border-radius: 28px;
+  background: var(--paper-2);
+}
+/* A spotlight follows the pointer across each block. */
+.ap-feature::before {
+  content: ""; position: absolute; inset: 0; z-index: -1; opacity: 0; transition: opacity 300ms ease;
+  background: radial-gradient(380px circle at var(--sx, 50%) var(--sy, 50%), color-mix(in srgb, var(--accent-ink) 22%, transparent), transparent 65%);
+}
+@media (hover: hover) { .ap-feature:hover::before { opacity: 1; } }
+.ap-feature h3 { font-size: var(--t-h3); color: var(--accent-ink); font-weight: 900; }
 .ap-feature p { margin-top: 8px; max-width: 30em; }
 
+/* ── Facts, set as each app's artefact ─────────────────── */
 .ap-facts { background: var(--paper-2); }
-.ap-facts-inner { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); gap: clamp(28px, 5vw, 72px); }
-.ap-facts dl { display: grid; grid-template-columns: minmax(7.5em, auto) minmax(0, 1fr); gap: 0 clamp(20px, 3vw, 40px); }
-.ap-facts dt, .ap-facts dd { padding-block: 18px; border-top: 1px solid var(--rule); }
-.ap-facts dt { font-weight: 800; }
-.ap-facts dd { max-width: 34em; }
+.facts-card { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); gap: 0; color: var(--ink); }
+.facts-stub { padding: clamp(24px, 3vw, 40px); }
+.facts-icon { width: 64px; aspect-ratio: 1; border-radius: var(--radius-icon); }
+.facts-stub h2 { margin-top: 18px; }
+.facts-card dl { padding: clamp(16px, 2.5vw, 32px) clamp(24px, 3vw, 40px); }
+.fact { display: grid; grid-template-columns: minmax(7.5em, auto) minmax(0, 1fr); gap: 0 clamp(20px, 3vw, 40px); padding-block: 16px; border-top: 1px solid var(--rule); }
+.fact:first-child { border-top: 0; }
+.fact dt { font-weight: 800; }
 
-/* Download, again, in the app's colour: the buttons and, on a computer, codes to scan with a phone. */
-.ap-download { background: var(--hero-bg); color: var(--hero-fg); }
-.ap-download-inner { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); align-items: center; gap: clamp(32px, 5vw, 72px); }
-.ap-download .ap-icon { width: 80px; }
-.ap-download h2 { margin-top: 22px; font-size: var(--t-h2); }
-.ap-download p { margin-top: 10px; max-width: 30em; }
-.ap-qr { display: flex; flex-wrap: wrap; gap: 20px; justify-content: flex-end; }
-.ap-qr figure { display: grid; justify-items: center; gap: 10px; }
-.ap-qr img { width: 148px; border-radius: 14px; box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18); }
+/* Evenli: a receipt with torn edges. */
+.facts-receipt .facts-card {
+  max-width: 860px; margin-inline: auto; background: #fffdf8; box-shadow: 0 30px 60px rgba(13, 43, 42, 0.14);
+  --z: 12px;
+  -webkit-mask: conic-gradient(from -45deg at bottom, #0000, #000 1deg 89deg, #0000 90deg) bottom / calc(var(--z) * 2) 51% repeat-x,
+                conic-gradient(from 135deg at top, #0000, #000 1deg 89deg, #0000 90deg) top / calc(var(--z) * 2) 51% repeat-x;
+          mask: conic-gradient(from -45deg at bottom, #0000, #000 1deg 89deg, #0000 90deg) bottom / calc(var(--z) * 2) 51% repeat-x,
+                conic-gradient(from 135deg at top, #0000, #000 1deg 89deg, #0000 90deg) top / calc(var(--z) * 2) 51% repeat-x;
+  padding-block: 20px; grid-template-columns: 1fr;
+}
+.facts-receipt .facts-stub { text-align: center; border-bottom: 2px dashed var(--rule); }
+.facts-receipt .facts-icon { margin-inline: auto; }
+.facts-receipt .fact { border-top: 1px dashed var(--rule); }
+
+/* Oshipass: a show ticket with a stub and a perforation. */
+.facts-ticket .facts-card {
+  --cut: 33%;
+  background: #fff; border-radius: 28px; box-shadow: 0 30px 60px rgba(146, 16, 63, 0.16);
+  -webkit-mask: radial-gradient(circle 18px at var(--cut) 0, #0000 98%, #000) top / 100% 51% no-repeat,
+                radial-gradient(circle 18px at var(--cut) 100%, #0000 98%, #000) bottom / 100% 51% no-repeat;
+          mask: radial-gradient(circle 18px at var(--cut) 0, #0000 98%, #000) top / 100% 51% no-repeat,
+                radial-gradient(circle 18px at var(--cut) 100%, #0000 98%, #000) bottom / 100% 51% no-repeat;
+  grid-template-columns: var(--cut) 1fr;
+}
+.facts-ticket .facts-stub { background: linear-gradient(160deg, #fde0ea, #f6a3c3); border-right: 3px dashed #fff; display: flex; flex-direction: column; justify-content: center; }
+
+/* Bit by Bit: a bank passbook, ruled, with the red double line. */
+.facts-ledger .facts-card {
+  background: #fffaf3; border-radius: 18px; box-shadow: 0 30px 60px rgba(160, 50, 30, 0.14);
+  border-top: 6px double #d6452c; overflow: hidden;
+}
+.facts-ledger .facts-card dl { background: repeating-linear-gradient(#fffaf3 0 calc(1.7em * 1 - 1px), #e9d9c9 calc(1.7em - 1px) 1.7em); }
+.facts-ledger .facts-stub { border-right: 2px solid #f2c4b8; }
+.facts-ledger .fact { border-top: 1px solid #e3c9bb; }
+.facts-ledger .fact dt { color: #a8341f; }
+
+/* Paw Hunter: a round name tag on a collar. */
+.facts-tag .facts-card { background: #fff7ea; border-radius: 48px; box-shadow: 0 30px 60px rgba(43, 33, 24, 0.14), inset 0 0 0 3px #e7d3ad; }
+
+/* ── Download ──────────────────────────────────────────── */
+.ap-download { position: relative; overflow: clip; background: var(--hero-bg); color: var(--hero-fg); }
+.ap-download-inner { position: relative; display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); align-items: center; gap: clamp(32px, 5vw, 72px); }
+.dl-name {
+  font-size: clamp(4rem, 2rem + 9vw, 11rem); font-weight: 900; line-height: 0.95; letter-spacing: -0.03em;
+  background: linear-gradient(100deg, var(--hero-fg) 0%, var(--hero-fg) 40%, var(--shine, #fff) 50%, var(--hero-fg) 60%, var(--hero-fg) 100%) 0 0 / 250% 100%;
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+  animation: shine 6s linear infinite;
+}
+.ap-download h2 { margin-top: 18px; font-size: var(--t-lead); }
+.ap-download p:not(.dl-name) { margin-top: 8px; max-width: 30em; }
+.ap-qr { display: flex; flex-wrap: wrap; gap: 20px; justify-content: flex-end; perspective: 800px; }
+.ap-qr figure { display: grid; justify-items: center; gap: 10px; transform: rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)); transition: transform 300ms var(--ease-out); }
+.ap-qr img { width: 150px; border-radius: 16px; box-shadow: 0 16px 34px rgba(0, 0, 0, 0.24); }
 .ap-qr figcaption { font-size: var(--t-small); font-weight: 800; }
 .ap-qr-hint { width: 100%; text-align: right; color: var(--hero-soft); font-size: var(--t-small); }
-
 .ap-foot { padding-block: 28px; color: var(--muted); font-size: var(--t-small); }
 
+/* ── Motion (only when the visitor allows it) ──────────── */
+@media (prefers-reduced-motion: no-preference) {
+  .js .ap-hero h1 .ch { animation: char-in 900ms var(--ease-spring) both; animation-delay: calc(120ms + var(--i) * 45ms); }
+  .js .ap-icon { animation: icon-in 900ms var(--ease-spring) both; }
+  .js .ap-kind, .js .ap-tagline, .js .ap-intro, .js .ap-hero .ap-get, .js .laser-hint { animation: up-in 900ms var(--ease-out) both; }
+  .js .ap-kind { animation-delay: 380ms; } .js .ap-tagline { animation-delay: 460ms; } .js .ap-intro { animation-delay: 540ms; }
+  .js .ap-hero .ap-get { animation-delay: 620ms; } .js .laser-hint { animation-delay: 760ms; }
+  .js .stage-fan img, .js .stage-single img { animation: deal 1100ms var(--ease-spring) both; animation-delay: 300ms; }
+  .js .stage-fan img:nth-of-type(2) { animation-delay: 420ms; } .js .stage-fan img:nth-of-type(3) { animation-delay: 520ms; }
+  .js .stage-tilt { animation: float 6s ease-in-out 1.6s infinite; }
+  .js .disc::before { animation: half-l 1200ms var(--ease-spring) 200ms both; }
+  .js .disc::after { animation: half-r 1200ms var(--ease-spring) 200ms both; }
+  .store::after { animation: sweep 4.5s ease-in-out 2s infinite; }
+
+  .js [data-reveal] { opacity: 0; transform: translateY(48px) scale(0.97); filter: blur(8px);
+    transition: opacity 900ms var(--ease-out), transform 900ms var(--ease-out), filter 900ms var(--ease-out); transition-delay: var(--d, 0ms); }
+  .js [data-reveal].is-in { opacity: 1; transform: none; filter: none; }
+  .js .grounds[data-reveal] { opacity: 1; transform: none; filter: none; }
+  .js .grounds[data-reveal] .ground { opacity: 0; transform: rotateY(-70deg) translateZ(-60px); transition: opacity 700ms ease, transform 1000ms var(--ease-spring); }
+  .js .grounds[data-reveal].is-in .ground { opacity: 1; transform: none; }
+  .js .grounds .ground:nth-child(2) { transition-delay: 120ms; } .js .grounds .ground:nth-child(3) { transition-delay: 240ms; } .js .grounds .ground:nth-child(4) { transition-delay: 360ms; }
+  @media (hover: hover) { .ground:hover { transform: translateY(-8px) rotateX(6deg) !important; } }
+}
+@keyframes char-in { from { opacity: 0; transform: translateY(0.7em) rotate(12deg) scale(0.6); filter: blur(6px); } }
+@keyframes icon-in { from { opacity: 0; transform: scale(0.3) rotate(-20deg); } }
+@keyframes up-in { from { opacity: 0; transform: translateY(24px); } }
+@keyframes deal { from { opacity: 0; transform: translateY(30%) rotate(0deg) scale(0.7); } }
+@keyframes float { 50% { translate: 0 -14px; } }
+@keyframes half-l { from { transform: translateX(-60%) rotate(-30deg); opacity: 0; } }
+@keyframes half-r { from { transform: translateX(60%) rotate(30deg); opacity: 0; } }
+@keyframes sweep { 0%, 70% { opacity: 0; left: -60%; } 72% { opacity: 1; } 100% { opacity: 1; left: 130%; } }
+
+/* ── Small screens ─────────────────────────────────────── */
 @media (max-width: 900px) {
   .ap-hero-inner { grid-template-columns: 1fr; min-height: 0; }
-  .ap-fan { max-width: 560px; width: 100%; margin-inline: auto; }
-  .ap-strip { grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: min(62%, 260px);
-    overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 12px; margin-inline: calc(var(--pad) * -1); padding-inline: var(--pad); scroll-padding-inline: var(--pad); }
-  .ap-strip img { scroll-snap-align: start; }
-  .ap-features-grid, .ap-facts-inner, .ap-download-inner { grid-template-columns: 1fr; }
+  .ap-stage { max-width: 560px; width: 100%; margin-inline: auto; }
+  .settle, .allow, .ap-features-grid, .ap-download-inner { grid-template-columns: 1fr; }
+  .grounds { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .facts-card, .facts-ticket .facts-card { grid-template-columns: 1fr; }
+  .facts-ticket .facts-card { -webkit-mask: none; mask: none; }
+  .facts-ticket .facts-stub { border-right: 0; border-bottom: 3px dashed #fff; }
+  .facts-ledger .facts-stub { border-right: 0; border-bottom: 2px solid #f2c4b8; }
   .ap-qr { justify-content: flex-start; }
   .ap-qr-hint { text-align: left; }
 }
-/* On a phone the buttons are the way to download; the codes are for computers. */
 @media (max-width: 900px), (pointer: coarse) { .ap-qr { display: none; } }
 @media (max-width: 520px) {
-  .ap-facts dl { grid-template-columns: 1fr; }
-  .ap-facts dd { border-top: 0; padding-top: 0; }
+  .fact { grid-template-columns: 1fr; }
   .store { flex: 1 1 100%; }
   .ap-lang button { padding: 0 10px; }
+  .person { grid-template-columns: auto 1fr; }
+  .person .money { grid-column: 1 / -1; justify-self: stretch; }
+  .person .money input { width: 100%; }
+  .transfers li { grid-template-columns: 1fr; gap: 6px; }
 }
+
+/* Per-app effect colours. */
+.app-evenli { --flow-bg: #062f2f; --glow: rgba(244, 124, 102, 0.6); --shine: #ffbfae; --mq-dot: #f47c66; }
+.app-paw-hunter { --flow-bg: #141a33; --glow: rgba(255, 70, 50, 0.45); --shine: #c2541f; --mq-dot: #ff2a2a; }
+.app-oshipass { --flow-bg: #3a1230; --glow: rgba(255, 255, 255, 0.7); --shine: #ffffff; --mq-dot: #ff5fa2; }
+.app-bit-by-bit { --flow-bg: #2a0f08; --glow: rgba(255, 214, 120, 0.7); --shine: #ffe08a; --mq-dot: #ffc23d; }
