@@ -226,23 +226,19 @@ input, button { font: inherit; color: inherit; }
 .flow-pin { padding-block: clamp(80px, 9vw, 120px); overflow: clip; }
 .ap-screens .sig-head p { color: inherit; opacity: 0.75; }
 .flow {
-  display: flex; gap: clamp(16px, 3vw, 40px); margin-top: clamp(36px, 4vw, 56px);
-  padding-inline: var(--pad); perspective: 1200px;
+  display: flex; gap: clamp(16px, 3vw, 40px); margin-top: clamp(28px, 3vw, 44px);
+  padding-block: 24px; padding-inline: calc(50% - var(--card) / 2); perspective: 1200px; --card: 300px;
+  cursor: grab; user-select: none; -webkit-user-select: none;
   overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none;
 }
 .flow::-webkit-scrollbar { display: none; }
 .flow img {
-  flex: none; width: min(64vw, 300px); scroll-snap-align: center;
+  flex: none; width: var(--card); scroll-snap-align: center; cursor: pointer; -webkit-user-drag: none;
+  transition: box-shadow 300ms ease;
   border-radius: 22px; box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
   transform: rotateY(var(--cy, 0deg)) scale(var(--cs, 1)) translateZ(var(--cz, 0px));
   filter: brightness(var(--cb, 1));
 }
-/* Pinned version (set by script on wide screens): the track slides sideways as you scroll down. */
-.ap-screens.is-pinned { height: var(--flow-h); }
-.ap-screens.is-pinned .flow-pin { position: sticky; top: 0; min-height: 100svh; display: flex; flex-direction: column; justify-content: center; padding-block: 64px; }
-.ap-screens.is-pinned .flow { overflow: visible; scroll-snap-type: none; padding-inline: calc(50vw - 160px); transform: translateX(var(--fx, 0px)); will-change: transform; }
-.ap-screens.is-pinned .flow img { width: 320px; }
-
 /* ── Features ──────────────────────────────────────────── */
 .ap-features { background: var(--paper); }
 .ap-features-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(14px, 2vw, 24px); margin-top: clamp(36px, 4vw, 56px); }
@@ -389,3 +385,123 @@ input, button { font: inherit; color: inherit; }
 .app-paw-hunter { --flow-bg: #141a33; --glow: rgba(255, 70, 50, 0.45); --shine: #c2541f; --mq-dot: #ff2a2a; }
 .app-oshipass { --flow-bg: #3a1230; --glow: rgba(255, 255, 255, 0.7); --shine: #ffffff; --mq-dot: #ff5fa2; }
 .app-bit-by-bit { --flow-bg: #2a0f08; --glow: rgba(255, 214, 120, 0.7); --shine: #ffe08a; --mq-dot: #ffc23d; }
+
+/* ── Screens: controls ─────────────────────────────────── */
+.flow.is-dragging { cursor: grabbing; scroll-snap-type: none; }
+.flow.is-dragging img { pointer-events: none; }
+.flow img.is-active { cursor: zoom-in; box-shadow: 0 30px 60px rgba(0, 0, 0, 0.45), 0 0 0 3px rgba(255, 255, 255, 0.85); }
+.flow-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; }
+.flow-nav { display: flex; gap: 10px; flex: none; }
+.round-btn {
+  display: grid; place-items: center; width: 52px; height: 52px; padding: 0; border: 0; border-radius: 50%; cursor: pointer;
+  background: rgba(255, 255, 255, 0.14); color: inherit;
+  -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.22);
+  transition: background 200ms ease, transform 200ms var(--ease-spring), opacity 200ms ease;
+}
+.round-btn svg { width: 24px; height: 24px; }
+@media (hover: hover) { .round-btn:hover:not(:disabled) { background: rgba(255, 255, 255, 0.26); transform: scale(1.08); } }
+.round-btn:active:not(:disabled) { transform: scale(0.92); }
+.round-btn:disabled { opacity: 0.3; cursor: default; }
+.flow-dots { display: flex; justify-content: center; gap: 10px; margin-top: 8px; }
+.flow-dots button { width: 10px; height: 10px; padding: 0; border: 0; border-radius: 99px; cursor: pointer; background: currentColor; opacity: 0.3; transition: width 300ms var(--ease-out), opacity 300ms ease; }
+.flow-dots button[aria-current="true"] { width: 32px; opacity: 1; }
+.flow-hint { margin-top: 14px; text-align: center; font-size: var(--t-small); opacity: 0.65; }
+.grounds img[data-zoom] { cursor: zoom-in; }
+
+/* ── Full-size viewer ──────────────────────────────────── */
+.viewer {
+  width: 100vw; height: 100dvh; max-width: none; max-height: none; margin: 0; padding: 0; border: 0;
+  background: rgba(10, 8, 24, 0.94); color: #fff; overflow: hidden;
+}
+.viewer::backdrop { background: rgba(10, 8, 24, 0.6); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); }
+.viewer[open] { display: grid; place-items: center; }
+html.viewer-open { overflow: hidden; }
+.viewer-frame { display: grid; justify-items: center; gap: 14px; padding: 72px 84px 64px; touch-action: pan-y; }
+.viewer-frame img { max-height: calc(100dvh - 190px); max-width: min(92vw, 720px); width: auto; border-radius: 22px; box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6); user-select: none; -webkit-user-drag: none; }
+.viewer-caption { max-width: 34em; text-align: center; font-size: var(--t-small); opacity: 0.8; }
+.viewer .round-btn { position: absolute; }
+.viewer-prev { left: max(16px, 3vw); top: 50%; translate: 0 -50%; }
+.viewer-next { right: max(16px, 3vw); top: 50%; translate: 0 -50%; }
+.viewer-close { right: 16px; top: 16px; }
+.viewer-count { position: absolute; left: 50%; top: 26px; translate: -50% 0; font-weight: 800; font-variant-numeric: tabular-nums; }
+@media (prefers-reduced-motion: no-preference) { .viewer[open] .viewer-frame img { animation: zoom-in 360ms var(--ease-out); } }
+@keyframes zoom-in { from { transform: scale(0.85); opacity: 0; } }
+
+/* ── Phone download bar (phones only) ──────────────────── */
+.ap-dock { display: none; }
+
+/* ══ Phone version ════════════════════════════════════════
+   A layout of its own: an app-store-style header (icon, name, download right away),
+   screenshots straight after it to swipe through, lighter effects,
+   and a download bar that stays at the bottom. */
+@media (max-width: 900px) {
+  main { display: flex; flex-direction: column; }
+  main > .ap-hero { order: 0; }
+  main > .ap-screens { order: 1; }
+  main > .sig { order: 2; }
+  main > .marquee { order: 3; }
+  main > .ap-features { order: 4; }
+  main > .ap-facts { order: 5; }
+  main > .ap-download { order: 6; }
+
+  .ap-top { padding-block: 12px; }
+  .ap-hero-inner { padding-top: 72px; padding-bottom: 32px; gap: 0; }
+  .ap-hero .ap-stage { display: none; }
+  .ap-hero-text {
+    display: grid; grid-template-columns: auto minmax(0, 1fr); column-gap: 16px; align-items: center;
+  }
+  .ap-hero-text > * { grid-column: 1 / -1; }
+  .ap-hero-text > .ap-icon { grid-column: 1; grid-row: 1 / span 2; width: 92px; align-self: start; }
+  .ap-hero h1 { grid-column: 2; grid-row: 1; margin-top: 0; font-size: clamp(2rem, 1.2rem + 4vw, 2.75rem); align-self: end; }
+  .ap-hero .ap-kind { grid-column: 2; grid-row: 2; margin-top: 4px; font-size: var(--t-small); line-height: 1.5; align-self: start; }
+  .ap-tagline { margin-top: 22px; }
+  .ap-get { margin-top: 22px; }
+  .is-ios .ap-get .store[data-store="play"], .is-android .ap-get .store[data-store="ios"] { min-height: 52px; opacity: 0.85; }
+
+  .ap-screens .flow-pin { padding-block: 40px 44px; }
+  .flow-nav { display: none; }
+  .flow { --card: min(72vw, 300px); gap: 14px; padding-block: 16px; }
+  .flow-hint { margin-top: 10px; }
+
+  .ap-section { padding-block: 64px; }
+  .sig-head p { font-size: var(--t-body); }
+  .ap-feature { padding: 22px; border-radius: 22px; }
+  .ap-features-grid { gap: 12px; }
+  .marquee { padding-block: 14px; }
+  .marquee-track { font-size: 2.75rem; }
+  .dl-name { font-size: 3.25rem; }
+  .ap-download .ap-get .store { flex: 1 1 100%; }
+  .ap-foot { padding-bottom: 104px; }
+
+  .ap-dock {
+    position: fixed; left: 10px; right: 10px; bottom: max(10px, env(safe-area-inset-bottom)); z-index: 20;
+    display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: 12px;
+    padding: 10px 10px 10px 12px; border-radius: 24px;
+    background: color-mix(in srgb, var(--paper) 78%, transparent); color: var(--ink);
+    -webkit-backdrop-filter: blur(18px) saturate(1.6); backdrop-filter: blur(18px) saturate(1.6);
+    box-shadow: 0 14px 40px rgba(0, 0, 0, 0.22), inset 0 0 0 1px rgba(255, 255, 255, 0.5);
+    transform: translateY(calc(100% + 24px)); transition: transform 420ms var(--ease-spring);
+  }
+  .ap-dock.is-shown { transform: none; }
+  .ap-dock > img { width: 46px; height: 46px; border-radius: var(--radius-icon); }
+  .ap-dock p { display: grid; line-height: 1.3; min-width: 0; }
+  .ap-dock strong { font-family: var(--display); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .ap-dock p span { font-size: 0.75rem; color: var(--muted); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .dock-stores { display: flex; gap: 6px; }
+  .dock-store {
+    display: inline-flex; align-items: center; gap: 6px; min-height: 44px; padding: 0 14px 0 8px; border-radius: 99px;
+    background: var(--btn-bg); color: var(--btn-fg); text-decoration: none; font-weight: 800; font-size: 0.875rem; white-space: nowrap;
+  }
+  .dock-store img { width: 26px; height: 26px; border-radius: 7px; background: #fff; padding: 3px; }
+  .is-ios .dock-store[data-store="play"], .is-android .dock-store[data-store="ios"] { display: none; }
+  .dock-stores:has(> :nth-child(2)) .dock-store { font-size: 0; gap: 0; padding: 0 9px; }
+  .is-ios .dock-stores .dock-store, .is-android .dock-stores .dock-store { font-size: 0.875rem; gap: 6px; padding: 0 14px 0 8px; }
+  .viewer-frame { padding: 64px 12px 96px; }
+  .viewer-frame img { max-height: calc(100dvh - 200px); }
+  .viewer-prev, .viewer-next { top: auto; bottom: 22px; translate: none; }
+  .viewer-prev { left: calc(50% - 70px); } .viewer-next { right: calc(50% - 70px); }
+}
+@media (max-width: 900px) and (prefers-reduced-motion: no-preference) {
+  .js .ap-hero h1 .ch { animation-duration: 700ms; }
+}

@@ -4,15 +4,18 @@
 (() => {
   const languages = ["en", "zh-TW", "ja"];
   const shared = {
-    en: { skip: "Skip to content", back: "Back", languageLabel: "Language", downloadOn: "Download on the", getItOn: "Get it on",
+    en: { prevShot: "Previous screen", nextShot: "Next screen", closeViewer: "Close", zoomHint: "Tap a screen to see it full size.",
+      skip: "Skip to content", back: "Back", languageLabel: "Language", downloadOn: "Download on the", getItOn: "Get it on",
       screensTitle: "Screens", featuresTitle: "What it does", factsTitle: "Before you download",
       factPrice: "Price", factDevices: "Works on", factLanguages: "Languages", factData: "Your data", factNote: "Good to know",
       qrHint: "On a computer? Scan with your phone's camera.", footer: "Made by Liu Chuan Feng in Tokyo." },
-    "zh-TW": { skip: "跳到內容", back: "返回", languageLabel: "語言", downloadOn: "前往下載", getItOn: "前往下載",
+    "zh-TW": { prevShot: "上一張", nextShot: "下一張", closeViewer: "關閉", zoomHint: "點一下畫面可以放大來看。",
+      skip: "跳到內容", back: "返回", languageLabel: "語言", downloadOn: "前往下載", getItOn: "前往下載",
       screensTitle: "畫面", featuresTitle: "功能", factsTitle: "下載前須知",
       factPrice: "價格", factDevices: "支援裝置", factLanguages: "語言", factData: "資料", factNote: "注意事項",
       qrHint: "在電腦上看？用手機相機掃描即可下載。", footer: "由 Liu Chuan Feng 在東京製作。" },
-    ja: { skip: "本文へ移動", back: "戻る", languageLabel: "言語", downloadOn: "ダウンロード", getItOn: "ダウンロード",
+    ja: { prevShot: "前の画面", nextShot: "次の画面", closeViewer: "閉じる", zoomHint: "画面をタップすると大きく表示されます。",
+      skip: "本文へ移動", back: "戻る", languageLabel: "言語", downloadOn: "ダウンロード", getItOn: "ダウンロード",
       screensTitle: "画面", featuresTitle: "できること", factsTitle: "ダウンロードの前に",
       factPrice: "価格", factDevices: "対応端末", factLanguages: "言語", factData: "データ", factNote: "ご注意",
       qrHint: "パソコンで見ている方は、スマホのカメラで読み取ってください。", footer: "東京で Liu Chuan Feng が制作しました。" },
@@ -413,52 +416,127 @@
     addEventListener("resize", () => { half = track.scrollWidth / 2; });
   }
 
-  /* ── Screens: coverflow, pinned on wide screens ───────── */
+  /* ── Screens: one at a time, with buttons, dots, swipe and arrow keys ── */
   const flowSection = document.querySelector("[data-flow]");
   if (flowSection) {
     const flow = flowSection.querySelector("[data-flow-track]");
     const cards = [...flow.querySelectorAll("img")];
-    const wide = matchMedia("(min-width: 901px)");
-    let overflow = 0;
-    const cover = () => {
-      const mid = innerWidth / 2;
-      cards.forEach((img) => {
-        const r = img.getBoundingClientRect();
-        const off = clamp(((r.left + r.width / 2) - mid) / (r.width + 40), -2.2, 2.2);
-        img.style.setProperty("--cy", `${(-off * 32).toFixed(1)}deg`);
-        img.style.setProperty("--cs", (1.08 - Math.min(Math.abs(off), 1.6) * 0.14).toFixed(3));
-        img.style.setProperty("--cz", `${(-Math.abs(off) * 140).toFixed(0)}px`);
-        img.style.setProperty("--cb", (1 - Math.min(Math.abs(off), 1.6) * 0.28).toFixed(2));
+    const dots = flowSection.querySelector("[data-flow-dots]");
+    let active = 0;
+    dots.innerHTML = cards.map((_, i) => `<button type="button" aria-label="${i + 1} / ${cards.length}"></button>`).join("");
+    const dotButtons = [...dots.children];
+    const centerOf = (img) => img.offsetLeft + img.offsetWidth / 2 - flow.clientWidth / 2;
+    const go = (i, smooth = true) => {
+      active = clamp(i, 0, cards.length - 1);
+      flow.scrollTo({ left: centerOf(cards[active]), behavior: smooth && moves() ? "smooth" : "auto" });
+    };
+    const update = () => {
+      const mid = flow.scrollLeft + flow.clientWidth / 2;
+      let best = 0, bestD = Infinity;
+      cards.forEach((img, i) => {
+        const c = img.offsetLeft + img.offsetWidth / 2;
+        const off = clamp((c - mid) / (img.offsetWidth + 40), -2.2, 2.2);
+        if (Math.abs(c - mid) < bestD) { bestD = Math.abs(c - mid); best = i; }
+        if (moves()) {
+          img.style.setProperty("--cy", `${(-off * 30).toFixed(1)}deg`);
+          img.style.setProperty("--cs", (1.06 - Math.min(Math.abs(off), 1.6) * 0.14).toFixed(3));
+          img.style.setProperty("--cz", `${(-Math.abs(off) * 120).toFixed(0)}px`);
+          img.style.setProperty("--cb", (1 - Math.min(Math.abs(off), 1.6) * 0.3).toFixed(2));
+        }
       });
+      active = best;
+      cards.forEach((img, i) => img.classList.toggle("is-active", i === best));
+      dotButtons.forEach((d, i) => d.setAttribute("aria-current", String(i === best)));
+      flowSection.querySelector("[data-flow-prev]").disabled = best === 0;
+      flowSection.querySelector("[data-flow-next]").disabled = best === cards.length - 1;
     };
-    const layout = () => {
-      const pin = wide.matches && moves();
-      flowSection.classList.toggle("is-pinned", pin);
-      if (pin) {
-        flow.style.setProperty("--fx", "0px");
-        overflow = Math.max(0, flow.scrollWidth - innerWidth);
-        flowSection.style.setProperty("--flow-h", `${innerHeight + overflow * 1.1}px`);
-      } else {
-        flowSection.style.removeProperty("--flow-h"); flow.style.removeProperty("--fx");
-      }
-      onScroll();
+    flowSection.querySelector("[data-flow-prev]").addEventListener("click", () => go(active - 1));
+    flowSection.querySelector("[data-flow-next]").addEventListener("click", () => go(active + 1));
+    dotButtons.forEach((d, i) => d.addEventListener("click", () => go(i)));
+    flow.addEventListener("keydown", (event) => {
+      if (event.key === "ArrowRight") { event.preventDefault(); go(active + 1); }
+      if (event.key === "ArrowLeft") { event.preventDefault(); go(active - 1); }
+      if (event.key === "Enter") openViewer(cards, active);
+    });
+    // A side card comes to the middle; the middle card opens full size.
+    cards.forEach((img, i) => img.addEventListener("click", () => (i === active ? openViewer(cards, i) : go(i))));
+    // Drag with a mouse, like swiping on a phone.
+    let drag = null;
+    flow.addEventListener("pointerdown", (event) => {
+      if (event.pointerType !== "mouse") return;
+      drag = { x: event.clientX, left: flow.scrollLeft, moved: false };
+    });
+    addEventListener("pointermove", (event) => {
+      if (!drag) return;
+      const dx = event.clientX - drag.x;
+      if (Math.abs(dx) > 4) { drag.moved = true; flow.classList.add("is-dragging"); }
+      flow.scrollLeft = drag.left - dx;
+    });
+    addEventListener("pointerup", () => {
+      if (!drag) return;
+      const moved = drag.moved; drag = null; flow.classList.remove("is-dragging");
+      if (moved) { update(); go(active); flow.addEventListener("click", (e) => e.stopPropagation(), { capture: true, once: true }); }
+    });
+    flow.addEventListener("scroll", () => requestAnimationFrame(update), { passive: true });
+    addEventListener("resize", () => go(active, false));
+    addEventListener("load", () => go(active, false));
+    go(0, false); update();
+  }
+
+  /* ── Paw Hunter's grounds open full size too ─────────── */
+  const groundShots = [...document.querySelectorAll(".grounds img[data-zoom]")];
+  groundShots.forEach((img, i) => img.addEventListener("click", () => openViewer(groundShots, i)));
+
+  /* ── Full-size viewer ─────────────────────────────────── */
+  function openViewer(list, index) {
+    const dialog = document.querySelector("[data-viewer]");
+    if (!dialog?.showModal) return;
+    const img = dialog.querySelector("[data-viewer-img]");
+    const caption = dialog.querySelector("[data-viewer-caption]");
+    const count = dialog.querySelector("[data-viewer-count]");
+    let i = index;
+    const show = (n, dir = 0) => {
+      i = (n + list.length) % list.length;
+      img.src = list[i].currentSrc || list[i].src; img.alt = list[i].alt;
+      caption.textContent = list[i].alt;
+      count.textContent = `${i + 1} / ${list.length}`;
+      if (dir && moves()) img.animate([{ transform: `translateX(${dir * 40}px)`, opacity: 0 }, { transform: "none", opacity: 1 }], { duration: 280, easing: "cubic-bezier(.22,1,.36,1)" });
     };
-    const onScroll = () => {
-      if (!moves()) { cards.forEach((c) => ["--cy", "--cs", "--cz", "--cb"].forEach((p) => c.style.removeProperty(p))); return; }
-      if (flowSection.classList.contains("is-pinned")) {
-        const r = flowSection.getBoundingClientRect();
-        const p = clamp(-r.top / Math.max(1, r.height - innerHeight), 0, 1);
-        flow.style.setProperty("--fx", `${(-p * overflow).toFixed(1)}px`);
-      }
-      cover();
+    dialog.onkeydown = (event) => {
+      if (event.key === "ArrowRight") show(i + 1, 1);
+      if (event.key === "ArrowLeft") show(i - 1, -1);
     };
-    addEventListener("scroll", onScroll, { passive: true });
-    flow.addEventListener("scroll", onScroll, { passive: true });
-    addEventListener("resize", layout);
-    wide.addEventListener?.("change", layout);
-    motion.addEventListener?.("change", layout);
-    window.addEventListener("load", layout);
-    layout();
+    dialog.querySelector("[data-viewer-prev]").onclick = () => show(i - 1, -1);
+    dialog.querySelector("[data-viewer-next]").onclick = () => show(i + 1, 1);
+    dialog.querySelector("[data-viewer-close]").onclick = () => dialog.close();
+    dialog.onclick = (event) => { if (event.target === dialog) dialog.close(); };
+    let sx = null;
+    dialog.onpointerdown = (event) => { sx = event.clientX; };
+    dialog.onpointerup = (event) => {
+      if (sx === null) return;
+      const dx = event.clientX - sx; sx = null;
+      if (Math.abs(dx) > 50) show(i + (dx < 0 ? 1 : -1), dx < 0 ? 1 : -1);
+    };
+    show(i);
+    dialog.showModal();
+    document.documentElement.classList.add("viewer-open");
+    dialog.addEventListener("close", () => document.documentElement.classList.remove("viewer-open"), { once: true });
+  }
+
+  /* ── Phone: a download bar that stays at the bottom once the first buttons scroll away ── */
+  const dock = document.querySelector("[data-dock]");
+  if (dock && "IntersectionObserver" in window) {
+    const heroGet = document.querySelector(".ap-hero .ap-get");
+    const lastGet = document.querySelector(".ap-download");
+    let heroGone = false, endVisible = false;
+    const sync = () => {
+      const show = heroGone && !endVisible;
+      dock.classList.toggle("is-shown", show);
+      dock.setAttribute("aria-hidden", String(!show));
+      dock.querySelectorAll("a").forEach((a) => { a.tabIndex = show ? 0 : -1; });
+    };
+    new IntersectionObserver(([e]) => { heroGone = !e.isIntersecting && e.boundingClientRect.top < 0; sync(); }).observe(heroGet);
+    new IntersectionObserver(([e]) => { endVisible = e.isIntersecting; sync(); }).observe(lastGet);
   }
 
   /* ── Reveals, spotlights and tilting codes ────────────── */

@@ -66,10 +66,10 @@
       <div class="wrap">
         <div class="sig-head" data-reveal><h2 id="sig-title" data-i18n="sigTitle">The prey</h2><p data-i18n="sigLead">Each one has its own ground.</p></div>
         <ul class="grounds" data-reveal>
-          <li class="ground" style="--g:#e7d3ad;--gfg:#2b2118"><img src="../assets/apps/paw-hunter-1.webp" width="718" height="1560" alt="A mouse running across a wooden floor, with a box and a cushion to hide behind" data-i18n-alt="shot1" loading="lazy"><h3 data-i18n="g1">Mouse</h3><p data-i18n="g1t">Darts across a wooden floor and ducks behind a box.</p></li>
-          <li class="ground" style="--g:#2e4a2b;--gfg:#f1f5e6"><img src="../assets/apps/paw-hunter-2.webp" width="718" height="1560" alt="A butterfly over grass, with a leaf and a stone to hide behind" data-i18n-alt="shot2" loading="lazy"><h3 data-i18n="g2">Butterfly</h3><p data-i18n="g2t">Flutters over the grass, past a leaf and a stone.</p></li>
-          <li class="ground" style="--g:#123f4a;--gfg:#e8f6f6"><img src="../assets/apps/paw-hunter-3.webp" width="718" height="1560" alt="A koi swimming between lily pads" data-i18n-alt="shot3" loading="lazy"><h3 data-i18n="g3">Koi</h3><p data-i18n="g3t">Swims between the lily pads.</p></li>
-          <li class="ground" style="--g:#141a33;--gfg:#eef0ff"><img src="../assets/apps/paw-hunter-4.webp" width="718" height="1560" alt="A red dot of light on a dark screen" data-i18n-alt="shot4" loading="lazy"><h3 data-i18n="g4">Dot of light</h3><p data-i18n="g4t">Glides across a dark screen, like a laser pointer.</p></li>
+          <li class="ground" style="--g:#e7d3ad;--gfg:#2b2118"><img src="../assets/apps/paw-hunter-1.webp" width="718" height="1560" alt="A mouse running across a wooden floor, with a box and a cushion to hide behind" data-i18n-alt="shot1" loading="lazy" data-zoom><h3 data-i18n="g1">Mouse</h3><p data-i18n="g1t">Darts across a wooden floor and ducks behind a box.</p></li>
+          <li class="ground" style="--g:#2e4a2b;--gfg:#f1f5e6"><img src="../assets/apps/paw-hunter-2.webp" width="718" height="1560" alt="A butterfly over grass, with a leaf and a stone to hide behind" data-i18n-alt="shot2" loading="lazy" data-zoom><h3 data-i18n="g2">Butterfly</h3><p data-i18n="g2t">Flutters over the grass, past a leaf and a stone.</p></li>
+          <li class="ground" style="--g:#123f4a;--gfg:#e8f6f6"><img src="../assets/apps/paw-hunter-3.webp" width="718" height="1560" alt="A koi swimming between lily pads" data-i18n-alt="shot3" loading="lazy" data-zoom><h3 data-i18n="g3">Koi</h3><p data-i18n="g3t">Swims between the lily pads.</p></li>
+          <li class="ground" style="--g:#141a33;--gfg:#eef0ff"><img src="../assets/apps/paw-hunter-4.webp" width="718" height="1560" alt="A red dot of light on a dark screen" data-i18n-alt="shot4" loading="lazy" data-zoom><h3 data-i18n="g4">Dot of light</h3><p data-i18n="g4t">Glides across a dark screen, like a laser pointer.</p></li>
         </ul>
       </div>
     </section>
@@ -128,6 +128,23 @@
   </main>
 
   <footer class="ap-foot wrap"><p data-i18n="footer">Made by Liu Chuan Feng in Tokyo.</p></footer>
+
+  <div class="ap-dock" data-dock aria-hidden="true">
+    <img src="../assets/icons/paw-hunter.png" width="256" height="256" alt="">
+    <p><strong data-i18n="name">Paw Hunter</strong><span data-i18n="note">Free on iPhone and iPad</span></p>
+    <div class="dock-stores"><a class="dock-store" data-store="ios" href="https://apps.apple.com/jp/app/id6826493325" target="_blank" rel="noreferrer" tabindex="-1"><img src="../assets/app-store-icon.webp" width="28" height="28" alt="">App Store</a></div>
+  </div>
+
+  <dialog class="viewer" data-viewer aria-label="Screens" data-i18n-aria="screensTitle">
+    <div class="viewer-frame">
+      <img data-viewer-img alt="">
+      <p class="viewer-caption" data-viewer-caption></p>
+    </div>
+    <button type="button" class="round-btn viewer-prev" data-viewer-prev aria-label="Previous screen" data-i18n-aria="prevShot"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+    <button type="button" class="round-btn viewer-next" data-viewer-next aria-label="Next screen" data-i18n-aria="nextShot"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+    <p class="viewer-count" data-viewer-count></p>
+    <button type="button" class="round-btn viewer-close" data-viewer-close aria-label="Close" data-i18n-aria="closeViewer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg></button>
+  </dialog>
 
   <script type="application/json" id="copy">
 {

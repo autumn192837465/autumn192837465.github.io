@@ -83,13 +83,21 @@
 
     <section class="ap-screens" aria-labelledby="screens-title" data-flow>
       <div class="flow-pin">
-        <div class="wrap sig-head" data-reveal><h2 id="screens-title" data-i18n="screensTitle">Screens</h2><p data-i18n="screensLead">Days together, tickets, the calendar and the savings book.</p></div>
-        <div class="flow" tabindex="0" role="group" aria-labelledby="screens-title" data-flow-track>
-          <img src="../assets/apps/oshipass-1.webp" width="718" height="1560" alt="Home screen counting 837 days as a fan, with a ticket payment and a savings goal" data-i18n-alt="shot1" loading="lazy">
-          <img src="../assets/apps/oshipass-2.webp" width="718" height="1560" alt="Ticket screen with the ballot result and payment deadline" data-i18n-alt="shot2" loading="lazy">
-          <img src="../assets/apps/oshipass-3.webp" width="718" height="1560" alt="Calendar of shows, deadlines and anniversaries" data-i18n-alt="shot3" loading="lazy">
-          <img src="../assets/apps/oshipass-4.webp" width="718" height="1560" alt="Savings book for a trip to a concert" data-i18n-alt="shot4" loading="lazy">
+        <div class="wrap flow-head" data-reveal>
+          <div class="sig-head"><h2 id="screens-title" data-i18n="screensTitle">Screens</h2><p data-i18n="screensLead">Days together, tickets, the calendar and the savings book.</p></div>
+          <div class="flow-nav">
+            <button type="button" class="round-btn" data-flow-prev aria-label="Previous screen" data-i18n-aria="prevShot"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+            <button type="button" class="round-btn" data-flow-next aria-label="Next screen" data-i18n-aria="nextShot"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          </div>
         </div>
+        <div class="flow" tabindex="0" role="group" aria-labelledby="screens-title" data-flow-track>
+          <img src="../assets/apps/oshipass-1.webp" width="718" height="1560" alt="Home screen counting 837 days as a fan, with a ticket payment and a savings goal" data-i18n-alt="shot1" loading="lazy" data-zoom>
+          <img src="../assets/apps/oshipass-2.webp" width="718" height="1560" alt="Ticket screen with the ballot result and payment deadline" data-i18n-alt="shot2" loading="lazy" data-zoom>
+          <img src="../assets/apps/oshipass-3.webp" width="718" height="1560" alt="Calendar of shows, deadlines and anniversaries" data-i18n-alt="shot3" loading="lazy" data-zoom>
+          <img src="../assets/apps/oshipass-4.webp" width="718" height="1560" alt="Savings book for a trip to a concert" data-i18n-alt="shot4" loading="lazy" data-zoom>
+        </div>
+        <div class="flow-dots" data-flow-dots></div>
+        <p class="flow-hint" data-i18n="zoomHint">Tap a screen to see it full size.</p>
       </div>
     </section>
 
@@ -146,6 +154,23 @@
   </main>
 
   <footer class="ap-foot wrap"><p data-i18n="footer">Made by Liu Chuan Feng in Tokyo.</p></footer>
+
+  <div class="ap-dock" data-dock aria-hidden="true">
+    <img src="../assets/icons/oshipass.png" width="256" height="256" alt="">
+    <p><strong data-i18n="name">Oshipass</strong><span data-i18n="note">Free on iPhone and Android</span></p>
+    <div class="dock-stores"><a class="dock-store" data-store="ios" href="https://apps.apple.com/jp/app/id6827162992" target="_blank" rel="noreferrer" tabindex="-1"><img src="../assets/app-store-icon.webp" width="28" height="28" alt="">App Store</a><a class="dock-store" data-store="play" href="https://play.google.com/store/apps/details?id=com.kinopistudio.oshipass" target="_blank" rel="noreferrer" tabindex="-1"><img src="../assets/google-play-store-icon.webp" width="28" height="28" alt="">Google Play</a></div>
+  </div>
+
+  <dialog class="viewer" data-viewer aria-label="Screens" data-i18n-aria="screensTitle">
+    <div class="viewer-frame">
+      <img data-viewer-img alt="">
+      <p class="viewer-caption" data-viewer-caption></p>
+    </div>
+    <button type="button" class="round-btn viewer-prev" data-viewer-prev aria-label="Previous screen" data-i18n-aria="prevShot"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+    <button type="button" class="round-btn viewer-next" data-viewer-next aria-label="Next screen" data-i18n-aria="nextShot"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+    <p class="viewer-count" data-viewer-count></p>
+    <button type="button" class="round-btn viewer-close" data-viewer-close aria-label="Close" data-i18n-aria="closeViewer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg></button>
+  </dialog>
 
   <script type="application/json" id="copy">
 {
