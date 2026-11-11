@@ -11,7 +11,7 @@ const translations = {
     heroCta: "Message me on LinkedIn",
 
     appsTitle: "Apps I’ve released",
-    appsIntro: "Four apps, each planned, built, published and promoted by me alone.",
+    appsIntro: "Five apps, each planned, built, published and promoted by me alone.",
     navGames: "Games",
     navTools: "Tools",
     phoneLabel: "My phone with the apps I’ve released",
@@ -56,6 +56,12 @@ const translations = {
     bbShot1Alt: "Bit by Bit overview with this month’s remaining budget",
     bbShot2Alt: "Bit by Bit entry screen with the calculator keypad",
     bbShot3Alt: "Bit by Bit calendar of daily spending",
+    evKind: "Trip expense splitter for Android",
+    evText: "Log what everyone paid on a trip, in any of 12 currencies, and Evenli works out who owes whom with as few transfers as possible. Tick off each payback and share the result as an image or text; only the person keeping track needs the app. No account, and it works offline.",
+    evDate: "Available on Google Play",
+    evShot1Alt: "Evenli trip overview with totals in US dollars and yen",
+    evShot2Alt: "Evenli settle-up screen showing who pays whom",
+    evShot3Alt: "Evenli add-expense screen with the amount and who it is split between",
 
 
     workTitle: "Games I’ve worked on",
@@ -77,7 +83,7 @@ const translations = {
     aboutTitle: "About",
     aboutText: "I’m a senior Unity engineer with more than five years of mobile game development in Tokyo, on four titles that have launched.",
     aboutMore: "My focus is gameplay and boss systems, out-game UI and live events, backed by async code with UniTask, unit tests and debug tools that keep a live game easy to update. At Rudel I worked on three live titles and became lead engineer. At Limit Break I’m a senior client engineer on Puzzle Panic, working every day with designers, planners and QA in Japan, the US and the Philippines.",
-    aboutIndie: "Outside work I also make apps independently, handling planning, development, release and promotion myself. Four are live on the App Store and Google Play.",
+    aboutIndie: "Outside work I also make apps independently, handling planning, development, release and promotion myself. Five are live on the App Store and Google Play.",
     factBased: "Based in",
     factBasedValue: "Tokyo, Japan",
     factLang: "Works in",
@@ -111,7 +117,7 @@ const translations = {
     heroCta: "在 LinkedIn 聯絡我",
 
     appsTitle: "已上架的 App",
-    appsIntro: "四款 App，每一款都由我一個人企劃、開發、上架與宣傳。",
+    appsIntro: "五款 App，每一款都由我一個人企劃、開發、上架與宣傳。",
     navGames: "遊戲",
     navTools: "工具",
     phoneLabel: "我的手機，裡面是已上架的 App",
@@ -156,6 +162,12 @@ const translations = {
     bbShot1Alt: "一點一滴記帳本的總覽，顯示本月剩餘預算",
     bbShot2Alt: "一點一滴記帳本的記帳畫面與計算機鍵盤",
     bbShot3Alt: "一點一滴記帳本的每日支出行事曆",
+    evKind: "旅行分帳 App，支援 Android",
+    evText: "記下旅途中每個人付了多少，支援 12 種貨幣，Evenli 會用最少的轉帳次數算出誰該還誰多少。還款可以逐筆打勾，結果能用圖片或文字分享，只有負責記帳的人需要安裝。不用註冊，離線也能用。",
+    evDate: "已在 Google Play 上架",
+    evShot1Alt: "Evenli 的旅程總覽，顯示美元與日圓的總額",
+    evShot2Alt: "Evenli 的結算畫面，列出誰該付給誰",
+    evShot3Alt: "Evenli 的新增支出畫面，輸入金額與分攤的人",
 
 
     workTitle: "參與開發的遊戲",
@@ -177,7 +189,7 @@ const translations = {
     aboutTitle: "關於我",
     aboutText: "我是資深 Unity 遊戲工程師，在東京從事手機遊戲開發五年以上，參與過四款已上線的作品。",
     aboutMore: "專長是遊戲玩法與 Boss 系統、外圍 UI 與活動功能，並以 UniTask 非同步架構、單元測試和除錯工具，讓營運中的遊戲能穩定地持續更新。在 Rudel 參與三款營運中的作品，並擔任主程式；現在於 Limit Break 擔任 Puzzle Panic 的資深客戶端工程師，每天與日本、美國、菲律賓的設計師、企劃和 QA 協作。",
-    aboutIndie: "工作之外，我也獨立開發 App，從企劃、開發到上架與宣傳都由自己完成，目前已在 App Store 與 Google Play 上架四款。",
+    aboutIndie: "工作之外，我也獨立開發 App，從企劃、開發到上架與宣傳都由自己完成，目前已在 App Store 與 Google Play 上架五款。",
     factBased: "所在地",
     factBasedValue: "日本東京",
     factLang: "工作語言",
@@ -211,7 +223,7 @@ const translations = {
     heroCta: "LinkedIn で連絡する",
 
     appsTitle: "公開中のアプリ",
-    appsIntro: "4 本のアプリ。どれも企画・開発・公開・宣伝まで一人で手がけました。",
+    appsIntro: "5 本のアプリ。どれも企画・開発・公開・宣伝まで一人で手がけました。",
     navGames: "ゲーム",
     navTools: "ツール",
     phoneLabel: "公開中のアプリが入った私のスマホ",
@@ -256,6 +268,12 @@ const translations = {
     bbShot1Alt: "コツコツ家計簿の概要画面（今月の残り予算）",
     bbShot2Alt: "コツコツ家計簿の入力画面と電卓キー",
     bbShot3Alt: "コツコツ家計簿の日別支出カレンダー",
+    evKind: "旅行の割り勘アプリ（Android）",
+    evText: "旅行中に誰がいくら払ったかを 12 通貨で記録すると、Evenli が送金回数をできるだけ少なくして、誰が誰にいくら返すかを計算します。返済は一件ずつチェックでき、結果は画像やテキストで共有。インストールが必要なのは記録する人だけです。登録不要で、オフラインでも使えます。",
+    evDate: "Google Play で公開中",
+    evShot1Alt: "Evenli の旅行概要（米ドルと日本円の合計）",
+    evShot2Alt: "Evenli の精算画面（誰が誰に払うか）",
+    evShot3Alt: "Evenli の支出入力画面（金額と割り勘する人）",
 
 
     workTitle: "参加したタイトル",
@@ -277,7 +295,7 @@ const translations = {
     aboutTitle: "プロフィール",
     aboutText: "東京でモバイルゲーム開発に 5 年以上携わるシニア Unity エンジニアです。これまでにリリースされた 4 タイトルの開発に参加してきました。",
     aboutMore: "得意分野はゲームプレイとボスのシステム、アウトゲーム UI、イベント機能です。UniTask による非同期処理、ユニットテスト、デバッグツールなど、運営タイトルを安定して更新し続けるための基盤づくりも重視しています。Rudel では運営中の 3 タイトルに携わり、リードエンジニアを担当しました。現在は Limit Break で Puzzle Panic のシニアクライアントエンジニアとして、日本・アメリカ・フィリピンのデザイナー、プランナー、QA と日々協業しています。",
-    aboutIndie: "業務外では個人でもアプリを開発し、企画・開発・リリース・宣伝まで一人で行っています。現在、App Store と Google Play で 4 本を公開中です。",
+    aboutIndie: "業務外では個人でもアプリを開発し、企画・開発・リリース・宣伝まで一人で行っています。現在、App Store と Google Play で 5 本を公開中です。",
     factBased: "拠点",
     factBasedValue: "東京",
     factLang: "使用言語",

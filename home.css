@@ -315,6 +315,7 @@ html[lang="zh-TW"] .section-head h2 { font-weight: 400; }
   .js .folder:first-of-type li:nth-child(2) .launch { animation-delay: 700ms; }
   .js .folder:last-of-type li:nth-child(1) .launch { animation-delay: 780ms; }
   .js .folder:last-of-type li:nth-child(2) .launch { animation-delay: 860ms; }
+  .js .folder:last-of-type li:nth-child(3) .launch { animation-delay: 940ms; }
   .phone-glow { animation: breathe 7s ease-in-out infinite alternate; }
 }
 @keyframes rise { from { opacity: 0; translate: 0 80px; scale: 0.88; } to { opacity: 1; translate: 0 0; scale: 1; } }
@@ -357,6 +358,8 @@ html[lang="ja"] .category-head h3 { letter-spacing: -0.01em; }
 .is-oshi { --bg: #f8b9d0; --fg: #3a1230; --soft: #6a2f55; --link: #92103f;
   background: linear-gradient(160deg, #fcd7e4 0%, #f6a3c3 100%); }
 .is-bit { --bg: #e46b55; --fg: #2a0f08; --soft: #4a1c12; --link: #2a0f08; }
+.is-even { --bg: #095a59; --fg: #f4fbf8; --soft: #c4e4de; --link: #ffbfae;
+  background: radial-gradient(circle at 80% 38%, #0f8783 0, transparent 55%), var(--bg); }
 
 .app-icon { width: 80px; height: 80px; border-radius: var(--radius-icon); box-shadow: 0 10px 24px rgba(0, 0, 0, 0.22); }
 .app-text h4 { margin-top: 20px; font-size: var(--t-h2); font-weight: 800; line-height: 1.15; }

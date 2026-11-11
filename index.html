@@ -75,6 +75,7 @@
                 <ul>
                   <li><a class="launch" href="#app-oshipass" data-app="oshipass"><img src="assets/icons/oshipass.png" width="256" height="256" alt=""><span data-i18n="osName">Oshipass</span></a></li>
                   <li><a class="launch" href="#app-bit-by-bit" data-app="bit-by-bit"><img src="assets/icons/kotsukotsu.png" width="256" height="256" alt=""><span data-i18n="bbName">Bit by Bit</span></a></li>
+                  <li><a class="launch" href="#app-evenli" data-app="evenli"><img src="assets/icons/evenli.png" width="256" height="256" alt=""><span>Evenli</span></a></li>
                 </ul>
               </div>
             </div>
@@ -101,6 +102,12 @@
               </div>
               <div class="phone-sheet"><img src="assets/icons/kotsukotsu.png" width="256" height="256" alt=""><p><strong data-i18n="bbName">Bit by Bit</strong><a href="#app-bit-by-bit" data-i18n="moreAbout">Read about it</a></p></div>
             </div>
+            <div class="phone-app" data-view="evenli" style="--app-bg:#0b7c7c" hidden>
+              <div class="slides" aria-hidden="true">
+                <img src="assets/apps/evenli-1.webp" alt="" loading="lazy"><img src="assets/apps/evenli-2.webp" alt="" loading="lazy"><img src="assets/apps/evenli-3.webp" alt="" loading="lazy"><img src="assets/apps/evenli-4.webp" alt="" loading="lazy">
+              </div>
+              <div class="phone-sheet"><img src="assets/icons/evenli.png" width="256" height="256" alt=""><p><strong>Evenli</strong><a href="#app-evenli" data-i18n="moreAbout">Read about it</a></p></div>
+            </div>
 
             <button class="phone-back" type="button" hidden><span class="chev" aria-hidden="true"></span><span data-i18n="phoneBack">Home</span></button>
             <div class="phone-dock" role="group" aria-label="Switch app" data-i18n-aria="phoneSwitch" hidden>
@@ -108,6 +115,7 @@
               <button type="button" data-app="paw-hunter" aria-label="Paw Hunter" data-i18n-aria="phName"><img src="assets/icons/paw-hunter.png" width="256" height="256" alt=""></button>
               <button type="button" data-app="oshipass" aria-label="Oshipass" data-i18n-aria="osName"><img src="assets/icons/oshipass.png" width="256" height="256" alt=""></button>
               <button type="button" data-app="bit-by-bit" aria-label="Bit by Bit" data-i18n-aria="bbName"><img src="assets/icons/kotsukotsu.png" width="256" height="256" alt=""></button>
+              <button type="button" data-app="evenli" aria-label="Evenli"><img src="assets/icons/evenli.png" width="256" height="256" alt=""></button>
             </div>
             <button class="phone-homebar" type="button" aria-label="Back to the home screen" data-i18n-aria="phoneHome" hidden></button>
           </div>
@@ -121,7 +129,7 @@
     <section class="apps" id="apps" aria-labelledby="apps-title">
       <div class="section-head">
         <h2 id="apps-title" data-i18n="appsTitle">Apps I’ve released</h2>
-        <p data-i18n="appsIntro">Four apps, each planned, built, published and promoted by me alone.</p>
+        <p data-i18n="appsIntro">Five apps, each planned, built, published and promoted by me alone.</p>
       </div>
 
       <div class="category" id="games" aria-labelledby="cat-games">
@@ -210,6 +218,25 @@
         </div>
         </div>
       </article>
+      <article class="app is-even" id="app-evenli" aria-labelledby="t-ev">
+        <div class="app-inner">
+        <div class="app-text">
+          <img class="app-icon" src="assets/icons/evenli.png" width="256" height="256" alt="">
+          <h4 id="t-ev">Evenli</h4>
+          <p class="app-kind" data-i18n="evKind">Trip expense splitter for Android</p>
+          <p data-i18n="evText">Log what everyone paid on a trip, in any of 12 currencies, and Evenli works out who owes whom with as few transfers as possible. Tick off each payback and share the result as an image or text; only the person keeping track needs the app. No account, and it works offline.</p>
+          <p class="app-date" data-i18n="evDate">Available on Google Play</p>
+          <ul class="app-links">
+            <li><a href="https://play.google.com/store/apps/details?id=com.kinopistudio.evenli" target="_blank" rel="noreferrer">Google Play</a></li>
+          </ul>
+        </div>
+        <div class="app-shots">
+          <img src="assets/apps/evenli-2.webp" width="720" height="1280" loading="lazy" alt="Evenli settle-up screen showing who pays whom" data-i18n-alt="evShot2Alt">
+          <img src="assets/apps/evenli-1.webp" width="720" height="1280" loading="lazy" alt="Evenli trip overview with totals in US dollars and yen" data-i18n-alt="evShot1Alt">
+          <img src="assets/apps/evenli-3.webp" width="720" height="1280" loading="lazy" alt="Evenli add-expense screen with the amount and who it is split between" data-i18n-alt="evShot3Alt">
+        </div>
+        </div>
+      </article>
     </section>
 
     <!-- Professional work -->
@@ -274,7 +301,7 @@
         <div class="about-copy">
           <p class="about-lead" data-i18n="aboutText">I’m a senior Unity engineer with more than five years of mobile game development in Tokyo, on four titles that have launched.</p>
           <p data-i18n="aboutMore">My focus is gameplay and boss systems, out-game UI and live events, backed by async code with UniTask, unit tests and debug tools that keep a live game easy to update. At Rudel I worked on three live titles and became lead engineer. At Limit Break I’m a senior client engineer on Puzzle Panic, working every day with designers, planners and QA in Japan, the US and the Philippines.</p>
-          <p data-i18n="aboutIndie">Outside work I also make apps independently, handling planning, development, release and promotion myself. Four are live on the App Store and Google Play.</p>
+          <p data-i18n="aboutIndie">Outside work I also make apps independently, handling planning, development, release and promotion myself. Five are live on the App Store and Google Play.</p>
           <dl class="facts">
             <div><dt data-i18n="factBased">Based in</dt><dd data-i18n="factBasedValue">Tokyo, Japan</dd></div>
             <div><dt data-i18n="factLang">Works in</dt><dd data-i18n="factLangValue">Chinese, Japanese and English</dd></div>
