@@ -25,9 +25,12 @@ html[lang="zh-TW"] { --font: "Huninn", "M PLUS Rounded 1c", "PingFang TC", "Noto
 *, *::before, *::after { box-sizing: border-box; }
 * { margin: 0; }
 html { -webkit-text-size-adjust: 100%; }
+/* The canvas behind the page is the app's colour, so pulling past the top or bottom
+   (the rubber-band bounce on iPhone and Mac) shows the hero colour instead of white. */
+html { background: var(--hero-solid, var(--paper)); }
 body {
   font-family: var(--font); font-size: var(--t-body); line-height: 1.7;
-  background: var(--paper); color: var(--ink);
+  background: transparent; color: var(--ink);
   -webkit-font-smoothing: antialiased;
   overflow-x: clip;
 }
@@ -322,7 +325,7 @@ input, button { font: inherit; color: inherit; }
 .ap-qr img { width: 150px; border-radius: 16px; box-shadow: 0 16px 34px rgba(0, 0, 0, 0.24); }
 .ap-qr figcaption { font-size: var(--t-small); font-weight: 800; }
 .ap-qr-hint { width: 100%; text-align: right; color: var(--hero-soft); font-size: var(--t-small); }
-.ap-foot { padding-block: 28px; color: var(--muted); font-size: var(--t-small); }
+.ap-foot { padding-block: 28px; color: var(--hero-soft); font-size: var(--t-small); }
 
 /* ── Motion (only when the visitor allows it) ──────────── */
 @media (prefers-reduced-motion: no-preference) {

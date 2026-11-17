@@ -39,7 +39,8 @@ html[lang="zh-TW"] {
 }
 
 *, *::before, *::after { box-sizing: border-box; }
-html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+/* The night sky sits behind the page, so the bounce past the top or bottom is dark, not white. */
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; background: var(--sky-deep); }
 body {
   margin: 0;
   background: var(--paper);
