@@ -81,6 +81,27 @@ const translations = {
     alsoRudel: "Also at Rudel:",
     artCredit: "Game art from each title’s App Store page, © Limit Break Inc. and Rudel Inc.",
 
+    navFramework: "Framework",
+    fwTitle: "My own Unity framework",
+    fwIntro: "Every game I start now begins from it. After one setup command, a new project already boots, saves, shows ads, takes payments and builds for both stores.",
+    fwG1: "Start and flow",
+    fwG1Text: "Boot sequence and splash, scene transitions, UI panels that return results, state machines, object pools, sound, Addressables",
+    fwG2: "Player data",
+    fwG2Text: "Saves that survive a crash mid-write, with a backup, checksum and version migrations; server time that catches a rolled-back clock; network status; remote config",
+    fwG3: "Revenue and store",
+    fwG3Text: "Ads with frequency rules, in-app purchases, review prompts, forced updates",
+    fwG4: "Running a live game",
+    fwG4Text: "Analytics with automatic crash and error reports, local notifications, localization, an in-game debug menu, one-click Android and iOS builds",
+    fwAiTitle: "Working with AI agents",
+    fwAiText: "I build with Claude Code and Codex, often several at once. Unity scenes and prefabs can’t be merged safely, so the framework ships a claim board: each part of the project has one writer at a time, and an agent that needs a part someone else holds leaves them a request. The agents and I read the same API guide.",
+    fwBoardLabel: "Claim board terminal",
+    fwBoardCaption: "The claim board with three agents on one project.",
+    fwFactTests: "Tests",
+    fwFactTestsValue: "375 automated tests",
+    fwFactInstall: "Install checks",
+    fwFactInstallValue: "9 fresh-project setups, from no SDKs to all of them",
+    fwFactNeeds: "Requires",
+    fwFactNeedsValue: "Unity 6 and UniTask",
     aboutTitle: "About",
     aboutText: "I’m a senior Unity engineer with more than five years of mobile game development in Tokyo, on four titles that have launched.",
     aboutMore: "My focus is gameplay and boss systems, out-game UI and live events, backed by async code with UniTask, unit tests and debug tools that keep a live game easy to update. At Rudel I worked on three live titles and became lead engineer. At Limit Break I’m a senior client engineer on Puzzle Panic, working every day with designers, planners and QA in Japan, the US and the Philippines.",
@@ -90,7 +111,7 @@ const translations = {
     factLang: "Works in",
     factLangValue: "Chinese, Japanese and English",
     factTools: "Tools",
-    factToolsValue: "Unity, C#, UniTask and Flutter",
+    factToolsValue: "Unity, C#, UniTask, Flutter, Claude Code and Codex",
     experienceTitle: "Experience",
     present: "now",
     lbRole: "Senior Unity engineer on Puzzle Panic",
@@ -188,6 +209,27 @@ const translations = {
     alsoRudel: "在 Rudel 也參與過：",
     artCredit: "遊戲圖片取自各作品的 App Store 頁面，© Limit Break Inc. 與 Rudel Inc.",
 
+    navFramework: "框架",
+    fwTitle: "自己寫的 Unity 框架",
+    fwIntro: "我現在開新遊戲都從它開始。跑一次 Setup，新專案就能開機、存檔、播廣告、收款，也能直接出 Android 和 iOS 的包。",
+    fwG1: "開機與流程",
+    fwG1Text: "開機與 Splash、場景轉場、能回傳結果的 UI 面板、狀態機、物件池、音效、Addressables",
+    fwG2: "玩家資料",
+    fwG2Text: "寫到一半當機也不會壞的存檔，附備份、校驗碼和版本遷移；伺服器校時，抓得到玩家把時鐘調回去；網路狀態；遠端設定",
+    fwG3: "營收與商店",
+    fwG3Text: "有頻率規則的廣告、內購、評分邀請、強制更新",
+    fwG4: "上線營運",
+    fwG4Text: "分析與自動錯誤回報、本地推播、多語系、遊戲內除錯選單、一鍵出 Android 和 iOS 包",
+    fwAiTitle: "和 AI 代理一起開發",
+    fwAiText: "我平常用 Claude Code 和 Codex 開發，常常好幾個同時跑。Unity 的場景和 prefab 沒辦法安全合併，所以框架附了一套認領板：專案的每一區同時只有一個代理能寫，需要改別人手上的區，就留需求單給它。API 文件只有一份，我和代理讀的是同一份。",
+    fwBoardLabel: "認領板的終端機畫面",
+    fwBoardCaption: "三個代理同時做一個專案時的認領板。",
+    fwFactTests: "測試",
+    fwFactTestsValue: "375 個自動測試",
+    fwFactInstall: "安裝檢查",
+    fwFactInstallValue: "9 種全新專案設定，從不裝 SDK 到全部裝齊",
+    fwFactNeeds: "需求",
+    fwFactNeedsValue: "Unity 6 與 UniTask",
     aboutTitle: "關於我",
     aboutText: "我是資深 Unity 遊戲工程師，在東京從事手機遊戲開發五年以上，參與過四款已上線的作品。",
     aboutMore: "專長是遊戲玩法與 Boss 系統、外圍 UI 與活動功能，並以 UniTask 非同步架構、單元測試和除錯工具，讓營運中的遊戲能穩定地持續更新。在 Rudel 參與三款營運中的作品，並擔任主程式；現在於 Limit Break 擔任 Puzzle Panic 的資深客戶端工程師，每天與日本、美國、菲律賓的設計師、企劃和 QA 協作。",
@@ -197,7 +239,7 @@ const translations = {
     factLang: "工作語言",
     factLangValue: "中文、日文、英文",
     factTools: "工具",
-    factToolsValue: "Unity、C#、UniTask、Flutter",
+    factToolsValue: "Unity、C#、UniTask、Flutter、Claude Code、Codex",
     experienceTitle: "工作經歷",
     present: "至今",
     lbRole: "資深 Unity 工程師，負責 Puzzle Panic",
@@ -295,6 +337,27 @@ const translations = {
     alsoRudel: "Rudel ではほかに：",
     artCredit: "ゲーム画像は各タイトルの App Store ページより。© Limit Break Inc.、Rudel Inc.",
 
+    navFramework: "フレームワーク",
+    fwTitle: "自作の Unity フレームワーク",
+    fwIntro: "新しいゲームはいつもここから作り始めます。セットアップを一度実行するだけで、起動、セーブ、広告、課金がそろい、Android と iOS のビルドも出せます。",
+    fwG1: "起動と画面遷移",
+    fwG1Text: "起動処理とスプラッシュ、シーン遷移、結果を返す UI パネル、ステートマシン、オブジェクトプール、サウンド、Addressables",
+    fwG2: "プレイヤーデータ",
+    fwG2Text: "書き込み中に落ちても壊れないセーブ（バックアップ、チェックサム、バージョン移行付き）、時計の巻き戻しを検知するサーバー時刻、ネットワーク状態、リモート設定",
+    fwG3: "収益とストア",
+    fwG3Text: "頻度ルール付きの広告、アプリ内課金、レビュー依頼、強制アップデート",
+    fwG4: "運営",
+    fwG4Text: "アナリティクスとエラーの自動報告、ローカル通知、多言語対応、ゲーム内デバッグメニュー、Android と iOS のワンクリックビルド",
+    fwAiTitle: "AI エージェントと一緒に開発する",
+    fwAiText: "普段は Claude Code と Codex で開発していて、複数を同時に動かすことも多いです。Unity のシーンや prefab は安全にマージできないので、フレームワークには担当表を同梱しています。プロジェクトの各エリアに書き込めるのは同時に一人だけで、他のエージェントが持っているエリアに変更が必要なときは、持ち主に依頼を残します。API ドキュメントは一つだけで、私もエージェントも同じものを読みます。",
+    fwBoardLabel: "担当表のターミナル画面",
+    fwBoardCaption: "3 つのエージェントが一つのプロジェクトで作業しているときの担当表。",
+    fwFactTests: "テスト",
+    fwFactTestsValue: "自動テスト 375 件",
+    fwFactInstall: "インストール確認",
+    fwFactInstallValue: "新規プロジェクト 9 パターン（SDK なしから全部入りまで）",
+    fwFactNeeds: "動作環境",
+    fwFactNeedsValue: "Unity 6 と UniTask",
     aboutTitle: "プロフィール",
     aboutText: "東京でモバイルゲーム開発に 5 年以上携わるシニア Unity エンジニアです。これまでにリリースされた 4 タイトルの開発に参加してきました。",
     aboutMore: "得意分野はゲームプレイとボスのシステム、アウトゲーム UI、イベント機能です。UniTask による非同期処理、ユニットテスト、デバッグツールなど、運営タイトルを安定して更新し続けるための基盤づくりも重視しています。Rudel では運営中の 3 タイトルに携わり、リードエンジニアを担当しました。現在は Limit Break で Puzzle Panic のシニアクライアントエンジニアとして、日本・アメリカ・フィリピンのデザイナー、プランナー、QA と日々協業しています。",
@@ -304,7 +367,7 @@ const translations = {
     factLang: "使用言語",
     factLangValue: "中国語、日本語、英語",
     factTools: "ツール",
-    factToolsValue: "Unity、C#、UniTask、Flutter",
+    factToolsValue: "Unity、C#、UniTask、Flutter、Claude Code、Codex",
     experienceTitle: "職歴",
     present: "現在",
     lbRole: "シニア Unity エンジニア（Puzzle Panic）",
@@ -599,6 +662,19 @@ function initializePhone() {
   }
 }
 
+// The claim board in the framework section plays its lines once, when it first scrolls into view.
+function initializeBoard() {
+  const board = document.querySelector(".board");
+  if (!board) return;
+  if (reduceMotion() || !("IntersectionObserver" in window)) { board.classList.add("is-played"); return; }
+  const observer = new IntersectionObserver((entries) => {
+    if (!entries.some((entry) => entry.isIntersecting)) return;
+    board.classList.add("is-played");
+    observer.disconnect();
+  }, { threshold: 0.35 });
+  observer.observe(board);
+}
+
 function initializePortfolio() {
   if (!document.querySelector(".home")) return;
   const refreshClock = initializeClock();
@@ -614,6 +690,7 @@ function initializePortfolio() {
   refreshClock();
   initializeVideos();
   initializePhone();
+  initializeBoard();
 }
 
 if (typeof document !== "undefined") {

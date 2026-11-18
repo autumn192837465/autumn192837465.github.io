@@ -26,6 +26,7 @@
         <a href="#games" data-i18n="navGames">Games</a>
         <a href="#tools" data-i18n="navTools">Tools</a>
         <a href="#work" data-i18n="navWork">Work</a>
+        <a href="#framework" data-i18n="navFramework">Framework</a>
         <a href="#about" data-i18n="navAbout">About</a>
         <a href="#contact" data-i18n="navContact">Contact</a>
       </div>
@@ -294,6 +295,45 @@
       </div>
       <p class="work-also"><span data-i18n="alsoRudel">Also at Rudel:</span> <span lang="ja">大熱闘 ドラゴンスマッシュ</span></p>
       <p class="note" data-i18n="artCredit">Game art from each title’s App Store page, © Limit Break Inc. and Rudel Inc.</p>
+    </section>
+
+    <!-- My Unity framework -->
+    <section class="framework" id="framework" aria-labelledby="fw-title">
+      <div class="section-head">
+        <h2 id="fw-title" data-i18n="fwTitle">My own Unity framework</h2>
+        <p data-i18n="fwIntro">Every game I start now begins from it. After one setup command, a new project already boots, saves, shows ads, takes payments and builds for both stores.</p>
+      </div>
+
+      <div class="fw-grid">
+        <dl class="fw-modules">
+          <div><dt data-i18n="fwG1">Start and flow</dt><dd data-i18n="fwG1Text">Boot sequence and splash, scene transitions, UI panels that return results, state machines, object pools, sound, Addressables</dd></div>
+          <div><dt data-i18n="fwG2">Player data</dt><dd data-i18n="fwG2Text">Saves that survive a crash mid-write, with a backup, checksum and version migrations; server time that catches a rolled-back clock; network status; remote config</dd></div>
+          <div><dt data-i18n="fwG3">Revenue and store</dt><dd data-i18n="fwG3Text">Ads with frequency rules, in-app purchases, review prompts, forced updates</dd></div>
+          <div><dt data-i18n="fwG4">Running a live game</dt><dd data-i18n="fwG4Text">Analytics with automatic crash and error reports, local notifications, localization, an in-game debug menu, one-click Android and iOS builds</dd></div>
+        </dl>
+
+        <div class="fw-ai">
+          <h3 data-i18n="fwAiTitle">Working with AI agents</h3>
+          <p data-i18n="fwAiText">I build with Claude Code and Codex, often several at once. Unity scenes and prefabs can’t be merged safely, so the framework ships a claim board: each part of the project has one writer at a time, and an agent that needs a part someone else holds leaves them a request. The agents and I read the same API guide.</p>
+          <figure class="board">
+            <pre aria-label="Claim board terminal" data-i18n-aria="fwBoardLabel"><code><span class="b-cmd">$ board list</span>
+<span class="b-row">gameplay  claude-a  34 min  relay level</span>
+<span class="b-row">ui        codex-b   12 min  results screen</span>
+<span class="b-row">art       codex-c    5 min  sprites</span>
+<span class="b-cmd">$ board claim ui claude-a "relay bonus"</span>
+<span class="b-held">HELD ui by codex-b for 12 min: results screen</span>
+<span class="b-cmd">$ board request ui claude-a "relay bonus row"</span>
+<span class="b-ok">request filed: requests/ui-claude-a.md</span></code></pre>
+            <figcaption data-i18n="fwBoardCaption">The claim board with three agents on one project.</figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <dl class="facts fw-facts">
+        <div><dt data-i18n="fwFactTests">Tests</dt><dd data-i18n="fwFactTestsValue">375 automated tests</dd></div>
+        <div><dt data-i18n="fwFactInstall">Install checks</dt><dd data-i18n="fwFactInstallValue">9 fresh-project setups, from no SDKs to all of them</dd></div>
+        <div><dt data-i18n="fwFactNeeds">Requires</dt><dd data-i18n="fwFactNeedsValue">Unity 6 and UniTask</dd></div>
+      </dl>
     </section>
 
     <!-- About and experience -->
